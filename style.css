@@ -270,14 +270,16 @@ a { color: inherit; }
 .service-card h3 { font-size: 1.12rem; color: var(--heading); margin-bottom: .55rem; }
 .service-card p { font-size: .9rem; color: var(--muted); line-height: 1.7; margin-bottom: 1.1rem; }
 
-.tech-tags {
-  list-style: none; display: flex; flex-wrap: wrap; gap: .4rem;
+.tier-popular { position: relative; border-color: var(--primary); box-shadow: 0 0 0 1px var(--primary), var(--shadow); }
+.tier-badge {
+  position: absolute; top: -11px; right: 1.5rem;
+  font-size: .66rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--on-primary); background: var(--primary);
+  padding: .28rem .75rem; border-radius: 100px;
 }
-.tech-tags li {
-  font-size: .72rem; font-weight: 600; letter-spacing: .04em;
-  color: var(--link);
-  background: var(--surface-2);
-  padding: .28rem .6rem; border-radius: 100px;
+.concept-note {
+  margin-top: 2rem; text-align: center;
+  font-size: .95rem; font-weight: 500; color: var(--text);
 }
 
 /* ── PROCESS ── */
@@ -343,6 +345,7 @@ a { color: inherit; }
   padding: clamp(4rem, 8vw, 6.5rem) 1.5rem;
   display: grid; grid-template-columns: 1fr; gap: 3.5rem; align-items: center;
 }
+.about-text { max-width: 680px; }
 .about-text .eyebrow { color: var(--accent); }
 .about-text h2 {
   font-family: var(--serif); font-weight: 400;
@@ -350,20 +353,6 @@ a { color: inherit; }
   color: var(--heading); margin-bottom: 1.1rem;
 }
 .about-text p { color: var(--muted); line-height: 1.8; font-size: .98rem; margin-bottom: 1.1rem; }
-.about-tags { margin-top: 1.5rem; }
-
-.stats {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1rem;
-}
-.stat {
-  background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
-  padding: 1.75rem 1.5rem; text-align: center;
-}
-.stat dt {
-  font-family: var(--serif); font-size: 2.1rem; color: var(--heading);
-  line-height: 1.1; margin-bottom: .3rem;
-}
-.stat dd { font-size: .8rem; color: var(--muted); line-height: 1.5; }
 
 /* ── CONTACT ── */
 .contact-section {
@@ -436,7 +425,6 @@ html.js .reveal.visible { opacity: 1; transform: translateY(0); }
 
 /* ── RESPONSIVE ── */
 @media (min-width: 900px) {
-  .about-grid { grid-template-columns: 1.4fr 1fr; }
   .contact-inner { grid-template-columns: 1fr 1fr; }
 }
 

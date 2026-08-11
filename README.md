@@ -28,7 +28,7 @@ GitHub Pages ondersteunt maar één custom domein per site. Daarom:
 
 ## Inhoud aanpassen
 
-- Diensten, portfolio en contact staan in `index.html`; kleuren en lettertypen in `style.css` (bovenaan het bestand, `:root`).
+- Concepten, portfolio en contact staan in `index.html`; kleuren en lettertypen in `style.css` (bovenaan het bestand, `:root`).
 - Logo's: `assets/logo.png` (navy op transparant, lichte modus) en `assets/logo-dark.png` (wit op transparant, donkere modus). Vervang beide als het logo verandert.
 
 ## Light / dark mode
