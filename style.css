@@ -412,6 +412,37 @@ a.contact-item:focus-visible { outline: 2px solid var(--em-light); outline-offse
   font-family: var(--serif); color: rgba(255,255,255,.85);
   font-size: 1.05rem; margin-bottom: .35rem;
 }
+.footer-links { margin-top: .8rem; }
+.footer-links a {
+  color: rgba(255,255,255,.6); text-decoration: none;
+  font-size: .82rem;
+}
+.footer-links a:hover { color: #fff; text-decoration: underline; }
+
+/* ── LEGAL (privacy & voorwaarden) ── */
+.legal { max-width: 760px; margin: 0 auto; padding: clamp(3rem, 6vw, 5rem) 1.5rem; }
+.legal h1 {
+  font-family: var(--serif); font-weight: 400;
+  font-size: clamp(1.9rem, 4vw, 2.8rem);
+  color: var(--heading); line-height: 1.2; margin: .4rem 0;
+}
+.legal-updated { color: var(--muted); font-size: .85rem; margin-bottom: 2rem; }
+.legal-nav {
+  display: flex; flex-wrap: wrap; gap: .75rem 1.5rem;
+  margin-bottom: 3rem; padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--line);
+}
+.legal-nav a { color: var(--link); font-weight: 600; text-decoration: none; font-size: .9rem; }
+.legal-nav a:hover { text-decoration: underline; }
+.legal h2 {
+  font-family: var(--serif); font-weight: 400;
+  font-size: 1.5rem; color: var(--heading); margin: 3rem 0 1rem;
+}
+.legal h3 { font-size: 1rem; color: var(--heading); margin: 1.5rem 0 .5rem; }
+.legal p, .legal li { color: var(--muted); line-height: 1.75; font-size: .95rem; }
+.legal p { margin-bottom: 1rem; }
+.legal ul, .legal ol { margin: 0 0 1rem 1.25rem; }
+.legal a { color: var(--link); }
 
 /* ── REVEAL ──
    Only hidden when JS is active; without JS the content stays visible. */
