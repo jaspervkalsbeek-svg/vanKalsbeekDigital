@@ -66,8 +66,8 @@
       <div class="hero-inner">
         <img src="assets/logo-dark.png" alt="Van Kalsbeek Digital logo" class="hero-logo" />
         <p class="eyebrow">Landgraaf · Limburg</p>
-        <h1>Software en websites die het werk <em>voor je doen</em></h1>
-        <p class="hero-text">Van Kalsbeek Digital bouwt websites, webapplicaties en data-gedreven tools op maat. Van eerste idee tot productie: strak, overzichtelijk en gemaakt om dagelijks te gebruiken.</p>
+        <h1 class="hero-title" id="hero-title">Uw website werkt <em>voor u</em>, terwijl u onderneemt</h1>
+        <p class="hero-text">Van Kalsbeek Digital bouwt de site die uw zaak verder helpt: een duidelijke bedrijfswebsite, een webapplicatie of automatische overzichten — zodat u niets handmatig hoeft over te typen. Van eerste idee tot live, strak en gemaakt om dagelijks te gebruiken.</p>
         <div class="hero-actions">
           <a href="mailto:info@vankalsbeekdigital.com" class="btn btn-primary">Neem contact op</a>
           <a href="#portfolio" class="btn btn-ghost">Bekijk mijn werk</a>
@@ -111,7 +111,7 @@
           <p>Het complete pakket: een volledig dynamische oplossing met data-integraties, maatwerkfuncties en uitgebreide ondersteuning.</p>
         </article>
       </div>
-      <p class="concept-note">Het maken van de concepten is volledig gratis en vrijblijvend — je betaalt pas wanneer je kiest welk concept je wilt.</p>
+      <p class="concept-note">Gratis en vrijblijvend — binnen 2 dagen liggen je drie concepten klaar. Je betaalt pas wanneer je kiest welk concept je wilt.</p>
     </section>
 
     <!-- HOE IK WERK -->
@@ -134,9 +134,10 @@
         <li class="step reveal">
           <span class="step-nr">3</span>
           <h3>Live zetten</h3>
-          <p>Ik lever op, zorg dat alles draait en blijf beschikbaar voor vragen, aanpassingen en vervolgwerk.</p>
+          <p>Ik lever op en zorg dat alles draait. De eerste maand daarna is ondersteuning gratis: vragen en kleine aanpassingen inbegrepen. Daarna kies je zelf tussen losse uren of een onderhoudsabonnement.</p>
         </li>
       </ol>
+      <p class="steps-note">Kies je een concept, dan bind ik een concrete opleverdatum vast — je weet precies waar je aan toe bent.</p>
     </section>
 
     <!-- PORTFOLIO -->
@@ -170,8 +171,8 @@
         <div class="about-text reveal">
           <p class="eyebrow">Over mij</p>
           <h2>Jasper van Kalsbeek</h2>
-          <p>Softwareontwikkelaar in opleiding (MBO-4, VISTA College Heerlen) met een neus voor data. Wat ik maak moet werken én gebruikt worden — precies zoals de site die ik voor het familiebedrijf bouwde.</p>
-          <p>Mijn achtergrond in klantgerichte rollen vertaalt zich naar software die is gemaakt voor de mensen die ermee werken. Duidelijk, overzichtelijk en zonder overbodige functies.</p>
+          <p>Wat ik maak moet werken én gebruikt worden — duidelijk, overzichtelijk en zonder functies die niemand vraagt. Precies zoals de complete bedrijfswebsite die ik voor het familiebedrijf bouwde.</p>
+          <p>Ik ben softwareontwikkelaar (MBO-4, VISTA College Heerlen) met een neus voor data en een achtergrond in klantgerichte rollen. Die combinatie vertaalt zich naar software die is gemaakt voor de mensen die ermee werken.</p>
         </div>
       </div>
     </section>
@@ -184,6 +185,23 @@
           <h2>Klaar om iets te bouwen?</h2>
           <p>Vertel wat je wilt bereiken en ik kijk mee. Je krijgt altijd een eerlijk antwoord — ook als dat is dat je iets anders nodig hebt.</p>
           <a href="mailto:info@vankalsbeekdigital.com" class="btn btn-accent">Stuur een e-mail</a>
+          <form class="contact-form" action="https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID" method="POST">
+            <div class="form-row">
+              <div class="form-field">
+                <label for="contact-naam">Naam</label>
+                <input id="contact-naam" type="text" name="naam" placeholder="Uw naam" required />
+              </div>
+              <div class="form-field">
+                <label for="contact-email">E-mail</label>
+                <input id="contact-email" type="email" name="email" placeholder="u@voorbeeld.nl" required />
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="contact-bericht">Waar kan ik mee helpen?</label>
+              <textarea id="contact-bericht" name="bericht" rows="4" placeholder="Vertel kort wat je wilt bereiken..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-accent">Verstuur</button>
+          </form>
         </div>
         <div class="contact-details reveal">
           <a class="contact-item" href="mailto:info@vankalsbeekdigital.com">
@@ -220,10 +238,22 @@
     </section>
   </main>
 
+  <div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie-instellingen">
+    <p>Deze website gebruikt cookies om te meten hoe de site wordt gebruikt (Google Analytics). Kies hieronder of je hiermee akkoord gaat.</p>
+    <div class="cookie-actions">
+      <button type="button" class="btn-cookie btn-cookie-primary" id="cookie-accept">Akkoord</button>
+      <button type="button" class="btn-cookie btn-cookie-secondary" id="cookie-reject">Weigeren</button>
+    </div>
+  </div>
+
   <footer class="footer">
     <p class="footer-brand">Van Kalsbeek Digital</p>
     <p>© <span id="year">2026</span> Van Kalsbeek Digital · vankalsbeekdigital.com · .nl</p>
-    <p class="footer-links"><a href="privacy.html">Privacy &amp; voorwaarden</a></p>
+    <p class="footer-links">
+      <a href="privacy.html">Privacy &amp; voorwaarden</a>
+      <span aria-hidden="true">·</span>
+      <button type="button" class="footer-link-btn" id="cookie-settings">Cookie-instellingen</button>
+    </p>
   </footer>
 
   <script src="script.js"></script>

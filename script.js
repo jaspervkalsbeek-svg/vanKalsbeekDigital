@@ -1,7 +1,53 @@
-// Van Kalsbeek Digital — mobile menu, theme toggle, footer year,
-// scroll reveal and active-nav highlighting.
+// Van Kalsbeek Digital — cookie consent, analytics, mobile menu,
+// theme toggle, footer year, scroll reveal and active-nav highlighting.
 (function () {
   'use strict';
+
+  // Cookie consent & analytics. GA_ID is empty until a Google Analytics
+  // measurement ID is provided per project; no tracking runs without consent.
+  var COOKIE_KEY = 'vkd-cookie-consent';
+  var GA_ID = '';
+
+  function loadGA() {
+    if (!GA_ID || document.getElementById('ga-script')) return;
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+    s.id = 'ga-script';
+    document.head.appendChild(s);
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { window.dataLayer.push(arguments); }
+    window.gtag = gtag;
+    gtag('js', new Date());
+    gtag('config', GA_ID, { anonymize_ip: true });
+  }
+
+  var cookieBanner = document.getElementById('cookie-banner');
+  var cookieConsent = null;
+  try { cookieConsent = localStorage.getItem(COOKIE_KEY); } catch (e) {}
+
+  if (cookieConsent === 'accepted') {
+    loadGA();
+  } else if (!cookieConsent && cookieBanner) {
+    cookieBanner.style.display = 'flex';
+  }
+
+  if (cookieBanner) {
+    document.getElementById('cookie-accept').addEventListener('click', function () {
+      try { localStorage.setItem(COOKIE_KEY, 'accepted'); } catch (e) {}
+      window.location.reload();
+    });
+    document.getElementById('cookie-reject').addEventListener('click', function () {
+      try { localStorage.setItem(COOKIE_KEY, 'rejected'); } catch (e) {}
+      window.location.reload();
+    });
+  }
+  var cookieSettingsBtn = document.getElementById('cookie-settings');
+  if (cookieSettingsBtn) {
+    cookieSettingsBtn.addEventListener('click', function () {
+      if (cookieBanner) cookieBanner.style.display = 'flex';
+    });
+  }
 
   // Mark that JS runs, so reveal animations start hidden (CSS: html.js .reveal).
   document.documentElement.classList.add('js');
@@ -60,6 +106,25 @@
     reveals.forEach(function (el) { observer.observe(el); });
   } else {
     reveals.forEach(function (el) { el.classList.add('visible'); });
+  }
+
+  // Hero headline rotation. Skipped when the user prefers reduced motion.
+  var heroTitle = document.getElementById('hero-title');
+  if (heroTitle && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    var headlines = [
+      'Uw website werkt <em>voor u</em>, terwijl u onderneemt',
+      'Drie gratis concepten <em>binnen twee dagen</em>',
+      'Uw zaak professioneel online, <em>zonder gedoe</em>'
+    ];
+    var headlineIndex = 0;
+    window.setInterval(function () {
+      heroTitle.classList.add('is-hidden');
+      window.setTimeout(function () {
+        headlineIndex = (headlineIndex + 1) % headlines.length;
+        heroTitle.innerHTML = headlines[headlineIndex];
+        heroTitle.classList.remove('is-hidden');
+      }, 300);
+    }, 5000);
   }
 
   // Highlight the active nav link while scrolling
