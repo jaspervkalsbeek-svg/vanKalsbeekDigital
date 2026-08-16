@@ -321,17 +321,15 @@ a { color: inherit; }
 /* ── WHY / UP-TO-DATE ── */
 .why-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem 3rem;
+  max-width: 900px;
 }
-.why-item {
-  background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
-  padding: 1.75rem 1.5rem;
-  transition: box-shadow .25s, transform .25s, border-color .25s, background .25s;
+.why-item h3 {
+  font-size: 1.1rem; color: var(--heading); margin-bottom: .6rem;
+  padding-bottom: .6rem; border-bottom: 1px solid var(--line);
 }
-.why-item:hover { box-shadow: var(--shadow); transform: translateY(-4px); border-color: transparent; }
-.why-item h3 { font-size: 1.05rem; color: var(--heading); margin-bottom: .5rem; }
-.why-item p { font-size: .88rem; color: var(--muted); line-height: 1.7; }
+.why-item p { font-size: .92rem; color: var(--muted); line-height: 1.75; }
 
 /* ── PORTFOLIO ── */
 .projects-grid {
