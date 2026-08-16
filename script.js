@@ -92,6 +92,19 @@
   var yearElement = document.getElementById('year');
   if (yearElement) yearElement.textContent = new Date().getFullYear();
 
+  // Tier toggle: switch between nieuwbouw and redesign cards
+  var tierBtns = document.querySelectorAll('.tier-toggle-btn');
+  tierBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      tierBtns.forEach(function (b) { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+      var target = btn.getAttribute('data-tier');
+      document.getElementById('tier-nieuw').hidden = target !== 'nieuw';
+      document.getElementById('tier-redesign').hidden = target !== 'redesign';
+    });
+  });
+
   // Scroll reveal
   var reveals = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window) {

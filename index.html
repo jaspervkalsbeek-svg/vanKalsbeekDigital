@@ -79,9 +79,14 @@
       <div class="section-head">
         <p class="eyebrow">Concepten</p>
         <h2>Drie concepten, jij kiest</h2>
-        <p class="section-intro">Of u nu een nieuwe site wilt of uw huidige site wilt vernieuwen — ik maak drie concepten op maat. Bekijk de prijzen voor een nieuwe site of een redesign hieronder.</p>
+        <p class="section-intro">Voor elke opdracht maak ik drie concepten op maat. Nieuwe site of redesign — kies hieronder wat bij u past.</p>
       </div>
-      <div class="services-grid">
+      <div class="tier-toggle" role="tablist" aria-label="Type website">
+        <button class="tier-toggle-btn active" role="tab" aria-selected="true" data-tier="nieuw">Nieuwe website</button>
+        <button class="tier-toggle-btn" role="tab" aria-selected="false" data-tier="redesign">Redesign</button>
+      </div>
+
+      <div class="services-grid" id="tier-nieuw" role="tabpanel">
         <article class="service-card reveal">
           <span class="service-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 20h16M7 20v-6"/></svg>
@@ -139,16 +144,9 @@
         </article>
       </div>
       <p class="concept-note">Gratis en vrijblijvend — binnen 2 dagen liggen je drie concepten klaar. Je betaalt pas wanneer je kiest welk concept je wilt.</p>
-    </section>
-
-    <!-- REDESIGN -->
-    <section class="section section-soft" id="redesign">
-      <div class="section-head">
-        <p class="eyebrow">Redesign</p>
-        <h2>Uw huidige site, nieuw leven ingeblazen</h2>
-        <p class="section-intro">Al een website maar is deze verouderd, traag of niet mobiel-vriendelijk? Ik vernieuw uw bestaande site — behoud wat werkt, verbeter wat beter kan.</p>
       </div>
-      <div class="services-grid">
+
+      <div class="services-grid" id="tier-redesign" role="tabpanel" hidden>
         <article class="service-card reveal">
           <span class="service-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 20h16M7 20v-6"/></svg>
@@ -197,6 +195,7 @@
           </ul>
         </article>
       </div>
+
     </section>
 
     <!-- HOE IK WERK -->
