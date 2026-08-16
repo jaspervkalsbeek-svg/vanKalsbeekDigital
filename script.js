@@ -123,25 +123,6 @@
     reveals.forEach(function (el) { el.classList.add('visible'); });
   }
 
-  // Hero headline rotation. Skipped when the user prefers reduced motion.
-  var heroTitle = document.getElementById('hero-title');
-  if (heroTitle && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    var headlines = [
-      'Uw website werkt <em>voor u</em>, terwijl u onderneemt',
-      'Drie gratis concepten <em>binnen twee dagen</em>',
-      'Uw zaak professioneel online, <em>zonder gedoe</em>'
-    ];
-    var headlineIndex = 0;
-    window.setInterval(function () {
-      heroTitle.classList.add('is-hidden');
-      window.setTimeout(function () {
-        headlineIndex = (headlineIndex + 1) % headlines.length;
-        heroTitle.innerHTML = headlines[headlineIndex];
-        heroTitle.classList.remove('is-hidden');
-      }, 300);
-    }, 5000);
-  }
-
   // Highlight the active nav link while scrolling
   if (nav) {
     var links = Array.prototype.slice.call(nav.querySelectorAll('a'));
