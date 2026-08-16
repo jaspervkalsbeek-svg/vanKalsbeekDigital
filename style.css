@@ -233,16 +233,8 @@ a { color: inherit; }
   border-color: var(--primary);
 }
 .tier-panels { display: flex; flex-direction: column; }
-.tier-panel {
-  display: grid;
-  grid-template-rows: 0fr;
-  opacity: 0;
-  transition: grid-template-rows .4s ease, opacity .3s ease;
-}
-.tier-panel.active {
-  grid-template-rows: 1fr;
-  opacity: 1;
-}
+.tier-panel { display: none; }
+.tier-panel.active { display: block; }
 .tier-price {
   font-family: var(--serif); font-size: 1.6rem; font-weight: 700;
   color: var(--heading); margin-bottom: .75rem;
