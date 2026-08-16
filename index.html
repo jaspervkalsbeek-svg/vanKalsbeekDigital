@@ -86,7 +86,9 @@
         <button class="tier-toggle-btn" role="tab" aria-selected="false" data-tier="redesign">Redesign</button>
       </div>
 
-      <div class="services-grid" id="tier-nieuw" role="tabpanel">
+      <div class="tier-panels">
+        <div class="tier-panel active" id="tier-nieuw" role="tabpanel">
+          <div class="services-grid">
         <article class="service-card reveal">
           <span class="service-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 20h16M7 20v-6"/></svg>
@@ -142,11 +144,13 @@
             <li>Maandelijks opzegbaar onderhoudsabonnement</li>
           </ul>
         </article>
-      </div>
-      <p class="concept-note">Gratis en vrijblijvend — binnen 2 dagen liggen je drie concepten klaar. Je betaalt pas wanneer je kiest welk concept je wilt.</p>
-      </div>
+        </div>
+        <p class="concept-note">Gratis en vrijblijvend — binnen 2 dagen liggen je drie concepten klaar. Je betaalt pas wanneer je kiest welk concept je wilt.</p>
+        </div>
+        </div>
 
-      <div class="services-grid" id="tier-redesign" role="tabpanel" hidden>
+        <div class="tier-panel" id="tier-redesign" role="tabpanel">
+          <div class="services-grid">
         <article class="service-card reveal">
           <span class="service-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 20h16M7 20v-6"/></svg>
@@ -194,6 +198,8 @@
             <li>Maandelijks opzegbaar onderhoudsabonnement</li>
           </ul>
         </article>
+        </div>
+        </div>
       </div>
 
     </section>
