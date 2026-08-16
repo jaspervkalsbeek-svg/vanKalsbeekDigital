@@ -234,7 +234,12 @@ a { color: inherit; }
 }
 .tier-panels { display: flex; flex-direction: column; }
 .tier-panel { display: none; }
-.tier-panel.active { display: block; }
+.tier-panel.active { display: block; animation: tierFadeIn .3s ease; }
+
+@keyframes tierFadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 .tier-price {
   font-family: var(--serif); font-size: 1.6rem; font-weight: 700;
   color: var(--heading); margin-bottom: .75rem;
