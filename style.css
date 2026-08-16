@@ -271,6 +271,16 @@ a { color: inherit; }
 .service-icon svg { width: 24px; height: 24px; }
 .service-card h3 { font-size: 1.12rem; color: var(--heading); margin-bottom: .55rem; }
 .service-card p { font-size: .9rem; color: var(--muted); line-height: 1.7; margin-bottom: 1.1rem; }
+.tier-features {
+  list-style: none; margin: 0 0 1.25rem; padding: 0;
+}
+.tier-features li {
+  font-size: .86rem; color: var(--muted); line-height: 1.65;
+  padding-left: 1.4rem; position: relative;
+}
+.tier-features li::before {
+  content: '\2713'; position: absolute; left: 0; color: var(--link); font-weight: 700;
+}
 
 .tier-popular { position: relative; border-color: var(--primary); box-shadow: 0 0 0 1px var(--primary), var(--shadow); }
 .tier-badge {
