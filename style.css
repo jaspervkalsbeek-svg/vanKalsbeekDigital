@@ -243,7 +243,6 @@ a { color: inherit; }
   grid-template-rows: 1fr;
   opacity: 1;
 }
-.tier-panel > * { overflow: hidden; }
 .tier-price {
   font-family: var(--serif); font-size: 1.6rem; font-weight: 700;
   color: var(--heading); margin-bottom: .75rem;
