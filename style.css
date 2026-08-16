@@ -318,6 +318,21 @@ a { color: inherit; }
   font-size: .95rem; font-weight: 600; color: var(--heading);
 }
 
+/* ── WHY / UP-TO-DATE ── */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+.why-item {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
+  padding: 1.75rem 1.5rem;
+  transition: box-shadow .25s, transform .25s, border-color .25s, background .25s;
+}
+.why-item:hover { box-shadow: var(--shadow); transform: translateY(-4px); border-color: transparent; }
+.why-item h3 { font-size: 1.05rem; color: var(--heading); margin-bottom: .5rem; }
+.why-item p { font-size: .88rem; color: var(--muted); line-height: 1.7; }
+
 /* ── PORTFOLIO ── */
 .projects-grid {
   display: grid;
