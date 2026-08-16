@@ -215,6 +215,13 @@ a { color: inherit; }
 }
 .btn-ghost:hover { border-color: rgba(255,255,255,.7); background: rgba(255,255,255,.08); }
 
+/* ── CONCEPT / SERVICE CARDS ── */
+.tier-price {
+  font-family: var(--serif); font-size: 1.6rem; font-weight: 700;
+  color: var(--heading); margin-bottom: .75rem;
+}
+.tier-price-note { font-size: .78rem; font-weight: 400; color: var(--muted); }
+
 /* ── SECTIONS ── */
 .section { max-width: 1120px; margin: 0 auto; padding: clamp(4rem, 8vw, 6.5rem) 1.5rem; }
 .section-soft { background: var(--bg-soft); max-width: none; }
