@@ -44,11 +44,13 @@
 
   <main>
     <section class="hero">
-      <div class="hero-inner">
-        <div class="hero-badge"><span class="hero-badge-dot"></span> Beschikbaar voor nieuwe projecten</div>
-        <p class="eyebrow">Architectuur · Interieur · Advies</p>
+      <div class="hero-bg">
+        <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=1600&q=80" alt="Moderne architectuur" loading="eager" />
+      </div>
+      <div class="hero-content">
+        <div class="hero-badge">Beschikbaar voor nieuwe projecten</div>
         <h1>Ruimtes die <em>vertellen</em></h1>
-        <p>Void ontwerpt interieurs en gebouwen die voelen als thuis — voor woningcorporaties, zorginstellingen en particulieren.</p>
+        <p class="hero-sub">Void ontwerpt interieurs en gebouwen die voelen als thuis — voor woningcorporaties, zorginstellingen en particulieren.</p>
         <div class="hero-actions">
           <a href="#contact" class="btn btn-primary">Project bespreken</a>
           <a href="#projecten" class="btn btn-ghost">Bekijk projecten</a>
@@ -264,6 +266,18 @@
           updateButton();
         });
       }
+
+      // Header scroll effect
+      var header = document.querySelector('.header');
+      function onScroll() {
+        if (window.scrollY > 80) {
+          header.classList.add('scrolled');
+        } else {
+          header.classList.remove('scrolled');
+        }
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
 
       var reveals = document.querySelectorAll('.reveal');
       if ('IntersectionObserver' in window) {
