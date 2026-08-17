@@ -309,6 +309,15 @@ a { color: inherit; }
 }
 .concept-note::before { content: '✓ '; color: var(--link); }
 
+.tier-example-link {
+  display: inline-flex; align-items: center; gap: .3rem;
+  font-size: .85rem; font-weight: 600; color: var(--link);
+  text-decoration: none; margin-top: .5rem;
+  transition: color .18s;
+}
+.tier-example-link:hover { color: var(--heading); text-decoration: underline; text-underline-offset: 3px; }
+.tier-example-link:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; border-radius: 2px; }
+
 /* ── PROCESS ── */
 .steps {
   list-style: none;
