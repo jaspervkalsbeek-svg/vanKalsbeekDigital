@@ -27,12 +27,12 @@
       if (dist > 40) return;
       e.preventDefault();
       dragging = true;
-      el.setPointerCapture(e.pointerId);
       setPosition(e.clientX);
     }
 
     function onPointerMove(e) {
       if (!dragging) return;
+      e.preventDefault();
       setPosition(e.clientX);
     }
 
