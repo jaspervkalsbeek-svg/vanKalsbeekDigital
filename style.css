@@ -627,7 +627,7 @@ html.js .reveal.visible { opacity: 1; transform: translateY(0); }
   overflow: hidden;
   cursor: ew-resize;
   user-select: none;
-  touch-action: none;
+  touch-action: pan-y pinch-zoom;
 }
 .compare-side {
   position: absolute;
