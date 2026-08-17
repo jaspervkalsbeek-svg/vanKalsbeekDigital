@@ -21,6 +21,8 @@
     .see-example { text-align: center; margin-top: clamp(2rem, 5vw, 3rem); }
     .see-example a { display: inline-flex; align-items: center; gap: .5rem; background: var(--primary); color: #fff; padding: .85rem 2rem; border-radius: 8px; font-weight: 600; font-size: .9rem; text-decoration: none; transition: background .2s, transform .15s; }
     .see-example a:hover { background: #2563eb; transform: translateY(-1px); }
+    .compare-side.compare-new { background: var(--bg); }
+    .compare-side.compare-new iframe { width: 100%; height: 100%; border: none; pointer-events: none; }
   </style>
 </head>
 <body>
@@ -29,7 +31,7 @@
     <span class="banner-note">Kleuren, afbeeldingen en teksten zijn volledig aan te passen aan uw huisstijl.</span>
   </div>
 
-  <main class="redesign-page">
+  <section class="redesign-page">
     <a href="index.html" class="back-link"><span aria-hidden="true">←</span> Terug naar overzicht</a>
 
     <h1>Zo ziet een Ultimate redesign eruit</h1>
@@ -78,13 +80,8 @@
         <span class="compare-label">Voor</span>
       </div>
       <div class="compare-side compare-new">
+        <iframe src="example-ultimate.html" loading="lazy" title="Nieuwe Ultimate website"></iframe>
         <span class="compare-label">Na</span>
-        <div class="new-preview">
-          <div class="new-badge"><span class="new-dot"></span> Beschikbaar voor nieuwe projecten</div>
-          <h3>Ruimtes die vertellen</h3>
-          <p>Void ontwerpt interieurs en gebouwen die voelen als thuis.</p>
-          <a href="#contact" class="btn btn-primary">Project bespreken</a>
-        </div>
       </div>
       <div class="compare-handle"></div>
     </div>
@@ -92,7 +89,7 @@
     <div class="see-example">
       <a href="example-ultimate.html">Bekijk het volledige voorbeeld <span aria-hidden="true">→</span></a>
     </div>
-  </main>
+  </section>
 
   <script src="compare-slider.js"></script>
 </body>
