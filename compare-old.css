@@ -1,0 +1,361 @@
+/* Compare Old — dated 2016-era website styles */
+/* Used in compare sliders to show "before" versions */
+
+.compare-side {
+  font-family: 'Times New Roman', Times, serif;
+}
+.compare-side h3 {
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: normal;
+}
+.compare-side p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+/* OLD MINIMUM —Timmerman de Boer 2016 */
+.old-minimum {
+  background: #E8E8E8;
+  color: #333;
+  padding: 20px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.old-minimum .old-header {
+  background: #2E7D32;
+  color: #fff;
+  padding: 8px 12px;
+  font-size: 11px;
+  text-align: center;
+}
+.old-minimum .old-nav {
+  background: #1B5E20;
+  padding: 6px 12px;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.old-minimum .old-nav a {
+  color: #fff;
+  text-decoration: underline;
+  font-size: 11px;
+  font-family: Arial, sans-serif;
+}
+.old-minimum .old-hero {
+  background: linear-gradient(180deg, #4CAF50, #2E7D32);
+  color: #fff;
+  padding: 24px 16px;
+  text-align: center;
+}
+.old-minimum .old-hero h3 {
+  color: #fff;
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+.old-minimum .old-hero p {
+  color: #E8F5E9;
+  font-size: 12px;
+  margin-bottom: 12px;
+}
+.old-minimum .old-btn {
+  display: inline-block;
+  background: #FFC107;
+  color: #333;
+  padding: 6px 14px;
+  font-size: 11px;
+  font-weight: bold;
+  text-decoration: none;
+  border: 2px solid #FFA000;
+  font-family: Arial, sans-serif;
+}
+.old-minimum .old-content {
+  background: #fff;
+  padding: 16px;
+  border: 1px solid #ccc;
+}
+.old-minimum .old-content h3 {
+  font-size: 16px;
+  color: #2E7D32;
+  border-bottom: 2px solid #4CAF50;
+  padding-bottom: 4px;
+  margin-bottom: 8px;
+}
+.old-minimum .old-services {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.old-minimum .old-service {
+  background: #F5F5F5;
+  padding: 10px;
+  border-left: 3px solid #4CAF50;
+  font-size: 12px;
+}
+.old-minimum .old-service strong {
+  display: block;
+  font-size: 13px;
+  color: #1B5E20;
+  margin-bottom: 2px;
+}
+.old-minimum .old-footer {
+  background: #333;
+  color: #999;
+  padding: 10px;
+  text-align: center;
+  font-size: 10px;
+  font-family: Arial, sans-serif;
+}
+
+/* OLD PRO — Fysiotherapie Heuvel 2016 */
+.old-pro {
+  background: #F5F0E8;
+  color: #333;
+  padding: 20px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.old-pro .old-header {
+  background: linear-gradient(180deg, #E65100, #BF360C);
+  color: #fff;
+  padding: 12px 16px;
+  text-align: center;
+}
+.old-pro .old-header h3 {
+  color: #fff;
+  font-size: 16px;
+  font-style: italic;
+}
+.old-pro .old-nav {
+  background: #D84315;
+  padding: 6px 12px;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.old-pro .old-nav a {
+  color: #fff;
+  text-decoration: underline;
+  font-size: 11px;
+  font-family: Arial, sans-serif;
+}
+.old-pro .old-hero {
+  background: linear-gradient(180deg, #FF8A65, #E65100);
+  color: #fff;
+  padding: 28px 16px;
+  text-align: center;
+}
+.old-pro .old-hero h3 {
+  color: #fff;
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+.old-pro .old-hero p {
+  color: #FBE9E7;
+  font-size: 12px;
+  margin-bottom: 12px;
+  max-width: 280px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.old-pro .old-btn {
+  display: inline-block;
+  background: #fff;
+  color: #E65100;
+  padding: 6px 14px;
+  font-size: 11px;
+  font-weight: bold;
+  text-decoration: none;
+  border: 2px solid #BF360C;
+  font-family: Arial, sans-serif;
+}
+.old-pro .old-section {
+  background: #fff;
+  padding: 16px;
+  border: 1px solid #D7CCC8;
+}
+.old-pro .old-section h3 {
+  font-size: 15px;
+  color: #BF360C;
+  border-bottom: 1px solid #FFCCBC;
+  padding-bottom: 4px;
+  margin-bottom: 8px;
+}
+.old-pro .old-features {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.old-pro .old-feature {
+  padding: 8px 10px;
+  background: #FFF3E0;
+  border: 1px solid #FFE0B2;
+  font-size: 11px;
+}
+.old-pro .old-feature strong {
+  color: #E65100;
+}
+.old-pro .old-team {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+.old-pro .old-member {
+  text-align: center;
+  font-size: 10px;
+}
+.old-pro .old-avatar {
+  width: 36px;
+  height: 36px;
+  background: #FFCCBC;
+  border-radius: 50%;
+  margin: 0 auto 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  color: #BF360C;
+  font-weight: bold;
+}
+.old-pro .old-footer {
+  background: #3E2723;
+  color: #A1887F;
+  padding: 10px;
+  text-align: center;
+  font-size: 10px;
+  font-family: Arial, sans-serif;
+}
+
+/* OLD ULTIMATE — Architectenbureau Void 2016 */
+.old-ultimate {
+  background: #E0E0E0;
+  color: #333;
+  padding: 20px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.old-ultimate .old-header {
+  background: linear-gradient(180deg, #5C6BC0, #283593);
+  color: #fff;
+  padding: 12px 16px;
+  text-align: center;
+}
+.old-ultimate .old-header h3 {
+  color: #fff;
+  font-size: 18px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+.old-ultimate .old-nav {
+  background: #303F9F;
+  padding: 6px 12px;
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.old-ultimate .old-nav a {
+  color: #C5CAE9;
+  text-decoration: underline;
+  font-size: 10px;
+  font-family: Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.old-ultimate .old-hero {
+  background: linear-gradient(135deg, #1A237E, #4A148C);
+  color: #fff;
+  padding: 32px 16px;
+  text-align: center;
+}
+.old-ultimate .old-hero h3 {
+  color: #E8EAF6;
+  font-size: 22px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.old-ultimate .old-hero p {
+  color: #C5CAE9;
+  font-size: 11px;
+  margin-bottom: 12px;
+  max-width: 260px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.old-ultimate .old-btn {
+  display: inline-block;
+  background: #FFC107;
+  color: #1A237E;
+  padding: 6px 14px;
+  font-size: 10px;
+  font-weight: bold;
+  text-decoration: none;
+  border: 2px solid #FFA000;
+  font-family: Arial, sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.old-ultimate .old-section {
+  background: #fff;
+  padding: 16px;
+  border: 1px solid #C5CAE9;
+}
+.old-ultimate .old-section h3 {
+  font-size: 14px;
+  color: #283593;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-bottom: 2px solid #5C6BC0;
+  padding-bottom: 4px;
+  margin-bottom: 8px;
+}
+.old-ultimate .old-projects {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+.old-ultimate .old-project {
+  background: #E8EAF6;
+  padding: 10px;
+  border: 1px solid #C5CAE9;
+  font-size: 10px;
+}
+.old-ultimate .old-project strong {
+  color: #283593;
+  display: block;
+  margin-bottom: 2px;
+}
+.old-ultimate .old-stats {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  background: #283593;
+  padding: 12px;
+}
+.old-ultimate .old-stat {
+  text-align: center;
+  color: #C5CAE9;
+  font-size: 10px;
+}
+.old-ultimate .old-stat strong {
+  display: block;
+  font-size: 16px;
+  color: #FFC107;
+}
+.old-ultimate .old-footer {
+  background: #1A237E;
+  color: #7986CB;
+  padding: 10px;
+  text-align: center;
+  font-size: 10px;
+  font-family: Arial, sans-serif;
+}

@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="example-ultimate.css" />
+  <link rel="stylesheet" href="compare-old.css" />
   <script>
     (function () {
       try {
@@ -23,6 +24,67 @@
     Dit is een voorbeeld van een <strong>Ultimate</strong> website — gebouwd door <a href="index.html">Van Kalsbeek Digital</a>
     <span class="banner-note">Kleuren, afbeeldingen en teksten zijn volledig aan te passen aan uw huisstijl.</span>
   </div>
+
+  <section class="compare-section">
+    <div class="compare-intro">
+      <p class="eyebrow">Vergelijk</p>
+      <h2>Zo ziet een redesign eruit</h2>
+      <p>Sleep de slider om het verschil te zien tussen een gedateerde site en de nieuwe versie.</p>
+    </div>
+    <div class="compare-slider" tabindex="0" role="slider" aria-label="Voor en na vergelijking" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+      <div class="compare-side compare-old">
+        <div class="old-ultimate">
+          <div class="old-header">
+            <h3>VOID</h3>
+          </div>
+          <div class="old-nav">
+            <a href="#">Home</a>
+            <a href="#">Projecten</a>
+            <a href="#">Aanpak</a>
+            <a href="#">Over ons</a>
+            <a href="#">Contact</a>
+          </div>
+          <div class="old-hero">
+            <h3>Ruimtes die vertellen</h3>
+            <p>Void ontwerpt interieurs en gebouwen die voelen als thuis — voor woningcorporaties, zorginstellingen en particulieren.</p>
+            <a href="#" class="old-btn">Neem contact op</a>
+          </div>
+          <div class="old-stats">
+            <div class="old-stat"><strong>127</strong>Projecten</div>
+            <div class="old-stat"><strong>18</strong>Jaar ervaring</div>
+            <div class="old-stat"><strong>96%</strong>Tevredenheid</div>
+          </div>
+          <div class="old-section">
+            <h3>Projecten</h3>
+            <div class="old-projects">
+              <div class="old-project"><strong>Woonzorgcentrum De Horizon</strong>Compleet interieurontwerp voor 48 zorgwoningen.</div>
+              <div class="old-project"><strong>Villa Kalkoog</strong>Modern woonhuis met open plattegrond.</div>
+              <div class="old-project"><strong>Kantoor GreenTech</strong>Duurzaam kantoorgebouw met BREEAM-certificering.</div>
+              <div class="old-project"><strong>Cafe Bruut</strong>Restylistiek van een 19e-eeuws pand.</div>
+            </div>
+          </div>
+          <div class="old-section">
+            <h3>Onze aanpak</h3>
+            <p style="font-size:11px;">01. Kennismaking — We leren uw wensen kennen.<br>
+            02. Concept & ontwerp — Van schets tot 3D-render.<br>
+            03. Realisatie — Wij begeleiden de uitvoering.</p>
+          </div>
+          <div class="old-footer">&copy; 2016 Void Architecten — Alle rechten voorbehouden</div>
+        </div>
+        <span class="compare-label">Voor</span>
+      </div>
+      <div class="compare-side compare-new">
+        <span class="compare-label">Na</span>
+        <div class="new-preview">
+          <div class="new-badge"><span class="new-dot"></span> Beschikbaar voor nieuwe projecten</div>
+          <h3>Ruimtes die vertellen</h3>
+          <p>Void ontwerpt interieurs en gebouwen die voelen als thuis.</p>
+          <a href="#contact" class="btn btn-primary">Project bespreken</a>
+        </div>
+      </div>
+      <div class="compare-handle"></div>
+    </div>
+  </section>
 
   <header class="header">
     <div class="header-inner">
@@ -314,5 +376,6 @@
       }
     })();
   </script>
+  <script src="compare-slider.js"></script>
 </body>
 </html>
