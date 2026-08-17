@@ -93,18 +93,13 @@
 
     // -- Keyboard --
     el.addEventListener('keydown', function (e) {
+      var dir = e.key === 'ArrowLeft' ? -1 : e.key === 'ArrowRight' ? 1 : 0;
+      if (!dir) return;
+      e.preventDefault();
       var rect = el.getBoundingClientRect();
       var current = parseFloat(handle.style.left) || 50;
-      var step = 2;
-      if (e.key === 'ArrowLeft') {
-        e.preventDefault();
-        var newX = rect.left + (current - step) / 100 * rect.width;
-        setPosition(newX);
-      } else if (e.key === 'ArrowRight') {
-        e.preventDefault();
-        var newX = rect.left + (current + step) / 100 * rect.width;
-        setPosition(newX);
-      }
+      var newX = rect.left + (current + dir * 2) / 100 * rect.width;
+      setPosition(newX);
     });
   }
 

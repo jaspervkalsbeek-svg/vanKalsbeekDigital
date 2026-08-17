@@ -125,7 +125,7 @@
 
   // Highlight the active nav link while scrolling
   if (nav) {
-    var links = Array.prototype.slice.call(nav.querySelectorAll('a'));
+    var links = Array.from(nav.querySelectorAll('a'));
     var sections = links
       .map(function (link) {
         var target = link.getAttribute('href');

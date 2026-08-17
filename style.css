@@ -332,15 +332,6 @@ a { color: inherit; }
 .tier-example-link:hover { color: var(--heading); text-decoration: underline; text-underline-offset: 3px; }
 .tier-example-link:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; border-radius: 2px; }
 
-.tier-example-link {
-  display: inline-flex; align-items: center; gap: .3rem;
-  font-size: .85rem; font-weight: 600; color: var(--link);
-  text-decoration: none; margin-top: .5rem;
-  transition: color .18s;
-}
-.tier-example-link:hover { color: var(--heading); text-decoration: underline; text-underline-offset: 3px; }
-.tier-example-link:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; border-radius: 2px; }
-
 /* ── PROCESS ── */
 .steps {
   list-style: none;
@@ -687,33 +678,6 @@ html.js .reveal.visible { opacity: 1; transform: translateY(0); }
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%2307234B' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M9 18l-6-6 6-6'/%3E%3Cpath d='M15 6l6 6-6 6'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: center;
-}
-
-/* NEW PREVIEW — inside compare slider */
-.new-preview {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 2rem;
-  background: var(--bg);
-  color: var(--text);
-}
-.new-preview h3 {
-  font-family: var(--serif);
-  font-weight: 400;
-  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
-  color: var(--heading);
-  margin-bottom: .5rem;
-}
-.new-preview p {
-  font-size: .9rem;
-  color: var(--muted);
-  margin-bottom: 1.2rem;
-  max-width: 300px;
 }
 
 @media (max-width: 560px) {
