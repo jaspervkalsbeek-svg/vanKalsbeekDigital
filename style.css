@@ -635,7 +635,7 @@ html.js .reveal.visible { opacity: 1; transform: translateY(0); }
   overflow-y: auto;
   overflow-x: hidden;
 }
-.compare-old { z-index: 2; }
+.compare-old { z-index: 2; clip-path: inset(0 50% 0 0); }
 .compare-new { z-index: 1; }
 .compare-label {
   position: absolute;

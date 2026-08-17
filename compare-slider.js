@@ -17,6 +17,8 @@
       handle.style.left = pct + '%';
     }
 
+    setPosition(el.getBoundingClientRect().left + el.getBoundingClientRect().width / 2);
+
     function onPointerDown(e) {
       e.preventDefault();
       dragging = true;
