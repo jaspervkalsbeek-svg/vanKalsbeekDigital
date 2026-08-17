@@ -1,5 +1,4 @@
-// Compare slider for redesign examples — draggable before/after splitter.
-// Usage: add class="compare-slider" to a container with .compare-old and .compare-new children.
+// Compare slider — bulletproof touch + pointer handling.
 (function () {
   'use strict';
 
@@ -28,7 +27,10 @@
       e.preventDefault();
       dragging = true;
       el.setPointerCapture(e.pointerId);
-      setPosition(e.clientX);
+      el.addEventListener('pointermove', onPointerMove, { passive: false });
+      el.addEventListener('pointerup', onPointerUp);
+      el.addEventListener('pointercancel', onPointerUp);
+      el.addEventListener('lostpointercapture', onPointerUp);
     }
 
     function onPointerMove(e) {
@@ -39,13 +41,13 @@
 
     function onPointerUp() {
       dragging = false;
+      el.removeEventListener('pointermove', onPointerMove);
+      el.removeEventListener('pointerup', onPointerUp);
+      el.removeEventListener('pointercancel', onPointerUp);
+      el.removeEventListener('lostpointercapture', onPointerUp);
     }
 
-    el.addEventListener('pointerdown', onPointerDown);
-    el.addEventListener('pointermove', onPointerMove);
-    el.addEventListener('pointerup', onPointerUp);
-    el.addEventListener('pointercancel', onPointerUp);
-    el.addEventListener('lostpointercapture', onPointerUp);
+    el.addEventListener('pointerdown', onPointerDown, { passive: false });
 
     el.addEventListener('keydown', function (e) {
       var rect = el.getBoundingClientRect();
