@@ -18,6 +18,7 @@
 
     setPosition(el.getBoundingClientRect().left + el.getBoundingClientRect().width / 2);
 
+    // -- Pointer events (desktop + mobile fallback) --
     function onPointerDown(e) {
       var rect = el.getBoundingClientRect();
       var pct = parseFloat(handle.style.left) || 50;
@@ -49,6 +50,48 @@
 
     el.addEventListener('pointerdown', onPointerDown, { passive: false });
 
+    // -- Touch events (primary on mobile) --
+    var touchId = null;
+
+    function onTouchStart(e) {
+      var t = e.changedTouches[0];
+      var rect = el.getBoundingClientRect();
+      var pct = parseFloat(handle.style.left) || 50;
+      var handleX = rect.left + (pct / 100) * rect.width;
+      var dist = Math.abs(t.clientX - handleX);
+      if (dist > 40) return;
+      touchId = t.identifier;
+      dragging = true;
+      setPosition(t.clientX);
+    }
+
+    function onTouchMove(e) {
+      if (!dragging) return;
+      for (var i = 0; i < e.changedTouches.length; i++) {
+        if (e.changedTouches[i].identifier === touchId) {
+          e.preventDefault();
+          setPosition(e.changedTouches[i].clientX);
+          break;
+        }
+      }
+    }
+
+    function onTouchEnd(e) {
+      for (var i = 0; i < e.changedTouches.length; i++) {
+        if (e.changedTouches[i].identifier === touchId) {
+          dragging = false;
+          touchId = null;
+          break;
+        }
+      }
+    }
+
+    el.addEventListener('touchstart', onTouchStart, { passive: true });
+    el.addEventListener('touchmove', onTouchMove, { passive: false });
+    el.addEventListener('touchend', onTouchEnd);
+    el.addEventListener('touchcancel', onTouchEnd);
+
+    // -- Keyboard --
     el.addEventListener('keydown', function (e) {
       var rect = el.getBoundingClientRect();
       var current = parseFloat(handle.style.left) || 50;
