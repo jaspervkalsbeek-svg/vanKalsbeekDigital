@@ -212,6 +212,11 @@ a { color: inherit; }
   color: #fff; border: 1px solid rgba(255,255,255,.35);
 }
 .btn-ghost:hover { border-color: rgba(255,255,255,.7); background: rgba(255,255,255,.08); }
+.btn-white {
+  color: var(--primary); background: #fff; border: 1px solid #fff;
+  box-shadow: 0 4px 16px rgba(0,0,0,.15);
+}
+.btn-white:hover { background: var(--bg-soft); }
 
 /* ── CONCEPT / SERVICE CARDS ── */
 .tier-toggle {
@@ -614,6 +619,97 @@ html.js .reveal.visible { opacity: 1; transform: translateY(0); }
   .project-featured { grid-column: span 1; }
 }
 
+/* COMPARE SLIDER — reusable before/after splitter */
+.compare-slider {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  cursor: ew-resize;
+  user-select: none;
+  touch-action: none;
+}
+.compare-side {
+  position: absolute;
+  inset: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.compare-old { z-index: 2; }
+.compare-new { z-index: 1; }
+.compare-label {
+  position: absolute;
+  bottom: 16px;
+  z-index: 5;
+  background: rgba(0,0,0,.55);
+  color: #fff;
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: .45rem .9rem;
+  border-radius: 6px;
+  pointer-events: none;
+}
+.compare-old .compare-label { left: 16px; }
+.compare-new .compare-label { right: 16px; }
+.compare-handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 3px;
+  background: #fff;
+  z-index: 10;
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+.compare-handle::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 2px 12px rgba(0,0,0,.3);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%2307234B' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M9 18l-6-6 6-6'/%3E%3Cpath d='M15 6l6 6-6 6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* NEW PREVIEW — inside compare slider */
+.new-preview {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  background: var(--bg);
+  color: var(--text);
+}
+.new-preview h3 {
+  font-family: var(--serif);
+  font-weight: 400;
+  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  color: var(--heading);
+  margin-bottom: .5rem;
+}
+.new-preview p {
+  font-size: .9rem;
+  color: var(--muted);
+  margin-bottom: 1.2rem;
+  max-width: 300px;
+}
+
 @media (max-width: 560px) {
   .contact-form .form-row { grid-template-columns: 1fr; }
+  .compare-slider { aspect-ratio: 4 / 3; }
+  .compare-label { font-size: .65rem; padding: .35rem .7rem; }
+  .compare-handle::after { width: 32px; height: 32px; }
 }
