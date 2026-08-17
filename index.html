@@ -6,6 +6,8 @@
   <meta name="color-scheme" content="light dark" />
   <title>Van Kalsbeek Digital — Websites, data &amp; software op maat</title>
   <meta name="description" content="Van Kalsbeek Digital ontwikkelt websites, webapplicaties en data-gedreven software van concept tot live. Gebouwd in Landgraaf, Limburg." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://vankalsbeekdigital.com/" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Van Kalsbeek Digital" />
   <meta property="og:url" content="https://vankalsbeekdigital.com/" />
@@ -14,7 +16,11 @@
   <meta property="og:image" content="https://vankalsbeekdigital.com/assets/og-image.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
+  <meta property="og:locale" content="nl_NL" />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Van Kalsbeek Digital — Websites, data &amp; software op maat" />
+  <meta name="twitter:description" content="Websites, webapplicaties en data-gedreven software van concept tot live. Gebouwd in Landgraaf, Limburg." />
+  <meta name="twitter:image" content="https://vankalsbeekdigital.com/assets/og-image.png" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -29,6 +35,29 @@
         document.documentElement.setAttribute('data-theme', theme);
       } catch (e) { /* localStorage niet beschikbaar: systeeminstelling geldt */ }
     })();
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Van Kalsbeek Digital",
+    "url": "https://vankalsbeekdigital.com",
+    "logo": "https://vankalsbeekdigital.com/assets/logo.png",
+    "description": "Websites, webapplicaties en data-gedreven software van concept tot live.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Landgraaf",
+      "addressRegion": "Limburg",
+      "addressCountry": "NL"
+    },
+    "telephone": "+31610809971",
+    "email": "info@vankalsbeekdigital.com",
+    "areaServed": {
+      "@type": "State",
+      "name": "Limburg"
+    },
+    "priceRange": "€595-€2495"
+  }
   </script>
 </head>
 <body>
@@ -304,7 +333,7 @@
     <section class="section section-soft" id="over">
       <div class="about-grid">
         <div class="about-photo reveal">
-          <img src="assets/profile.jpg" alt="Jasper van Kalsbeek" />
+          <img src="assets/profile.jpg" alt="Jasper van Kalsbeek" loading="lazy" width="380" height="475" />
         </div>
         <div class="about-text reveal">
           <p class="eyebrow">Over mij</p>
