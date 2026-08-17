@@ -20,6 +20,11 @@
     setPosition(el.getBoundingClientRect().left + el.getBoundingClientRect().width / 2);
 
     function onPointerDown(e) {
+      var rect = el.getBoundingClientRect();
+      var pct = parseFloat(handle.style.left) || 50;
+      var handleX = rect.left + (pct / 100) * rect.width;
+      var dist = Math.abs(e.clientX - handleX);
+      if (dist > 40) return;
       e.preventDefault();
       dragging = true;
       el.setPointerCapture(e.pointerId);
