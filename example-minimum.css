@@ -65,6 +65,13 @@ a { color: inherit; }
   font-weight: 700;
 }
 .example-banner a:hover { opacity: .85; }
+.banner-note {
+  display: block;
+  font-size: .72rem;
+  font-weight: 400;
+  opacity: .7;
+  margin-top: .15rem;
+}
 
 .header {
   position: sticky;
@@ -127,7 +134,8 @@ a { color: inherit; }
 :root[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
 
 .hero {
-  background: var(--primary);
+  background: linear-gradient(135deg, rgba(45,80,22,.88), rgba(45,80,22,.78)),
+    url('https://images.unsplash.com/photo-1504148455328-c376907d081c?w=1600&q=80') center/cover no-repeat;
   color: #fff;
   padding: clamp(3rem, 7vw, 5rem) 1.5rem clamp(4rem, 8vw, 6rem);
   text-align: center;
