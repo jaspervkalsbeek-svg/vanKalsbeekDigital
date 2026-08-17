@@ -4,91 +4,300 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Redesign Pro — voorbeeld | Van Kalsbeek Digital</title>
-  <meta name="description" content="Bekijk het verschil tussen een oude website en een redesign. Sleep de slider om het contrast te zien." />
+  <meta name="description" content="Bekijk het verschil tussen een oude website en een redesign." />
   <link rel="icon" href="favicon.ico" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="compare-old.css" />
+  <link rel="stylesheet" href="example-pro.css" />
   <style>
-    body { background: var(--bg); color: var(--text); font-family: var(--sans); margin: 0; }
-    .example-banner { background: var(--primary); color: #fff; text-align: center; padding: 1rem 1.5rem; font-size: .85rem; font-weight: 600; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: .5rem 1.5rem; }
-    .example-banner a { color: #fff; text-decoration: underline; text-underline-offset: 2px; }
-    .example-banner .banner-note { font-weight: 400; font-size: .78rem; opacity: .8; width: 100%; margin-top: .25rem; }
-    .redesign-page { max-width: 1100px; margin: 0 auto; padding: clamp(3rem, 8vw, 5rem) 1.5rem; }
-    .redesign-page h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.8rem, 4vw, 2.8rem); color: var(--heading); line-height: 1.15; text-align: center; margin-bottom: .5rem; }
-    .redesign-page .subtitle { text-align: center; color: var(--muted); font-size: 1rem; line-height: 1.7; margin-bottom: clamp(2rem, 5vw, 3.5rem); max-width: 500px; margin-left: auto; margin-right: auto; }
-    .back-link { display: inline-flex; align-items: center; gap: .4rem; font-size: .85rem; color: var(--primary); text-decoration: none; font-weight: 600; margin-bottom: 2rem; }
-    .back-link:hover { text-decoration: underline; }
-    .see-example { text-align: center; margin-top: clamp(2rem, 5vw, 3rem); }
-    .see-example a { display: inline-flex; align-items: center; gap: .5rem; background: var(--primary); color: #fff; padding: .85rem 2rem; border-radius: 8px; font-weight: 600; font-size: .9rem; text-decoration: none; transition: background .2s, transform .15s; }
-    .see-example a:hover { background: #2563eb; transform: translateY(-1px); }
-    .compare-side.compare-new { background: var(--bg); }
-    .compare-side.compare-new iframe { width: 100%; height: 100%; border: none; pointer-events: none; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; overflow: hidden; background: #fff; }
+    .compare-slider { position: relative; width: 100vw; height: 100vh; overflow: hidden; cursor: ew-resize; user-select: none; touch-action: none; }
+    .compare-side { position: absolute; inset: 0; overflow-y: auto; overflow-x: hidden; }
+    .compare-old { z-index: 2; clip-path: inset(0 50% 0 0); }
+    .compare-new { z-index: 1; background: #fff; }
+    .compare-label { position: fixed; bottom: 24px; z-index: 20; background: rgba(0,0,0,.6); color: #fff; font-size: .75rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; padding: .5rem 1rem; border-radius: 6px; pointer-events: none; font-family: 'DM Sans', sans-serif; }
+    .compare-old > .compare-label { left: 24px; }
+    .compare-new > .compare-label { right: 24px; }
+    .compare-handle { position: absolute; top: 0; bottom: 0; left: 50%; width: 3px; background: #fff; z-index: 30; transform: translateX(-50%); pointer-events: none; box-shadow: 0 0 8px rgba(0,0,0,.3); }
+    .compare-handle::after { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 44px; height: 44px; background: #fff; border-radius: 50%; box-shadow: 0 2px 16px rgba(0,0,0,.25); background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%2307234B' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M9 18l-6-6 6-6'/%3E%3Cpath d='M15 6l6 6-6 6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: center; }
   </style>
 </head>
 <body>
-  <div class="example-banner">
-    Dit is een voorbeeld van een <strong>Pro</strong> redesign — gebouwd door <a href="index.html">Van Kalsbeek Digital</a>
-    <span class="banner-note">Kleuren, afbeeldingen en teksten zijn volledig aan te passen aan uw huisstijl.</span>
-  </div>
-
-  <section class="redesign-page">
-    <a href="index.html" class="back-link"><span aria-hidden="true">←</span> Terug naar overzicht</a>
-
-    <h1>Zo ziet een Pro redesign eruit</h1>
-    <p class="subtitle">Sleep de slider om het verschil te zien tussen een gedateerde site en de nieuwe versie.</p>
-
-    <div class="compare-slider" tabindex="0" role="slider" aria-label="Voor en na vergelijking" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
-      <div class="compare-side compare-old">
-        <div class="old-pro">
-          <div class="old-header">
-            <h3>Fysiotherapie Heuvel</h3>
-          </div>
-          <div class="old-nav">
-            <a href="#">Home</a>
-            <a href="#">Over ons</a>
-            <a href="#">Specialisaties</a>
-            <a href="#">Team</a>
-            <a href="#">Nieuws</a>
-            <a href="#">Contact</a>
-          </div>
-          <div class="old-hero">
-            <h3>Welkom bij Fysiotherapie Heuvel</h3>
-            <p>Bij Fysiotherapie Heuvel combineren we jarenlange ervaring met een persoonlijke aanpak. Uw herstel staat centraal. Maak vandaag nog een afspraak!</p>
-            <a href="#" class="old-btn">Klik hier voor een afspraak</a>
-          </div>
-          <div class="old-section">
-            <h3>Over ons</h3>
-            <p style="font-size:12px;margin-bottom:8px;">Fysiotherapie Heuvel is een praktijk voor algemene en specialistische fysiotherapie in het hart van Landgraaf. Al meer dan 15 jaar helpen wij patiënten met uiteenlopende klachten.</p>
-            <div class="old-features">
-              <div class="old-feature"><strong>Evidence-based</strong> — Behandelingen gebaseerd op de nieuwste inzichten</div>
-              <div class="old-feature"><strong>Snelle doorverwijzing</strong> — Binnen 48 uur een afspraak</div>
-              <div class="old-feature"><strong>Persoonlijke benadering</strong> — Uw behandeling op maat</div>
-            </div>
-          </div>
-          <div class="old-section">
-            <h3>Ons team</h3>
-            <div class="old-team">
-              <div class="old-member"><div class="old-avatar">MH</div>Marieke Heuvel<br><em style="font-size:9px;">Fysiotherapeut</em></div>
-              <div class="old-member"><div class="old-avatar">PB</div>Pieter Bergmans<br><em style="font-size:9px;">Sportfysio</em></div>
-              <div class="old-member"><div class="old-avatar">SV</div>Sara Vos<br><em style="font-size:9px;">Bekkenfysio</em></div>
-            </div>
-          </div>
-          <div class="old-footer">&copy; 2016 Fysiotherapie Heuvel — Alle rechten voorbehouden</div>
+  <div class="compare-slider" tabindex="0" role="slider" aria-label="Voor en na vergelijking" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+    <div class="compare-side compare-old">
+      <div class="old-pro">
+        <div class="old-header">
+          <h3>Fysiotherapie Heuvel</h3>
         </div>
-        <span class="compare-label">Voor</span>
+        <div class="old-nav">
+          <a href="#">Home</a>
+          <a href="#">Over ons</a>
+          <a href="#">Specialisaties</a>
+          <a href="#">Team</a>
+          <a href="#">Nieuws</a>
+          <a href="#">Contact</a>
+        </div>
+        <div class="old-hero">
+          <h3>Welkom bij Fysiotherapie Heuvel</h3>
+          <p>Bij Fysiotherapie Heuvel combineren we jarenlange ervaring met een persoonlijke aanpak. Uw herstel staat centraal. Maak vandaag nog een afspraak!</p>
+          <a href="#" class="old-btn">Klik hier voor een afspraak</a>
+        </div>
+        <div class="old-section">
+          <h3>Over ons</h3>
+          <p style="font-size:12px;margin-bottom:8px;">Fysiotherapie Heuvel is een praktijk voor algemene en specialistische fysiotherapie in het hart van Landgraaf. Al meer dan 15 jaar helpen wij patiënten met uiteenlopende klachten.</p>
+          <div class="old-features">
+            <div class="old-feature"><strong>Evidence-based</strong> — Behandelingen gebaseerd op de nieuwste inzichten</div>
+            <div class="old-feature"><strong>Snelle doorverwijzing</strong> — Binnen 48 uur een afspraak</div>
+            <div class="old-feature"><strong>Persoonlijke benadering</strong> — Uw behandeling op maat</div>
+          </div>
+        </div>
+        <div class="old-section">
+          <h3>Specialisaties</h3>
+          <div class="old-features">
+            <div class="old-feature"><strong>Rug- en nekklachten</strong> — Hernia, ischias, whiplash</div>
+            <div class="old-feature"><strong>Sportblessures</strong> — Van verstuiking tot kruisband</div>
+            <div class="old-feature"><strong>Hand- en armklachten</strong> — Carpale tunnelsyndroom, tennisarm</div>
+            <div class="old-feature"><strong>Chronische pijn</strong> — Langdurige klachten begeleiden</div>
+          </div>
+        </div>
+        <div class="old-section">
+          <h3>Ons team</h3>
+          <div class="old-team">
+            <div class="old-member"><div class="old-avatar">MH</div>Marieke Heuvel<br><em style="font-size:9px;">Fysiotherapeut</em></div>
+            <div class="old-member"><div class="old-avatar">PB</div>Pieter Bergmans<br><em style="font-size:9px;">Sportfysio</em></div>
+            <div class="old-member"><div class="old-avatar">SV</div>Sara Vos<br><em style="font-size:9px;">Bekkenfysio</em></div>
+          </div>
+        </div>
+        <div class="old-section">
+          <h3>Nieuws</h3>
+          <p style="font-size:11px;"><strong>Hardlopen in de herfst</strong> — 5 tips om blessures te voorkomen.<br><br>
+          <strong>Zitten is het nieuwe roken</strong> — Zo richt u uw bureau in.</p>
+        </div>
+        <div class="old-section">
+          <h3>Contact</h3>
+          <p style="font-size:11px;">Heuvelstraat 12, 6361 AH Nieuw-Lotbroek<br>
+          Tel: 045 - 567 8910<br>
+          Email: info@fysioheuvel.nl</p>
+        </div>
+        <div class="old-footer">&copy; 2016 Fysiotherapie Heuvel — Alle rechten voorbehouden</div>
       </div>
-      <div class="compare-side compare-new">
-        <iframe src="example-pro.html" loading="lazy" title="Nieuwe Pro website"></iframe>
-        <span class="compare-label">Na</span>
-      </div>
-      <div class="compare-handle"></div>
+      <span class="compare-label">Voor</span>
     </div>
-
-    <div class="see-example">
-      <a href="example-pro.html">Bekijk het volledige voorbeeld <span aria-hidden="true">→</span></a>
+    <div class="compare-side compare-new">
+      <header class="header">
+        <div class="header-inner">
+          <a href="#" class="brand">Fysio Heuvel</a>
+          <nav class="nav">
+            <a href="#over">Over ons</a>
+            <a href="#specialisaties">Specialisaties</a>
+            <a href="#team">Team</a>
+            <a href="#nieuws">Nieuws</a>
+            <a href="#contact" class="nav-cta">Afspraak maken</a>
+          </nav>
+        </div>
+      </header>
+      <main>
+        <section class="hero">
+          <div class="hero-content">
+            <p class="eyebrow">Landgraaf · Limburg</p>
+            <h1>Uw lichaam verdient <em>de beste zorg</em></h1>
+            <p>Bij Fysiotherapie Heuvel combineren we jarenlange ervaring met een persoonlijke aanpak. Uw herstel staat centraal.</p>
+            <div class="hero-actions">
+              <a href="#contact" class="btn btn-white">Maak een afspraak</a>
+              <a href="#specialisaties" class="btn btn-outline">Onze specialisaties</a>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1200&q=80" alt="Fysiotherapie in praktijk" loading="eager" />
+          </div>
+        </section>
+        <section class="section" id="over">
+          <div class="section-head">
+            <p class="eyebrow">Over ons</p>
+            <h2>Al meer dan 15 jaar uw fysiotherapeut</h2>
+            <p class="section-intro">Fysiotherapie Heuvel is een praktijk voor algemene en specialistische fysiotherapie in het hart van Landgraaf.</p>
+          </div>
+          <div class="features-grid">
+            <div class="feature-card reveal">
+              <span class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span>
+              <h3>Evidence-based</h3>
+              <p>Onze behandelingen zijn gebaseerd op de nieuwste wetenschappelijke inzichten.</p>
+            </div>
+            <div class="feature-card reveal">
+              <span class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span>
+              <h3>Snelle doorverwijzing</h3>
+              <p>Binnen 48 uur een afspraak. Geen wachttijden, wel direct aan de slag.</p>
+            </div>
+            <div class="feature-card reveal">
+              <span class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78Z"/></svg></span>
+              <h3>Persoonlijke benadering</h3>
+              <p>Uw behandeling wordt afgestemd op uw situatie, uw doelen en uw tempo.</p>
+            </div>
+          </div>
+        </section>
+        <section class="section section-soft" id="specialisaties">
+          <div class="section-inner">
+            <div class="section-head">
+              <p class="eyebrow">Specialisaties</p>
+              <h2>Waar kunnen wij u mee helpen?</h2>
+            </div>
+            <div class="features-grid">
+              <div class="feature-card reveal">
+                <span class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8m-4-4v4"/></svg></span>
+                <h3>Rug- en nekklachten</h3>
+                <p>Hernia, ischias, whiplash — wij helpen u weer pijnvrij bewegen.</p>
+              </div>
+              <div class="feature-card reveal">
+                <span class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="m8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></span>
+                <h3>Sportblessures</h3>
+                <p>Van verstuiking tot kruisband — snel terug naar uw sport.</p>
+              </div>
+              <div class="feature-card reveal">
+                <span class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg></span>
+                <h3>Hand- en armklachten</h3>
+                <p>Carpale tunnelsyndroom, tennisarm, peesproblemen — fijne motoriek terug.</p>
+              </div>
+              <div class="feature-card reveal">
+                <span class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"/></svg></span>
+                <h3>Chronische pijn</h3>
+                <p>Langdurige klachten vragen een andere aanpak — wij begeleiden u stap voor stap.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="section" id="team">
+          <div class="section-head">
+            <p class="eyebrow">Team</p>
+            <h2>Uw therapeuten</h2>
+            <p class="section-intro">Gedreven professionals met een passie voor beweging en herstel.</p>
+          </div>
+          <div class="team-grid">
+            <div class="team-card reveal">
+              <div class="team-avatar">MH</div>
+              <h3>Marieke Heuvel</h3>
+              <p>Algemeen fysiotherapeut, Manueel therapeut</p>
+            </div>
+            <div class="team-card reveal">
+              <div class="team-avatar">PB</div>
+              <h3>Pieter Bergmans</h3>
+              <p>Sportfysiotherapeut, Medical taping</p>
+            </div>
+            <div class="team-card reveal">
+              <div class="team-avatar">SV</div>
+              <h3>Sara Vos</h3>
+              <p>Kindervoedingscoach, Bekkenfysiotherapeut</p>
+            </div>
+          </div>
+        </section>
+        <section class="section section-soft" id="nieuws">
+          <div class="section-inner">
+            <div class="section-head">
+              <p class="eyebrow">Nieuws &amp; tips</p>
+              <h2>Laatste berichten</h2>
+            </div>
+            <div class="blog-grid">
+              <article class="blog-card reveal">
+                <div class="blog-img" aria-hidden="true"></div>
+                <div class="blog-body">
+                  <span class="blog-tag">Sport</span>
+                  <h3>Hardlopen in de herfst: 5 tips om blessures te voorkomen</h3>
+                  <p>De koude en natte maanden vragen om een andere aanpak. Lees hoe u veilig blijft lopen.</p>
+                </div>
+              </article>
+              <article class="blog-card reveal">
+                <div class="blog-img" aria-hidden="true"></div>
+                <div class="blog-body">
+                  <span class="blog-tag">Werkplek</span>
+                  <h3>Zitten is het nieuwe roken: zo richt u uw bureau in</h3>
+                  <p>Een ergonomische werkplek voorkomt rug- en nekklachten. De belangrijkste aanpassingen op een rij.</p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+        <section class="contact-section" id="contact">
+          <div class="contact-inner">
+            <div class="contact-head">
+              <h2>Afspraak maken</h2>
+              <p>Heeft u klachten of wilt u een afspraak inplannen? Neem contact op of vul het formulier in — wij bellen u binnen een werkdag terug.</p>
+              <form class="contact-form" onsubmit="return false;">
+                <div class="form-row">
+                  <div class="form-field">
+                    <label for="r-pro-naam">Naam</label>
+                    <input id="r-pro-naam" type="text" placeholder="Uw naam" required />
+                  </div>
+                  <div class="form-field">
+                    <label for="r-pro-tel">Telefoon</label>
+                    <input id="r-pro-tel" type="tel" placeholder="06-12345678" required />
+                  </div>
+                </div>
+                <div class="form-field">
+                  <label for="r-pro-klacht">Soort klacht</label>
+                  <select id="r-pro-klacht">
+                    <option value="">Kies uw klacht...</option>
+                    <option>Rug- / nekklachten</option>
+                    <option>Sportblessure</option>
+                    <option>Hand- / armklachten</option>
+                    <option>Chronische pijn</option>
+                    <option>Overig</option>
+                  </select>
+                </div>
+                <div class="form-field">
+                  <label for="r-pro-bericht">Toelichting (optioneel)</label>
+                  <textarea id="r-pro-bericht" rows="3" placeholder="Vertel kort wat uw klacht is..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-white">Verzoek indienen</button>
+              </form>
+            </div>
+            <div class="contact-info">
+              <h3>Contactgegevens</h3>
+              <div class="contact-item">
+                <span class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
+                <span>Heuvelstraat 12, 6361 AH Nieuw-Lotbroek</span>
+              </div>
+              <div class="contact-item">
+                <span class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2Z"/></svg></span>
+                <span>045 - 567 8910</span>
+              </div>
+              <div class="contact-item">
+                <span class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+                <span>info@fysioheuvel.nl</span>
+              </div>
+              <h3 style="margin-top:1.5rem;">Openingstijden</h3>
+              <dl class="opening-hours">
+                <dt>Ma - Vr</dt><dd>08:00 - 18:00</dd>
+                <dt>Zaterdag</dt><dd>09:00 - 13:00</dd>
+                <dt>Zondag</dt><dd>Gesloten</dd>
+              </dl>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+        <p>&copy; 2026 Fysiotherapie Heuvel — voorbeeld gemaakt door <a href="index.html">Van Kalsbeek Digital</a></p>
+      </footer>
+      <span class="compare-label">Na</span>
     </div>
-  </section>
-
+    <div class="compare-handle"></div>
+  </div>
   <script src="compare-slider.js"></script>
+  <script>
+    (function () {
+      var reveals = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window) {
+        var observer = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+        reveals.forEach(function(el) { observer.observe(el); });
+      } else {
+        reveals.forEach(function(el) { el.classList.add('visible'); });
+      }
+    })();
+  </script>
 </body>
 </html>

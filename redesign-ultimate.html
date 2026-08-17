@@ -1,96 +1,330 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="nl" data-theme="dark">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Redesign Ultimate — voorbeeld | Van Kalsbeek Digital</title>
-  <meta name="description" content="Bekijk het verschil tussen een oude website en een redesign. Sleep de slider om het contrast te zien." />
+  <meta name="description" content="Bekijk het verschil tussen een oude website en een redesign." />
   <link rel="icon" href="favicon.ico" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="compare-old.css" />
+  <link rel="stylesheet" href="example-ultimate.css" />
   <style>
-    body { background: var(--bg); color: var(--text); font-family: var(--sans); margin: 0; }
-    .example-banner { background: var(--primary); color: #fff; text-align: center; padding: 1rem 1.5rem; font-size: .85rem; font-weight: 600; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: .5rem 1.5rem; }
-    .example-banner a { color: #fff; text-decoration: underline; text-underline-offset: 2px; }
-    .example-banner .banner-note { font-weight: 400; font-size: .78rem; opacity: .8; width: 100%; margin-top: .25rem; }
-    .redesign-page { max-width: 1100px; margin: 0 auto; padding: clamp(3rem, 8vw, 5rem) 1.5rem; }
-    .redesign-page h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.8rem, 4vw, 2.8rem); color: var(--heading); line-height: 1.15; text-align: center; margin-bottom: .5rem; }
-    .redesign-page .subtitle { text-align: center; color: var(--muted); font-size: 1rem; line-height: 1.7; margin-bottom: clamp(2rem, 5vw, 3.5rem); max-width: 500px; margin-left: auto; margin-right: auto; }
-    .back-link { display: inline-flex; align-items: center; gap: .4rem; font-size: .85rem; color: var(--primary); text-decoration: none; font-weight: 600; margin-bottom: 2rem; }
-    .back-link:hover { text-decoration: underline; }
-    .see-example { text-align: center; margin-top: clamp(2rem, 5vw, 3rem); }
-    .see-example a { display: inline-flex; align-items: center; gap: .5rem; background: var(--primary); color: #fff; padding: .85rem 2rem; border-radius: 8px; font-weight: 600; font-size: .9rem; text-decoration: none; transition: background .2s, transform .15s; }
-    .see-example a:hover { background: #2563eb; transform: translateY(-1px); }
-    .compare-side.compare-new { background: var(--bg); }
-    .compare-side.compare-new iframe { width: 100%; height: 100%; border: none; pointer-events: none; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { height: 100%; overflow: hidden; background: #0A0A0A; }
+    .compare-slider { position: relative; width: 100vw; height: 100vh; overflow: hidden; cursor: ew-resize; user-select: none; touch-action: none; }
+    .compare-side { position: absolute; inset: 0; overflow-y: auto; overflow-x: hidden; }
+    .compare-old { z-index: 2; clip-path: inset(0 50% 0 0); }
+    .compare-new { z-index: 1; background: #0A0A0A; }
+    .compare-label { position: fixed; bottom: 24px; z-index: 20; background: rgba(0,0,0,.6); color: #fff; font-size: .75rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; padding: .5rem 1rem; border-radius: 6px; pointer-events: none; font-family: 'DM Sans', sans-serif; }
+    .compare-old > .compare-label { left: 24px; }
+    .compare-new > .compare-label { right: 24px; }
+    .compare-handle { position: absolute; top: 0; bottom: 0; left: 50%; width: 3px; background: #fff; z-index: 30; transform: translateX(-50%); pointer-events: none; box-shadow: 0 0 8px rgba(0,0,0,.5); }
+    .compare-handle::after { content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 44px; height: 44px; background: #fff; border-radius: 50%; box-shadow: 0 2px 16px rgba(0,0,0,.4); background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='%230A0A0A' stroke-width='2' stroke-linecap='round'%3E%3Cpath d='M9 18l-6-6 6-6'/%3E%3Cpath d='M15 6l6 6-6 6'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: center; }
   </style>
 </head>
 <body>
-  <div class="example-banner">
-    Dit is een voorbeeld van een <strong>Ultimate</strong> redesign — gebouwd door <a href="index.html">Van Kalsbeek Digital</a>
-    <span class="banner-note">Kleuren, afbeeldingen en teksten zijn volledig aan te passen aan uw huisstijl.</span>
-  </div>
-
-  <section class="redesign-page">
-    <a href="index.html" class="back-link"><span aria-hidden="true">←</span> Terug naar overzicht</a>
-
-    <h1>Zo ziet een Ultimate redesign eruit</h1>
-    <p class="subtitle">Sleep de slider om het verschil te zien tussen een gedateerde site en de nieuwe versie.</p>
-
-    <div class="compare-slider" tabindex="0" role="slider" aria-label="Voor en na vergelijking" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
-      <div class="compare-side compare-old">
-        <div class="old-ultimate">
-          <div class="old-header">
-            <h3>VOID</h3>
+  <div class="compare-slider" tabindex="0" role="slider" aria-label="Voor en na vergelijking" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+    <div class="compare-side compare-old">
+      <div class="old-ultimate">
+        <div class="old-header">
+          <h3>VOID</h3>
+        </div>
+        <div class="old-nav">
+          <a href="#">Home</a>
+          <a href="#">Projecten</a>
+          <a href="#">Aanpak</a>
+          <a href="#">Over ons</a>
+          <a href="#">Contact</a>
+        </div>
+        <div class="old-hero">
+          <h3>Ruimtes die vertellen</h3>
+          <p>Void ontwerpt interieurs en gebouwen die voelen als thuis — voor woningcorporaties, zorginstellingen en particulieren.</p>
+          <a href="#" class="old-btn">Neem contact op</a>
+        </div>
+        <div class="old-stats">
+          <div class="old-stat"><strong>127</strong>Projecten</div>
+          <div class="old-stat"><strong>18</strong>Jaar ervaring</div>
+          <div class="old-stat"><strong>96%</strong>Tevredenheid</div>
+        </div>
+        <div class="old-section">
+          <h3>Projecten</h3>
+          <div class="old-projects">
+            <div class="old-project"><strong>Woonzorgcentrum De Horizon</strong>Compleet interieurontwerp voor 48 zorgwoningen.</div>
+            <div class="old-project"><strong>Villa Kalkoog</strong>Modern woonhuis met open plattegrond.</div>
+            <div class="old-project"><strong>Kantoor GreenTech</strong>Duurzaam kantoorgebouw met BREEAM-certificering.</div>
+            <div class="old-project"><strong>Cafe Bruut</strong>Restylistiek van een 19e-eeuws pand.</div>
           </div>
-          <div class="old-nav">
-            <a href="#">Home</a>
-            <a href="#">Projecten</a>
-            <a href="#">Aanpak</a>
-            <a href="#">Over ons</a>
-            <a href="#">Contact</a>
+        </div>
+        <div class="old-section">
+          <h3>Aanpak</h3>
+          <p style="font-size:11px;">01. Kennismaking — We leren uw wensen kennen.<br>
+          02. Concept & ontwerp — Van schets tot 3D-render.<br>
+          03. Realisatie — Wij begeleiden de uitvoering.</p>
+        </div>
+        <div class="old-section">
+          <h3>Testimonials</h3>
+          <p style="font-size:11px;font-style:italic;">"Void heeft onze visie omgezet in een ruimte die precies voelt zoals we het ons hadden voorgesteld."</p>
+          <p style="font-size:10px;margin-top:4px;">— Annemieke Peeters, directeur Woonzorgcentrum De Horizon</p>
+        </div>
+        <div class="old-section">
+          <h3>Contact</h3>
+          <p style="font-size:11px;">Architectenweg 8, 6361 BX Landgraaf<br>
+          Tel: 045 - 123 4567<br>
+          Email: hello@void-architecten.nl</p>
+        </div>
+        <div class="old-footer">&copy; 2016 Void Architecten — Alle rechten voorbehouden</div>
+      </div>
+      <span class="compare-label">Voor</span>
+    </div>
+    <div class="compare-side compare-new">
+      <header class="header">
+        <div class="header-inner">
+          <a href="#" class="brand">Void</a>
+          <nav class="nav">
+            <a href="#projecten">Projecten</a>
+            <a href="#aanpak">Aanpak</a>
+            <a href="#dashboard">Dashboard</a>
+            <a href="#contact" class="nav-cta">Neem contact op</a>
+          </nav>
+        </div>
+      </header>
+      <main>
+        <section class="hero">
+          <div class="hero-bg">
+            <img src="https://images.unsplash.com/photo-1487958449943-2429e8be8625?w=1600&q=80" alt="Moderne architectuur" loading="eager" />
           </div>
-          <div class="old-hero">
-            <h3>Ruimtes die vertellen</h3>
-            <p>Void ontwerpt interieurs en gebouwen die voelen als thuis — voor woningcorporaties, zorginstellingen en particulieren.</p>
-            <a href="#" class="old-btn">Neem contact op</a>
-          </div>
-          <div class="old-stats">
-            <div class="old-stat"><strong>127</strong>Projecten</div>
-            <div class="old-stat"><strong>18</strong>Jaar ervaring</div>
-            <div class="old-stat"><strong>96%</strong>Tevredenheid</div>
-          </div>
-          <div class="old-section">
-            <h3>Projecten</h3>
-            <div class="old-projects">
-              <div class="old-project"><strong>Woonzorgcentrum De Horizon</strong>Compleet interieurontwerp voor 48 zorgwoningen.</div>
-              <div class="old-project"><strong>Villa Kalkoog</strong>Modern woonhuis met open plattegrond.</div>
-              <div class="old-project"><strong>Kantoor GreenTech</strong>Duurzaam kantoorgebouw met BREEAM-certificering.</div>
-              <div class="old-project"><strong>Cafe Bruut</strong>Restylistiek van een 19e-eeuws pand.</div>
+          <div class="hero-content">
+            <div class="hero-badge">Beschikbaar voor nieuwe projecten</div>
+            <h1>Ruimtes die <em>vertellen</em></h1>
+            <p class="hero-sub">Void ontwerpt interieurs en gebouwen die voelen als thuis — voor woningcorporaties, zorginstellingen en particulieren.</p>
+            <div class="hero-actions">
+              <a href="#contact" class="btn btn-primary">Project bespreken</a>
+              <a href="#projecten" class="btn btn-ghost">Bekijk projecten</a>
+            </div>
+            <div class="stats-row">
+              <div class="stat"><span class="stat-num">127</span><span class="stat-label">Projecten</span></div>
+              <div class="stat"><span class="stat-num">18</span><span class="stat-label">Jaar ervaring</span></div>
+              <div class="stat"><span class="stat-num">96%</span><span class="stat-label">Tevreden klanten</span></div>
             </div>
           </div>
-          <div class="old-section">
-            <h3>Onze aanpak</h3>
-            <p style="font-size:11px;">01. Kennismaking — We leren uw wensen kennen.<br>
-            02. Concept & ontwerp — Van schets tot 3D-render.<br>
-            03. Realisatie — Wij begeleiden de uitvoering.</p>
+        </section>
+        <section class="section" id="projecten">
+          <div class="section-head">
+            <p class="eyebrow">Projecten</p>
+            <h2>Werk waar we trots op zijn</h2>
+            <p class="section-intro">Van concept tot realisatie — elk project is een samenwerking tussen visie, functionaliteit en esthetiek.</p>
           </div>
-          <div class="old-footer">&copy; 2016 Void Architecten — Alle rechten voorbehouden</div>
+          <div class="projects-masonry">
+            <article class="project-card tall reveal">
+              <div class="project-visual"><div class="project-visual-inner pv-1" aria-hidden="true"></div></div>
+              <div class="project-body">
+                <span class="project-tag">Zorg</span>
+                <h3>Woonzorgcentrum De Horizon</h3>
+                <p>Compleet interieurontwerp voor 48 zorgwoningen. Warm, toegankelijk en duurzaam.</p>
+              </div>
+            </article>
+            <article class="project-card reveal">
+              <div class="project-visual"><div class="project-visual-inner pv-2" aria-hidden="true"></div></div>
+              <div class="project-body">
+                <span class="project-tag">Particulier</span>
+                <h3>Villa Kalkoog</h3>
+                <p>Modern woonhuis met open plattegrond en natuurlijke materialen.</p>
+              </div>
+            </article>
+            <article class="project-card reveal">
+              <div class="project-visual"><div class="project-visual-inner pv-3" aria-hidden="true"></div></div>
+              <div class="project-body">
+                <span class="project-tag">Utiliteit</span>
+                <h3>Kantoor GreenTech</h3>
+                <p>Duurzaam kantoorgebouw met biophilic design en BREEAM-certificering.</p>
+              </div>
+            </article>
+            <article class="project-card reveal">
+              <div class="project-visual"><div class="project-visual-inner pv-4" aria-hidden="true"></div></div>
+              <div class="project-body">
+                <span class="project-tag">Horeca</span>
+                <h3>Cafe Bruut</h3>
+                <p>Restylistiek van een 19e-eeuws pand naar een eigentijdse koffiebar.</p>
+              </div>
+            </article>
+          </div>
+        </section>
+        <section class="section" id="aanpak" style="padding-top:0;">
+          <div class="section-head">
+            <p class="eyebrow">Aanpak</p>
+            <h2>Van idee tot sleutel</h2>
+          </div>
+          <div class="services-grid">
+            <div class="service-card reveal">
+              <div class="service-num">01</div>
+              <h3>Kennismaking</h3>
+              <p>We leren uw wensen, uw gebouw en uw budget kennen. Samen bepalen we de richting.</p>
+            </div>
+            <div class="service-card reveal reveal-delay-1">
+              <div class="service-num">02</div>
+              <h3>Concept &amp; ontwerp</h3>
+              <p>Van schets tot 3D-render — u ziet precies wat het wordt voordat er iets gebouwd wordt.</p>
+            </div>
+            <div class="service-card reveal reveal-delay-2">
+              <div class="service-num">03</div>
+              <h3>Realisatie &amp; nazorg</h3>
+              <p>Wij begeleiden de uitvoering en blijven betrokken na oplevering. Uw tevredenheid is ons doel.</p>
+            </div>
+          </div>
+        </section>
+        <div class="testimonial-section">
+          <div class="testimonial-inner reveal">
+            <blockquote class="testimonial-quote">
+              Void heeft onze visie omgezet in een ruimte die precies voelt zoals we het ons hadden voorgesteld. Professioneel, creatief en betrokken.
+            </blockquote>
+            <p class="testimonial-attr"><strong>Annemieke Peeters</strong>, directeur Woonzorgcentrum De Horizon</p>
+          </div>
         </div>
-        <span class="compare-label">Voor</span>
-      </div>
-      <div class="compare-side compare-new">
-        <iframe src="example-ultimate.html" loading="lazy" title="Nieuwe Ultimate website"></iframe>
-        <span class="compare-label">Na</span>
-      </div>
-      <div class="compare-handle"></div>
+        <section class="section" id="dashboard">
+          <div class="section-head">
+            <p class="eyebrow">Dashboard</p>
+            <h2>Inzicht in uw project</h2>
+            <p class="section-intro">Bij Ultimate hoort een eigen omgeving waar u de voortgang, begroting en documenten altijd bij de hand hebt.</p>
+          </div>
+          <div class="dashboard-preview reveal">
+            <div class="dashboard-bar">
+              <span class="dashboard-dot dd-r"></span>
+              <span class="dashboard-dot dd-y"></span>
+              <span class="dashboard-dot dd-g"></span>
+              <span class="dashboard-title">Void Project Dashboard — De Horizon</span>
+            </div>
+            <div class="dashboard-grid">
+              <div class="dash-card">
+                <div class="dash-card-label">Begroting</div>
+                <div class="dash-card-value">&euro;248.500</div>
+                <div class="dash-card-change">12% onder budget</div>
+              </div>
+              <div class="dash-card">
+                <div class="dash-card-label">Voortgang</div>
+                <div class="dash-card-value">73%</div>
+                <div class="dash-card-change">+8% deze week</div>
+              </div>
+              <div class="dash-card">
+                <div class="dash-card-label">Oplevering</div>
+                <div class="dash-card-value">14 nov</div>
+                <div class="dash-card-change neg">3 dagen vertraging</div>
+              </div>
+            </div>
+            <div class="dash-chart">
+              <div class="dash-bar-row">
+                <span class="dash-bar-label">S1</span>
+                <div class="dash-bar-track"><div class="dash-bar-fill" data-width="100"></div></div>
+              </div>
+              <div class="dash-bar-row">
+                <span class="dash-bar-label">S2</span>
+                <div class="dash-bar-track"><div class="dash-bar-fill" data-width="85"></div></div>
+              </div>
+              <div class="dash-bar-row">
+                <span class="dash-bar-label">S3</span>
+                <div class="dash-bar-track"><div class="dash-bar-fill" data-width="45"></div></div>
+              </div>
+              <div class="dash-bar-row">
+                <span class="dash-bar-label">S4</span>
+                <div class="dash-bar-track"><div class="dash-bar-fill" data-width="10"></div></div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="contact-section" id="contact">
+          <div class="contact-inner">
+            <div class="contact-head">
+              <p class="eyebrow">Contact</p>
+              <h2>Laten we iets moois bouwen</h2>
+              <p>Vertel over uw project en ik denk mee — van eerste idee tot het definitieve ontwerp. Altijd vrijblijvend.</p>
+              <form class="contact-form" onsubmit="return false;">
+                <div class="form-row">
+                  <div class="form-field">
+                    <label for="r-ult-naam">Naam</label>
+                    <input id="r-ult-naam" type="text" placeholder="Uw naam" required />
+                  </div>
+                  <div class="form-field">
+                    <label for="r-ult-bedrijf">Bedrijf</label>
+                    <input id="r-ult-bedrijf" type="text" placeholder="Optioneel" />
+                  </div>
+                </div>
+                <div class="form-field">
+                  <label for="r-ult-email">E-mail</label>
+                  <input id="r-ult-email" type="email" placeholder="u@voorbeeld.nl" required />
+                </div>
+                <div class="form-field">
+                  <label for="r-ult-bericht">Vertel over uw project</label>
+                  <textarea id="r-ult-bericht" rows="4" placeholder="Wat wilt u bouwen of verbouwen?" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Bericht versturen</button>
+              </form>
+            </div>
+            <div class="contact-side">
+              <h3>Contactgegevens</h3>
+              <div class="contact-item">
+                <span class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
+                <span>Architectenweg 8, 6361 BX Landgraaf</span>
+              </div>
+              <div class="contact-item">
+                <span class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2Z"/></svg></span>
+                <span>045 - 123 4567</span>
+              </div>
+              <div class="contact-item">
+                <span class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+                <span>hello@void-architecten.nl</span>
+              </div>
+              <div class="contact-links">
+                <a href="#" class="contact-link">Instagram</a>
+                <a href="#" class="contact-link">LinkedIn</a>
+                <a href="#" class="contact-link">Behance</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      <footer class="footer">
+        <p class="footer-brand">Void Architecten</p>
+        <p>&copy; 2026 Void Architecten — voorbeeld gemaakt door <a href="index.html">Van Kalsbeek Digital</a></p>
+      </footer>
+      <span class="compare-label">Na</span>
     </div>
-
-    <div class="see-example">
-      <a href="example-ultimate.html">Bekijk het volledige voorbeeld <span aria-hidden="true">→</span></a>
-    </div>
-  </section>
-
+    <div class="compare-handle"></div>
+  </div>
   <script src="compare-slider.js"></script>
+  <script>
+    (function () {
+      var reveals = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window) {
+        var observer = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+          });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+        reveals.forEach(function(el) { observer.observe(el); });
+      } else {
+        reveals.forEach(function(el) { el.classList.add('visible'); });
+      }
+      var dashSection = document.getElementById('dashboard');
+      if (dashSection && 'IntersectionObserver' in window) {
+        var dashObs = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              entry.target.querySelectorAll('.dash-bar-fill').forEach(function(bar) {
+                var w = bar.getAttribute('data-width');
+                bar.style.width = '0%';
+                requestAnimationFrame(function() {
+                  requestAnimationFrame(function() { bar.style.width = w + '%'; });
+                });
+              });
+              dashObs.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.3 });
+        dashObs.observe(dashSection);
+      }
+    })();
+  </script>
 </body>
 </html>
