@@ -27,6 +27,7 @@
       if (dist > 40) return;
       e.preventDefault();
       dragging = true;
+      el.setPointerCapture(e.pointerId);
       setPosition(e.clientX);
     }
 
@@ -41,9 +42,10 @@
     }
 
     el.addEventListener('pointerdown', onPointerDown);
-    document.addEventListener('pointermove', onPointerMove);
-    document.addEventListener('pointerup', onPointerUp);
-    document.addEventListener('pointercancel', onPointerUp);
+    el.addEventListener('pointermove', onPointerMove);
+    el.addEventListener('pointerup', onPointerUp);
+    el.addEventListener('pointercancel', onPointerUp);
+    el.addEventListener('lostpointercapture', onPointerUp);
 
     el.addEventListener('keydown', function (e) {
       var rect = el.getBoundingClientRect();
