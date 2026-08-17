@@ -4,234 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Voorbeeld Pro — Fysiotherapie Heuvel</title>
-  <meta name="description" content="Voorbeeld van een Pro website door Van Kalsbeek Digital. Professioneel, met animaties en CMS." />
+  <meta name="description" content="Voorbeeld van een Pro website door Van Kalsbeek Digital." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --primary: #B45309;
-      --primary-light: #D97706;
-      --primary-strong: #92400E;
-      --accent: #EA580C;
-      --accent-light: #FB923C;
-      --bg: #FFFFFF;
-      --bg-soft: #FFF8F0;
-      --surface: #FFFFFF;
-      --surface-2: #FEF3E2;
-      --text: #1C1917;
-      --muted: #6B6560;
-      --line: #E8E0D8;
-      --heading: #78350F;
-      --on-primary: #FFFFFF;
-      --em-light: #FED7AA;
-      --serif: 'DM Serif Display', Georgia, serif;
-      --sans: 'DM Sans', system-ui, sans-serif;
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
-    body { font-family: var(--sans); background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
-    img { max-width: 100%; display: block; }
-    a { color: inherit; }
-
-    .example-banner {
-      background: var(--primary); color: #fff;
-      text-align: center; padding: .65rem 1rem;
-      font-size: .82rem; font-weight: 500;
-    }
-    .example-banner a { color: #fff; text-decoration: underline; text-underline-offset: 2px; font-weight: 700; }
-    .example-banner a:hover { color: #fde68a; }
-
-    .header {
-      position: sticky; top: 0; z-index: 100;
-      background: rgba(255,255,255,.9); backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--line);
-    }
-    .header-inner {
-      max-width: 1000px; margin: 0 auto;
-      padding: .75rem 1.5rem;
-      display: flex; align-items: center; justify-content: space-between;
-    }
-    .brand { font-family: var(--serif); font-size: 1.15rem; color: var(--heading); text-decoration: none; }
-    .nav { display: flex; gap: .25rem; }
-    .nav a {
-      text-decoration: none; color: var(--text);
-      font-size: .88rem; font-weight: 500;
-      padding: .6rem .85rem; border-radius: 6px;
-      transition: color .15s, background .15s;
-    }
-    .nav a:hover { background: var(--surface-2); color: var(--heading); }
-    .nav-cta { background: var(--primary); color: #fff !important; font-weight: 600; }
-    .nav-cta:hover { background: var(--primary-light) !important; }
-
-    .hero {
-      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-strong) 100%);
-      color: #fff;
-      padding: clamp(3.5rem, 8vw, 6rem) 1.5rem clamp(4.5rem, 9vw, 7rem);
-      text-align: center; position: relative; overflow: hidden;
-    }
-    .hero::before {
-      content: '';
-      position: absolute; inset: 0;
-      background: radial-gradient(800px 400px at 20% 0%, rgba(255,255,255,.1), transparent 60%);
-      pointer-events: none;
-    }
-    .hero-inner { max-width: 700px; margin: 0 auto; position: relative; z-index: 1; }
-    .eyebrow {
-      display: inline-block; font-size: .72rem; font-weight: 700;
-      letter-spacing: .14em; text-transform: uppercase;
-      color: var(--em-light); margin-bottom: 1rem;
-      border: 1px solid rgba(255,255,255,.25); padding: .35rem .9rem; border-radius: 100px;
-    }
-    .hero h1 {
-      font-family: var(--serif); font-weight: 400;
-      font-size: clamp(2.2rem, 5.5vw, 3.5rem);
-      line-height: 1.12; margin-bottom: 1.2rem;
-    }
-    .hero h1 em { font-style: italic; color: var(--em-light); }
-    .hero p { color: rgba(255,255,255,.78); font-size: 1.05rem; max-width: 550px; margin: 0 auto 2.2rem; line-height: 1.7; }
-    .hero-actions { display: flex; gap: .8rem; justify-content: center; flex-wrap: wrap; }
-    .btn {
-      display: inline-block; text-decoration: none; font-weight: 600; font-size: .92rem;
-      padding: .85rem 1.8rem; border-radius: 8px;
-      transition: transform .2s, background .2s, box-shadow .2s;
-    }
-    .btn:hover { transform: translateY(-2px); }
-    .btn:active { transform: scale(.97); }
-    .btn-white { background: #fff; color: var(--primary); box-shadow: 0 6px 20px rgba(0,0,0,.2); }
-    .btn-white:hover { background: #fef3e2; }
-    .btn-outline { color: #fff; border: 1px solid rgba(255,255,255,.35); }
-    .btn-outline:hover { border-color: rgba(255,255,255,.7); background: rgba(255,255,255,.08); }
-
-    .section { max-width: 1000px; margin: 0 auto; padding: clamp(4rem, 8vw, 6rem) 1.5rem; }
-    .section-soft { background: var(--bg-soft); max-width: none; }
-    .section-head { max-width: 640px; margin-bottom: 3rem; }
-    .section-head .eyebrow { color: var(--accent); margin-bottom: .6rem; }
-    .section-head h2 {
-      font-family: var(--serif); font-weight: 400;
-      font-size: clamp(1.7rem, 3.8vw, 2.5rem);
-      color: var(--heading); line-height: 1.2; margin-bottom: .8rem;
-    }
-    .section-intro { color: var(--muted); font-size: 1rem; line-height: 1.75; }
-
-    .features-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.25rem;
-    }
-    .feature-card {
-      background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
-      padding: 2rem 1.75rem;
-      transition: box-shadow .25s, transform .25s, border-color .25s;
-    }
-    .feature-card:hover {
-      box-shadow: 0 12px 36px rgba(180,83,9,.1);
-      transform: translateY(-4px);
-      border-color: transparent;
-    }
-    .feature-icon {
-      width: 44px; height: 44px; background: var(--surface-2); color: var(--accent);
-      border-radius: 10px; display: flex; align-items: center; justify-content: center;
-      margin-bottom: 1.1rem;
-    }
-    .feature-icon svg { width: 22px; height: 22px; }
-    .feature-card h3 { font-size: 1.08rem; color: var(--heading); margin-bottom: .4rem; }
-    .feature-card p { font-size: .88rem; color: var(--muted); line-height: 1.7; }
-
-    .team-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.5rem; max-width: 800px;
-    }
-    .team-card { text-align: center; }
-    .team-avatar {
-      width: 100px; height: 100px; border-radius: 50%;
-      background: var(--surface-2); margin: 0 auto 1rem;
-      display: flex; align-items: center; justify-content: center;
-      font-family: var(--serif); font-size: 2rem; color: var(--accent);
-    }
-    .team-card h3 { font-size: 1.05rem; color: var(--heading); margin-bottom: .2rem; }
-    .team-card p { font-size: .85rem; color: var(--muted); }
-
-    .blog-grid {
-      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.25rem;
-    }
-    .blog-card {
-      background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
-      overflow: hidden;
-      transition: box-shadow .25s, transform .25s;
-    }
-    .blog-card:hover { box-shadow: 0 12px 36px rgba(180,83,9,.1); transform: translateY(-3px); }
-    .blog-img {
-      height: 180px; background: linear-gradient(135deg, var(--surface-2), #fde68a33);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 2.5rem;
-    }
-    .blog-body { padding: 1.5rem; }
-    .blog-tag {
-      display: inline-block; font-size: .7rem; font-weight: 700;
-      letter-spacing: .1em; text-transform: uppercase;
-      color: var(--accent); background: var(--surface-2);
-      padding: .25rem .6rem; border-radius: 100px; margin-bottom: .7rem;
-    }
-    .blog-card h3 { font-size: 1.05rem; color: var(--heading); margin-bottom: .4rem; line-height: 1.35; }
-    .blog-card p { font-size: .85rem; color: var(--muted); line-height: 1.65; }
-
-    .contact-section { background: linear-gradient(135deg, var(--primary) 0%, var(--primary-strong) 100%); color: #fff; padding: clamp(4rem, 8vw, 6rem) 1.5rem; }
-    .contact-inner { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
-    .contact-head h2 {
-      font-family: var(--serif); font-weight: 400;
-      font-size: clamp(1.7rem, 3.8vw, 2.5rem);
-      margin-bottom: .8rem;
-    }
-    .contact-head p { color: rgba(255,255,255,.72); margin-bottom: 2rem; line-height: 1.7; }
-    .contact-form { display: flex; flex-direction: column; gap: 1rem; }
-    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
-    .form-field { display: flex; flex-direction: column; gap: .3rem; }
-    .form-field label { font-size: .75rem; font-weight: 600; color: rgba(255,255,255,.65); }
-    .form-field input, .form-field textarea, .form-field select {
-      font-family: var(--sans); font-size: .92rem; color: #fff;
-      background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.18);
-      border-radius: 8px; padding: .7rem 1rem;
-      transition: border-color .2s, background .2s;
-    }
-    .form-field input::placeholder, .form-field textarea::placeholder { color: rgba(255,255,255,.4); }
-    .form-field input:focus, .form-field textarea:focus, .form-field select:focus {
-      outline: none; border-color: var(--em-light); background: rgba(255,255,255,.12);
-    }
-    .form-field select option { background: var(--primary-strong); color: #fff; }
-
-    .contact-info { display: flex; flex-direction: column; gap: 1.5rem; padding-top: 1rem; }
-    .contact-info h3 { font-size: 1.1rem; margin-bottom: .5rem; }
-    .contact-item { display: flex; gap: .75rem; align-items: center; font-size: .9rem; color: rgba(255,255,255,.82); }
-    .contact-icon {
-      width: 38px; height: 38px; flex-shrink: 0;
-      background: rgba(255,255,255,.1); border-radius: 8px;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .contact-icon svg { width: 18px; height: 18px; }
-    .opening-hours { margin-top: .5rem; }
-    .opening-hours dt { font-size: .85rem; color: rgba(255,255,255,.6); margin-bottom: .15rem; }
-    .opening-hours dd { font-size: .9rem; color: rgba(255,255,255,.85); margin-bottom: .6rem; }
-
-    .footer {
-      background: #5C2D06; color: rgba(255,255,255,.4);
-      text-align: center; padding: 2rem 1.5rem; font-size: .8rem;
-    }
-    .footer a { color: rgba(255,255,255,.55); text-decoration: underline; }
-
-    .reveal { opacity: 0; transform: translateY(20px); transition: opacity .6s ease-out, transform .6s ease-out; }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
-    @media (prefers-reduced-motion: reduce) {
-      .reveal { opacity: 1; transform: none; transition: none; }
-      .feature-card, .blog-card { transition: none; }
-    }
-
-    @media (max-width: 768px) {
-      .nav { display: none; }
-      .contact-inner { grid-template-columns: 1fr; }
-      .form-row { grid-template-columns: 1fr; }
-    }
-  </style>
+  <link rel="stylesheet" href="example-pro.css" />
+  <script>
+    (function () {
+      try {
+        var theme = localStorage.getItem('ex-theme') ||
+          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {}
+    })();
+  </script>
 </head>
 <body>
   <div class="example-banner">
@@ -248,6 +34,12 @@
         <a href="#nieuws">Nieuws</a>
         <a href="#contact" class="nav-cta">Afspraak maken</a>
       </nav>
+      <div class="header-actions">
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Schakel naar donkere modus" aria-pressed="false">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4m11.4-11.4 1.4-1.4"/></svg>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -350,7 +142,7 @@
       </div>
       <div class="blog-grid">
         <article class="blog-card reveal">
-          <div class="blog-img">🏃</div>
+          <div class="blog-img" aria-hidden="true"></div>
           <div class="blog-body">
             <span class="blog-tag">Sport</span>
             <h3>Hardlopen in de herfst: 5 tips om blessures te voorkomen</h3>
@@ -358,7 +150,7 @@
           </div>
         </article>
         <article class="blog-card reveal">
-          <div class="blog-img">💻</div>
+          <div class="blog-img" aria-hidden="true"></div>
           <div class="blog-body">
             <span class="blog-tag">Werkplek</span>
             <h3>Zitten is het nieuwe roken: zo richt u uw bureau in</h3>
@@ -373,7 +165,7 @@
         <div class="contact-head">
           <h2>Afspraak maken</h2>
           <p>Heeft u klachten of wilt u een afspraak inplannen? Neem contact op of vul het formulier in — wij bellen u binnen een werkdag terug.</p>
-          <form class="contact-form">
+          <form class="contact-form" onsubmit="return false;">
             <div class="form-row">
               <div class="form-field">
                 <label for="naam">Naam</label>
@@ -418,10 +210,10 @@
           </div>
           <h3 style="margin-top:1.5rem;">Openingstijden</h3>
           <dl class="opening-hours">
-            <dt>Ma – Vr</dt>
-            <dd>08:00 – 18:00</dd>
+            <dt>Ma - Vr</dt>
+            <dd>08:00 - 18:00</dd>
             <dt>Zaterdag</dt>
-            <dd>09:00 – 13:00</dd>
+            <dd>09:00 - 13:00</dd>
             <dt>Zondag</dt>
             <dd>Gesloten</dd>
           </dl>
@@ -435,7 +227,26 @@
   </footer>
 
   <script>
-    (function() {
+    (function () {
+      document.documentElement.classList.add('js');
+
+      var toggle = document.getElementById('theme-toggle');
+      function updateButton() {
+        if (!toggle) return;
+        var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+        toggle.setAttribute('aria-pressed', dark ? 'true' : 'false');
+        toggle.setAttribute('aria-label', dark ? 'Schakel naar lichte modus' : 'Schakel naar donkere modus');
+      }
+      updateButton();
+      if (toggle) {
+        toggle.addEventListener('click', function () {
+          var next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+          document.documentElement.setAttribute('data-theme', next);
+          try { localStorage.setItem('ex-theme', next); } catch (e) {}
+          updateButton();
+        });
+      }
+
       var reveals = document.querySelectorAll('.reveal');
       if ('IntersectionObserver' in window) {
         var observer = new IntersectionObserver(function(entries) {

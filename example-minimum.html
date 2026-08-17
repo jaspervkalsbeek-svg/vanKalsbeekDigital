@@ -4,138 +4,20 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Voorbeeld Minimum — Timmerman de Boer</title>
-  <meta name="description" content="Voorbeeld van een Minimum website door Van Kalsbeek Digital. Simpel, snel en professioneel." />
+  <meta name="description" content="Voorbeeld van een Minimum website door Van Kalsbeek Digital." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
-  <style>
-    :root {
-      --primary: #2D5016;
-      --primary-light: #3A6B1E;
-      --accent: #5B8C3E;
-      --accent-light: #7BAF5A;
-      --bg: #FFFFFF;
-      --bg-soft: #F5F7F2;
-      --surface: #FFFFFF;
-      --text: #1A1A1A;
-      --muted: #5C5C5C;
-      --line: #E0E4DA;
-      --heading: #2D5016;
-      --on-primary: #FFFFFF;
-      --serif: 'DM Serif Display', Georgia, serif;
-      --sans: 'DM Sans', system-ui, sans-serif;
-    }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; scroll-padding-top: 80px; }
-    body { font-family: var(--sans); background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; }
-    img { max-width: 100%; display: block; }
-    a { color: inherit; }
-
-    .example-banner {
-      background: var(--primary); color: #fff;
-      text-align: center; padding: .65rem 1rem;
-      font-size: .82rem; font-weight: 500;
-    }
-    .example-banner a { color: #fff; text-decoration: underline; text-underline-offset: 2px; font-weight: 700; }
-    .example-banner a:hover { color: #d4e8c0; }
-
-    .header {
-      position: sticky; top: 0; z-index: 100;
-      background: rgba(255,255,255,.92); backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--line);
-    }
-    .header-inner {
-      max-width: 900px; margin: 0 auto;
-      padding: .75rem 1.5rem;
-      display: flex; align-items: center; justify-content: space-between;
-    }
-    .brand { font-family: var(--serif); font-size: 1.15rem; color: var(--heading); text-decoration: none; }
-    .nav { display: flex; gap: .25rem; }
-    .nav a {
-      text-decoration: none; color: var(--text);
-      font-size: .88rem; font-weight: 500;
-      padding: .6rem .85rem; border-radius: 6px;
-    }
-    .nav a:hover { background: var(--bg-soft); }
-    .nav-cta { background: var(--primary); color: #fff !important; font-weight: 600; }
-    .nav-cta:hover { background: var(--primary-light); }
-
-    .hero {
-      background: var(--primary); color: #fff;
-      padding: clamp(3rem, 7vw, 5rem) 1.5rem clamp(4rem, 8vw, 6rem);
-      text-align: center;
-    }
-    .hero h1 {
-      font-family: var(--serif); font-weight: 400;
-      font-size: clamp(2rem, 5vw, 3.2rem);
-      line-height: 1.15; margin-bottom: 1rem;
-    }
-    .hero p { color: rgba(255,255,255,.78); font-size: 1.05rem; max-width: 550px; margin: 0 auto 2rem; }
-    .hero-actions { display: flex; gap: .8rem; justify-content: center; flex-wrap: wrap; }
-    .btn {
-      display: inline-block; text-decoration: none; font-weight: 600; font-size: .92rem;
-      padding: .85rem 1.8rem; border-radius: 8px;
-      transition: transform .15s, background .15s;
-    }
-    .btn:hover { transform: translateY(-1px); }
-    .btn:active { transform: scale(.97); }
-    .btn-white { background: #fff; color: var(--primary); }
-    .btn-white:hover { background: #eef5e6; }
-    .btn-outline { color: #fff; border: 1px solid rgba(255,255,255,.35); }
-    .btn-outline:hover { border-color: rgba(255,255,255,.7); background: rgba(255,255,255,.08); }
-
-    .section { max-width: 900px; margin: 0 auto; padding: clamp(3.5rem, 7vw, 5.5rem) 1.5rem; }
-    .section-soft { background: var(--bg-soft); max-width: none; }
-    .section-head { max-width: 600px; margin-bottom: 2.5rem; }
-    .eyebrow {
-      display: inline-block; font-size: .72rem; font-weight: 700;
-      letter-spacing: .14em; text-transform: uppercase;
-      color: var(--accent); margin-bottom: .6rem;
-    }
-    .section-head h2 {
-      font-family: var(--serif); font-weight: 400;
-      font-size: clamp(1.6rem, 3.5vw, 2.3rem);
-      color: var(--heading); line-height: 1.2; margin-bottom: .75rem;
-    }
-    .section-intro { color: var(--muted); font-size: .98rem; line-height: 1.7; }
-
-    .about-text p { color: var(--muted); line-height: 1.75; font-size: .95rem; margin-bottom: 1rem; }
-    .about-text strong { color: var(--heading); }
-
-    .services-list { display: flex; flex-direction: column; gap: 1rem; max-width: 650px; }
-    .service-item {
-      background: var(--surface); border: 1px solid var(--line); border-radius: 10px;
-      padding: 1.4rem 1.5rem;
-    }
-    .service-item h3 { font-size: 1.05rem; color: var(--heading); margin-bottom: .35rem; }
-    .service-item p { font-size: .88rem; color: var(--muted); line-height: 1.65; }
-
-    .contact-section { background: var(--primary); color: #fff; padding: clamp(3.5rem, 7vw, 5.5rem) 1.5rem; }
-    .contact-inner { max-width: 900px; margin: 0 auto; }
-    .contact-inner h2 {
-      font-family: var(--serif); font-weight: 400;
-      font-size: clamp(1.6rem, 3.5vw, 2.3rem);
-      margin-bottom: .75rem;
-    }
-    .contact-inner p { color: rgba(255,255,255,.72); margin-bottom: 1.5rem; max-width: 480px; }
-    .contact-details { display: flex; flex-direction: column; gap: .8rem; margin-top: 2rem; }
-    .contact-item { display: flex; gap: .75rem; align-items: center; font-size: .92rem; color: rgba(255,255,255,.85); }
-    .contact-icon {
-      width: 38px; height: 38px; flex-shrink: 0;
-      background: rgba(255,255,255,.1); border-radius: 8px;
-      display: flex; align-items: center; justify-content: center;
-    }
-    .contact-icon svg { width: 18px; height: 18px; }
-
-    .footer {
-      background: #1a3409; color: rgba(255,255,255,.4);
-      text-align: center; padding: 2rem 1.5rem; font-size: .8rem;
-    }
-
-    @media (max-width: 768px) {
-      .nav { display: none; }
-    }
-  </style>
+  <link rel="stylesheet" href="example-minimum.css" />
+  <script>
+    (function () {
+      try {
+        var theme = localStorage.getItem('ex-theme') ||
+          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {}
+    })();
+  </script>
 </head>
 <body>
   <div class="example-banner">
@@ -148,8 +30,14 @@
       <nav class="nav">
         <a href="#over">Over</a>
         <a href="#diensten">Diensten</a>
-        <a href="#contact" class="nav-cta">Contact</a>
+        <a href="#contact">Contact</a>
       </nav>
+      <div class="header-actions">
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Schakel naar donkere modus" aria-pressed="false">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M2 12h2m16 0h2M4.9 19.1l1.4-1.4m11.4-11.4 1.4-1.4"/></svg>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -170,7 +58,7 @@
       </div>
       <div class="about-text">
         <p><strong>De Boer Timmerwerken</strong> is een familiebedrijf uit Heerlen met meer dan 25 jaar ervaring in timmerwerk, verbouwingen en onderhoud.</p>
-        <p>Wij geloven in eerlijk werk, duidelijke afspraken en resultaat waar u trots op kunt zijn. Geen verrassingen — wel een eindresultaat dat Precies doet wat het moet doen.</p>
+        <p>Wij geloven in eerlijk werk, duidelijke afspraken en resultaat waar u trots op kunt zijn. Geen verrassingen — wel een eindresultaat dat precies doet wat het moet doen.</p>
       </div>
     </section>
 
@@ -189,7 +77,7 @@
           <p>Van fundering tot dak — wij bouwen uw nieuwe woning of bedrijfsruimte.</p>
         </div>
         <div class="service-item">
-          <h3>Onderhoud & reparaties</h3>
+          <h3>Onderhoud &amp; reparaties</h3>
           <p>Kozijnen, deuren, dakramen — alles wat vastzit of stuk is maken wij weer heel.</p>
         </div>
       </div>
@@ -197,8 +85,26 @@
 
     <section class="contact-section" id="contact">
       <div class="contact-inner">
-        <h2>Klaar om te beginnen?</h2>
-        <p>Bel of mail voor een vrijblijvende offerte. Wij komen graag bij u langs.</p>
+        <div>
+          <h2>Klaar om te beginnen?</h2>
+          <p>Bel of mail voor een vrijblijvende offerte. Wij komen graag bij u langs.</p>
+          <form class="contact-form" onsubmit="return false;">
+            <div class="form-field">
+              <label for="contact-naam">Naam</label>
+              <input id="contact-naam" type="text" placeholder="Uw naam" required />
+            </div>
+            <div class="form-field">
+              <label for="contact-email">E-mail</label>
+              <input id="contact-email" type="email" placeholder="u@voorbeeld.nl" required />
+            </div>
+            <div class="form-field">
+              <label for="contact-bericht">Bericht</label>
+              <textarea id="contact-bericht" rows="3" placeholder="Vertel kort wat u wilt laten doen..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-white">Verstuur</button>
+          </form>
+          <p class="contact-alt">Liever bellen? <a href="tel:+31612345678">06 - 1234 5678</a></p>
+        </div>
         <div class="contact-details">
           <div class="contact-item">
             <span class="contact-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2Z"/></svg></span>
@@ -218,7 +124,28 @@
   </main>
 
   <footer class="footer">
-    <p>&copy; 2026 De Boer Timmerwerken — voorbeeld gemaakt door <a href="index.html" style="color:rgba(255,255,255,.6);text-decoration:underline;">Van Kalsbeek Digital</a></p>
+    <p>&copy; 2026 De Boer Timmerwerken — voorbeeld gemaakt door <a href="index.html">Van Kalsbeek Digital</a></p>
   </footer>
+
+  <script>
+    (function () {
+      var toggle = document.getElementById('theme-toggle');
+      function updateButton() {
+        if (!toggle) return;
+        var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+        toggle.setAttribute('aria-pressed', dark ? 'true' : 'false');
+        toggle.setAttribute('aria-label', dark ? 'Schakel naar lichte modus' : 'Schakel naar donkere modus');
+      }
+      updateButton();
+      if (toggle) {
+        toggle.addEventListener('click', function () {
+          var next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+          document.documentElement.setAttribute('data-theme', next);
+          try { localStorage.setItem('ex-theme', next); } catch (e) {}
+          updateButton();
+        });
+      }
+    })();
+  </script>
 </body>
 </html>
