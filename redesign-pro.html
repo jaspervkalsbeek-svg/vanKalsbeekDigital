@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Redesign Pro — voorbeeld | Van Kalsbeek Digital</title>
+  <meta name="description" content="Bekijk het verschil tussen een oude website en een redesign. Sleep de slider om het contrast te zien." />
+  <link rel="icon" href="favicon.ico" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="compare-old.css" />
+  <style>
+    body { background: var(--bg); color: var(--text); font-family: var(--sans); margin: 0; }
+    .example-banner { background: var(--primary); color: #fff; text-align: center; padding: 1rem 1.5rem; font-size: .85rem; font-weight: 600; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: .5rem 1.5rem; }
+    .example-banner a { color: #fff; text-decoration: underline; text-underline-offset: 2px; }
+    .example-banner .banner-note { font-weight: 400; font-size: .78rem; opacity: .8; width: 100%; margin-top: .25rem; }
+    .redesign-page { max-width: 1100px; margin: 0 auto; padding: clamp(3rem, 8vw, 5rem) 1.5rem; }
+    .redesign-page h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.8rem, 4vw, 2.8rem); color: var(--heading); line-height: 1.15; text-align: center; margin-bottom: .5rem; }
+    .redesign-page .subtitle { text-align: center; color: var(--muted); font-size: 1rem; line-height: 1.7; margin-bottom: clamp(2rem, 5vw, 3.5rem); max-width: 500px; margin-left: auto; margin-right: auto; }
+    .back-link { display: inline-flex; align-items: center; gap: .4rem; font-size: .85rem; color: var(--primary); text-decoration: none; font-weight: 600; margin-bottom: 2rem; }
+    .back-link:hover { text-decoration: underline; }
+    .see-example { text-align: center; margin-top: clamp(2rem, 5vw, 3rem); }
+    .see-example a { display: inline-flex; align-items: center; gap: .5rem; background: var(--primary); color: #fff; padding: .85rem 2rem; border-radius: 8px; font-weight: 600; font-size: .9rem; text-decoration: none; transition: background .2s, transform .15s; }
+    .see-example a:hover { background: #2563eb; transform: translateY(-1px); }
+  </style>
+</head>
+<body>
+  <div class="example-banner">
+    Dit is een voorbeeld van een <strong>Pro</strong> redesign — gebouwd door <a href="index.html">Van Kalsbeek Digital</a>
+    <span class="banner-note">Kleuren, afbeeldingen en teksten zijn volledig aan te passen aan uw huisstijl.</span>
+  </div>
+
+  <main class="redesign-page">
+    <a href="index.html" class="back-link"><span aria-hidden="true">←</span> Terug naar overzicht</a>
+
+    <h1>Zo ziet een Pro redesign eruit</h1>
+    <p class="subtitle">Sleep de slider om het verschil te zien tussen een gedateerde site en de nieuwe versie.</p>
+
+    <div class="compare-slider" tabindex="0" role="slider" aria-label="Voor en na vergelijking" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+      <div class="compare-side compare-old">
+        <div class="old-pro">
+          <div class="old-header">
+            <h3>Fysiotherapie Heuvel</h3>
+          </div>
+          <div class="old-nav">
+            <a href="#">Home</a>
+            <a href="#">Over ons</a>
+            <a href="#">Specialisaties</a>
+            <a href="#">Team</a>
+            <a href="#">Nieuws</a>
+            <a href="#">Contact</a>
+          </div>
+          <div class="old-hero">
+            <h3>Welkom bij Fysiotherapie Heuvel</h3>
+            <p>Bij Fysiotherapie Heuvel combineren we jarenlange ervaring met een persoonlijke aanpak. Uw herstel staat centraal. Maak vandaag nog een afspraak!</p>
+            <a href="#" class="old-btn">Klik hier voor een afspraak</a>
+          </div>
+          <div class="old-section">
+            <h3>Over ons</h3>
+            <p style="font-size:12px;margin-bottom:8px;">Fysiotherapie Heuvel is een praktijk voor algemene en specialistische fysiotherapie in het hart van Landgraaf. Al meer dan 15 jaar helpen wij patiënten met uiteenlopende klachten.</p>
+            <div class="old-features">
+              <div class="old-feature"><strong>Evidence-based</strong> — Behandelingen gebaseerd op de nieuwste inzichten</div>
+              <div class="old-feature"><strong>Snelle doorverwijzing</strong> — Binnen 48 uur een afspraak</div>
+              <div class="old-feature"><strong>Persoonlijke benadering</strong> — Uw behandeling op maat</div>
+            </div>
+          </div>
+          <div class="old-section">
+            <h3>Ons team</h3>
+            <div class="old-team">
+              <div class="old-member"><div class="old-avatar">MH</div>Marieke Heuvel<br><em style="font-size:9px;">Fysiotherapeut</em></div>
+              <div class="old-member"><div class="old-avatar">PB</div>Pieter Bergmans<br><em style="font-size:9px;">Sportfysio</em></div>
+              <div class="old-member"><div class="old-avatar">SV</div>Sara Vos<br><em style="font-size:9px;">Bekkenfysio</em></div>
+            </div>
+          </div>
+          <div class="old-footer">&copy; 2016 Fysiotherapie Heuvel — Alle rechten voorbehouden</div>
+        </div>
+        <span class="compare-label">Voor</span>
+      </div>
+      <div class="compare-side compare-new">
+        <span class="compare-label">Na</span>
+        <div class="new-preview">
+          <p class="eyebrow" style="color:var(--accent-light);border-color:rgba(255,255,255,.25);">Landgraaf · Limburg</p>
+          <h3>Uw lichaam verdient de beste zorg</h3>
+          <p>Jarenlange ervaring met een persoonlijke aanpak. Uw herstel staat centraal.</p>
+          <a href="#contact" class="btn btn-white">Maak een afspraak</a>
+        </div>
+      </div>
+      <div class="compare-handle"></div>
+    </div>
+
+    <div class="see-example">
+      <a href="example-pro.html">Bekijk het volledige voorbeeld <span aria-hidden="true">→</span></a>
+    </div>
+  </main>
+
+  <script src="compare-slider.js"></script>
+</body>
+</html>

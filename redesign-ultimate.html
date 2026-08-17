@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Redesign Ultimate — voorbeeld | Van Kalsbeek Digital</title>
+  <meta name="description" content="Bekijk het verschil tussen een oude website en een redesign. Sleep de slider om het contrast te zien." />
+  <link rel="icon" href="favicon.ico" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="compare-old.css" />
+  <style>
+    body { background: var(--bg); color: var(--text); font-family: var(--sans); margin: 0; }
+    .example-banner { background: var(--primary); color: #fff; text-align: center; padding: 1rem 1.5rem; font-size: .85rem; font-weight: 600; display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: .5rem 1.5rem; }
+    .example-banner a { color: #fff; text-decoration: underline; text-underline-offset: 2px; }
+    .example-banner .banner-note { font-weight: 400; font-size: .78rem; opacity: .8; width: 100%; margin-top: .25rem; }
+    .redesign-page { max-width: 1100px; margin: 0 auto; padding: clamp(3rem, 8vw, 5rem) 1.5rem; }
+    .redesign-page h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(1.8rem, 4vw, 2.8rem); color: var(--heading); line-height: 1.15; text-align: center; margin-bottom: .5rem; }
+    .redesign-page .subtitle { text-align: center; color: var(--muted); font-size: 1rem; line-height: 1.7; margin-bottom: clamp(2rem, 5vw, 3.5rem); max-width: 500px; margin-left: auto; margin-right: auto; }
+    .back-link { display: inline-flex; align-items: center; gap: .4rem; font-size: .85rem; color: var(--primary); text-decoration: none; font-weight: 600; margin-bottom: 2rem; }
+    .back-link:hover { text-decoration: underline; }
+    .see-example { text-align: center; margin-top: clamp(2rem, 5vw, 3rem); }
+    .see-example a { display: inline-flex; align-items: center; gap: .5rem; background: var(--primary); color: #fff; padding: .85rem 2rem; border-radius: 8px; font-weight: 600; font-size: .9rem; text-decoration: none; transition: background .2s, transform .15s; }
+    .see-example a:hover { background: #2563eb; transform: translateY(-1px); }
+  </style>
+</head>
+<body>
+  <div class="example-banner">
+    Dit is een voorbeeld van een <strong>Ultimate</strong> redesign — gebouwd door <a href="index.html">Van Kalsbeek Digital</a>
+    <span class="banner-note">Kleuren, afbeeldingen en teksten zijn volledig aan te passen aan uw huisstijl.</span>
+  </div>
+
+  <main class="redesign-page">
+    <a href="index.html" class="back-link"><span aria-hidden="true">←</span> Terug naar overzicht</a>
+
+    <h1>Zo ziet een Ultimate redesign eruit</h1>
+    <p class="subtitle">Sleep de slider om het verschil te zien tussen een gedateerde site en de nieuwe versie.</p>
+
+    <div class="compare-slider" tabindex="0" role="slider" aria-label="Voor en na vergelijking" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+      <div class="compare-side compare-old">
+        <div class="old-ultimate">
+          <div class="old-header">
+            <h3>VOID</h3>
+          </div>
+          <div class="old-nav">
+            <a href="#">Home</a>
+            <a href="#">Projecten</a>
+            <a href="#">Aanpak</a>
+            <a href="#">Over ons</a>
+            <a href="#">Contact</a>
+          </div>
+          <div class="old-hero">
+            <h3>Ruimtes die vertellen</h3>
+            <p>Void ontwerpt interieurs en gebouwen die voelen als thuis — voor woningcorporaties, zorginstellingen en particulieren.</p>
+            <a href="#" class="old-btn">Neem contact op</a>
+          </div>
+          <div class="old-stats">
+            <div class="old-stat"><strong>127</strong>Projecten</div>
+            <div class="old-stat"><strong>18</strong>Jaar ervaring</div>
+            <div class="old-stat"><strong>96%</strong>Tevredenheid</div>
+          </div>
+          <div class="old-section">
+            <h3>Projecten</h3>
+            <div class="old-projects">
+              <div class="old-project"><strong>Woonzorgcentrum De Horizon</strong>Compleet interieurontwerp voor 48 zorgwoningen.</div>
+              <div class="old-project"><strong>Villa Kalkoog</strong>Modern woonhuis met open plattegrond.</div>
+              <div class="old-project"><strong>Kantoor GreenTech</strong>Duurzaam kantoorgebouw met BREEAM-certificering.</div>
+              <div class="old-project"><strong>Cafe Bruut</strong>Restylistiek van een 19e-eeuws pand.</div>
+            </div>
+          </div>
+          <div class="old-section">
+            <h3>Onze aanpak</h3>
+            <p style="font-size:11px;">01. Kennismaking — We leren uw wensen kennen.<br>
+            02. Concept & ontwerp — Van schets tot 3D-render.<br>
+            03. Realisatie — Wij begeleiden de uitvoering.</p>
+          </div>
+          <div class="old-footer">&copy; 2016 Void Architecten — Alle rechten voorbehouden</div>
+        </div>
+        <span class="compare-label">Voor</span>
+      </div>
+      <div class="compare-side compare-new">
+        <span class="compare-label">Na</span>
+        <div class="new-preview">
+          <div class="new-badge"><span class="new-dot"></span> Beschikbaar voor nieuwe projecten</div>
+          <h3>Ruimtes die vertellen</h3>
+          <p>Void ontwerpt interieurs en gebouwen die voelen als thuis.</p>
+          <a href="#contact" class="btn btn-primary">Project bespreken</a>
+        </div>
+      </div>
+      <div class="compare-handle"></div>
+    </div>
+
+    <div class="see-example">
+      <a href="example-ultimate.html">Bekijk het volledige voorbeeld <span aria-hidden="true">→</span></a>
+    </div>
+  </main>
+
+  <script src="compare-slider.js"></script>
+</body>
+</html>
