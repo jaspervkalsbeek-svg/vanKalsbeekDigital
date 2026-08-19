@@ -208,7 +208,7 @@
       submitBtn.disabled = !(naam && email);
     }
 
-    // Stap 5:实时验证 naam + e-mail
+    // Stap 5: live validatie naam + e-mail
     ['intake-naam', 'intake-email'].forEach(function (id) {
       document.getElementById(id).addEventListener('input', validateGegevens);
     });
