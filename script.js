@@ -231,9 +231,7 @@
         body: data,
         headers: { Accept: 'application/json' }
       }).then(function () {
-        form.hidden = true;
-        document.querySelector('.intake-progress').hidden = true;
-        thanks.hidden = false;
+        window.location.href = 'bedankt.html';
       }).catch(function () {
         submitBtn.disabled = false;
         submitBtn.textContent = 'Vraag gratis uw 3 concepten aan';

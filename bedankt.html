@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Bedankt — Van Kalsbeek Digital</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    (function () {
+      try {
+        var theme = localStorage.getItem('vkd-theme') ||
+          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {}
+    })();
+  </script>
+  <style>
+    .thanks-page {
+      min-height: 100vh;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      background: var(--navy); color: #fff;
+      padding: 2rem 1.5rem; text-align: center;
+    }
+    .thanks-icon {
+      width: 80px; height: 80px; border-radius: 50%;
+      background: rgba(255,255,255,.1);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 2rem;
+      animation: thanksPop .5s ease;
+    }
+    .thanks-icon svg { width: 40px; height: 40px; color: var(--em-light); }
+    .thanks-page h1 {
+      font-family: var(--serif); font-weight: 400;
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      line-height: 1.2; margin-bottom: 1rem;
+    }
+    .thanks-page p {
+      color: rgba(255,255,255,.7); line-height: 1.75;
+      max-width: 480px; margin-bottom: .75rem; font-size: 1.02rem;
+    }
+    .thanks-steps {
+      display: flex; flex-direction: column; gap: .75rem;
+      margin: 2rem 0; text-align: left;
+      max-width: 400px; width: 100%;
+    }
+    .thanks-step {
+      display: flex; gap: .85rem; align-items: flex-start;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 10px; padding: 1rem 1.25rem;
+    }
+    .thanks-step-nr {
+      flex-shrink: 0;
+      width: 28px; height: 28px; border-radius: 50%;
+      background: var(--em-light); color: var(--navy);
+      display: flex; align-items: center; justify-content: center;
+      font-size: .78rem; font-weight: 700;
+    }
+    .thanks-step-text { font-size: .92rem; color: rgba(255,255,255,.8); line-height: 1.5; }
+    .thanks-step-text strong { color: #fff; }
+    .thanks-actions { display: flex; gap: .9rem; margin-top: 2rem; flex-wrap: wrap; justify-content: center; }
+    .thanks-btn-home {
+      display: inline-block; text-decoration: none;
+      font-weight: 600; font-size: .95rem;
+      padding: .9rem 1.9rem; border-radius: 8px;
+      background: #fff; color: var(--navy);
+      box-shadow: 0 6px 24px rgba(0,0,0,.25);
+      transition: transform .2s, background .2s;
+    }
+    .thanks-btn-home:hover { transform: translateY(-2px); background: #EAF1FB; }
+    .thanks-btn-home:active { transform: scale(.96); }
+    .thanks-contact {
+      margin-top: 2.5rem; padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,.12);
+    }
+    .thanks-contact p { font-size: .85rem; color: rgba(255,255,255,.5); margin-bottom: .75rem; }
+    .thanks-contact a {
+      color: rgba(255,255,255,.8); text-decoration: none;
+      font-size: .9rem; transition: color .18s;
+    }
+    .thanks-contact a:hover { color: #fff; text-decoration: underline; }
+    @keyframes thanksPop {
+      from { opacity: 0; transform: scale(.7); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+  <div class="thanks-page">
+    <div class="thanks-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg>
+    </div>
+    <h1>Bedankt! Uw aanvraag is ontvangen.</h1>
+    <p>Binnen 2 dagen liggen uw 3 concepten klaar. Ik neem zo snel mogelijk contact met u op.</p>
+
+    <div class="thanks-steps">
+      <div class="thanks-step">
+        <span class="thanks-step-nr">1</span>
+        <span class="thanks-step-text"><strong>Ik bekijk uw aanvraag</strong> en stem af op uw wensen.</span>
+      </div>
+      <div class="thanks-step">
+        <span class="thanks-step-nr">2</span>
+        <span class="thanks-step-text"><strong>3 concepten</strong> worden voor u gemaakt — 2 op uw voorkeuren, 1 door mij.</span>
+      </div>
+      <div class="thanks-step">
+        <span class="thanks-step-nr">3</span>
+        <span class="thanks-step-text"><strong>U kiest</strong> welk concept u wilt — daarna gaan we verder.</span>
+      </div>
+    </div>
+
+    <div class="thanks-actions">
+      <a href="index.html" class="thanks-btn-home">Terug naar de website</a>
+    </div>
+
+    <div class="thanks-contact">
+      <p>Liever direct contact?</p>
+      <a href="tel:+31610809971">06-10809971</a> · <a href="mailto:info@vankalsbeekdigital.com">info@vankalsbeekdigital.com</a>
+    </div>
+  </div>
+</body>
+</html>
