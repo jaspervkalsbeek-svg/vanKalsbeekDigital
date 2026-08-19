@@ -368,61 +368,157 @@
       </dl>
     </section>
 
-    <!-- CONTACT -->
-    <section class="contact-section" id="contact">
-      <div class="contact-inner">
-        <div class="contact-head reveal">
-          <p class="eyebrow">Contact</p>
-          <h2>Klaar om iets te bouwen?</h2>
-          <p>Vertel wat u wilt bereiken en ik kijk mee. U krijgt altijd een eerlijk antwoord — ook als dat is dat u iets anders nodig hebt.</p>
-          <form class="contact-form" action="https://formspree.io/f/xyegnaaq" method="POST">
-            <div class="form-row">
-              <div class="form-field">
-                <label for="contact-naam">Naam</label>
-                <input id="contact-naam" type="text" name="naam" placeholder="Uw naam" required />
-              </div>
-              <div class="form-field">
-                <label for="contact-email">E-mail</label>
-                <input id="contact-email" type="email" name="email" placeholder="u@voorbeeld.nl" required />
-              </div>
-            </div>
-            <div class="form-field">
-              <label for="contact-bericht">Waar kan ik mee helpen?</label>
-              <textarea id="contact-bericht" name="bericht" rows="4" placeholder="Vertel kort wat je wilt bereiken..." required></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Verstuur</button>
-          </form>
-          <p class="contact-alt">Liever mailen? <a href="mailto:info@vankalsbeekdigital.com">Stuur een e-mail</a></p>
+    <!-- INTAKE -->
+    <section class="intake-section" id="contact">
+      <div class="intake-inner">
+        <div class="intake-head reveal">
+          <p class="eyebrow">Aanvraag</p>
+          <h2>Gratis uw 3 concepten aanvragen</h2>
+          <p>Kies uw type website en plan — binnen 2 dagen liggen uw concepten klaar. U betaalt pas als u kiest.</p>
         </div>
-        <div class="contact-details reveal">
-          <a class="contact-item" href="mailto:info@vankalsbeekdigital.com">
-            <span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
-            <span>
-              <span class="contact-label">E-mail</span>
-              <span class="contact-value">info@vankalsbeekdigital.com</span>
-            </span>
-          </a>
-          <a class="contact-item" href="tel:+31610809971">
-            <span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2Z"/></svg></span>
-            <span>
-              <span class="contact-label">Telefoon</span>
-              <span class="contact-value">06-10809971</span>
-            </span>
-          </a>
-          <div class="contact-item">
-            <span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></span>
-            <span>
-              <span class="contact-label">Locatie</span>
-              <span class="contact-value">Palenbergerweg 1, 6374 LS Landgraaf</span>
-            </span>
+
+        <div class="intake-progress reveal" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="3" aria-label="Voortgang aanvraag">
+          <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+          <div class="progress-steps">
+            <span class="progress-step active" data-step="1"><span class="progress-step-nr">1</span> Type website</span>
+            <span class="progress-step" data-step="2"><span class="progress-step-nr">2</span> Kies uw plan</span>
+            <span class="progress-step" data-step="3"><span class="progress-step-nr">3</span> Uw gegevens</span>
           </div>
-          <div class="contact-item">
-            <span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg></span>
-            <span class="contact-value contact-links">
-              <a href="https://github.com/jaspervkalsbeek-svg" target="_blank" rel="noopener">GitHub</a>
-              <span aria-hidden="true">·</span>
-              <a href="https://www.linkedin.com/in/jasper-van-kalsbeek-a58041221" target="_blank" rel="noopener">LinkedIn</a>
-            </span>
+        </div>
+
+        <form class="intake-form" id="intake-form" action="https://formspree.io/f/xyegnaaq" method="POST">
+          <input type="hidden" name="type_website" id="field-type" />
+          <input type="hidden" name="gekozen_plan" id="field-plan" />
+
+          <!-- Stap 1: Type website -->
+          <div class="intake-step active" data-step="1">
+            <h3 class="intake-step-title">Wat zoekt u?</h3>
+            <div class="intake-choice-grid">
+              <button type="button" class="intake-choice" data-value="Nieuwe website">
+                <span class="intake-choice-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 20h16M7 20v-6"/></svg>
+                </span>
+                <span class="intake-choice-label">Nieuwe website</span>
+                <span class="intake-choice-desc">Van nul gebouwd</span>
+                <span class="intake-choice-check" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                </span>
+              </button>
+              <button type="button" class="intake-choice" data-value="Redesign">
+                <span class="intake-choice-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 20h16M7 20v-6M12 20v-9"/></svg>
+                </span>
+                <span class="intake-choice-label">Redesign</span>
+                <span class="intake-choice-desc">Huidige site opfrissen</span>
+                <span class="intake-choice-check" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                </span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Stap 2: Plan kiezen -->
+          <div class="intake-step" data-step="2">
+            <h3 class="intake-step-title">Welk plan past bij u?</h3>
+            <div class="intake-plan-grid">
+              <button type="button" class="intake-plan" data-value="Minimum">
+                <span class="intake-plan-name">Minimum</span>
+                <span class="intake-plan-price">vanaf €595</span>
+                <span class="intake-plan-duration">1 week</span>
+                <ul class="intake-plan-features">
+                  <li>1–3 pagina's</li>
+                  <li>Responsive</li>
+                  <li>Contactformulier</li>
+                  <li>Basis SEO</li>
+                </ul>
+                <span class="intake-plan-check" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                </span>
+              </button>
+              <button type="button" class="intake-plan intake-plan-popular" data-value="Pro">
+                <span class="intake-plan-badge">Populair</span>
+                <span class="intake-plan-name">Pro</span>
+                <span class="intake-plan-price">vanaf €1.295</span>
+                <span class="intake-plan-duration">2–3 weken</span>
+                <ul class="intake-plan-features">
+                  <li>Alles uit Minimum</li>
+                  <li>Tot 7 pagina's</li>
+                  <li>Animaties &amp; huisstijl</li>
+                  <li>CMS + blog</li>
+                  <li>SEO-pakket</li>
+                </ul>
+                <span class="intake-plan-check" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                </span>
+              </button>
+              <button type="button" class="intake-plan" data-value="Ultimate">
+                <span class="intake-plan-name">Ultimate</span>
+                <span class="intake-plan-price">vanaf €2.495</span>
+                <span class="intake-plan-duration">4–6 weken</span>
+                <ul class="intake-plan-features">
+                  <li>Alles uit Pro</li>
+                  <li>Onbeperkt pagina's</li>
+                  <li>Volledig maatwerk</li>
+                  <li>Data-integraties</li>
+                  <li>Onderhoudsabonnement</li>
+                </ul>
+                <span class="intake-plan-check" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+                </span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Stap 3: Gegevens -->
+          <div class="intake-step" data-step="3">
+            <h3 class="intake-step-title">Uw gegevens</h3>
+            <div class="intake-summary" id="intake-summary"></div>
+            <div class="intake-fields">
+              <div class="form-field">
+                <label for="intake-naam">Naam</label>
+                <input id="intake-naam" type="text" name="naam" placeholder="Uw naam" required />
+              </div>
+              <div class="form-field">
+                <label for="intake-email">E-mail</label>
+                <input id="intake-email" type="email" name="email" placeholder="u@voorbeeld.nl" required />
+              </div>
+              <div class="form-field">
+                <label for="intake-telefoon">Telefoon <span class="form-optional">(optioneel)</span></label>
+                <input id="intake-telefoon" type="tel" name="telefoon" placeholder="06-12345678" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Stap-annotaties -->
+          <div class="intake-nav">
+            <button type="button" class="btn intake-btn-back" id="intake-back" hidden>Terug</button>
+            <button type="button" class="btn btn-primary intake-btn-next" id="intake-next">Volgende</button>
+            <button type="submit" class="btn btn-primary intake-btn-submit" id="intake-submit" hidden>Vraag gratis uw 3 concepten aan</button>
+          </div>
+        </form>
+
+        <!-- Bedank-state na verzending -->
+        <div class="intake-thanks" id="intake-thanks" hidden>
+          <div class="intake-thanks-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg>
+          </div>
+          <h3>Bedankt! Uw aanvraag is ontvangen.</h3>
+          <p>Binnen 2 dagen liggen uw 3 concepten klaar. Ik neem zo snel mogelijk contact met u op.</p>
+          <a href="#hoofd" class="btn btn-ghost intake-thanks-btn">Terug naar boven</a>
+        </div>
+
+        <!-- Alternatief: direct contact -->
+        <div class="intake-alt reveal">
+          <p>Liever direct bellen of mailen?</p>
+          <div class="intake-alt-links">
+            <a href="tel:+31610809971" class="intake-alt-link">
+              <span aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2Z"/></svg></span>
+              06-10809971
+            </a>
+            <a href="mailto:info@vankalsbeekdigital.com" class="intake-alt-link">
+              <span aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+              info@vankalsbeekdigital.com
+            </a>
           </div>
         </div>
       </div>

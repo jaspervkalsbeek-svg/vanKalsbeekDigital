@@ -107,6 +107,108 @@
     });
   });
 
+  // Intake multi-step form
+  (function () {
+    var form = document.getElementById('intake-form');
+    if (!form) return;
+    var steps = form.querySelectorAll('.intake-step');
+    var progressFill = document.getElementById('progress-fill');
+    var progressSteps = document.querySelectorAll('.progress-step');
+    var backBtn = document.getElementById('intake-back');
+    var nextBtn = document.getElementById('intake-next');
+    var submitBtn = document.getElementById('intake-submit');
+    var fieldType = document.getElementById('field-type');
+    var fieldPlan = document.getElementById('field-plan');
+    var summary = document.getElementById('intake-summary');
+    var thanks = document.getElementById('intake-thanks');
+    var currentStep = 1;
+    var totalSteps = 3;
+
+    function updateUI() {
+      steps.forEach(function (s) {
+        s.classList.toggle('active', parseInt(s.getAttribute('data-step')) === currentStep);
+      });
+      progressSteps.forEach(function (ps) {
+        var n = parseInt(ps.getAttribute('data-step'));
+        ps.classList.remove('active', 'done');
+        if (n === currentStep) ps.classList.add('active');
+        else if (n < currentStep) ps.classList.add('done');
+      });
+      progressFill.style.width = ((currentStep / totalSteps) * 100) + '%';
+      backBtn.hidden = currentStep === 1;
+      nextBtn.hidden = currentStep === totalSteps;
+      submitBtn.hidden = currentStep !== totalSteps;
+    }
+
+    function validateStep() {
+      if (currentStep === 1 && !fieldType.value) return false;
+      if (currentStep === 2 && !fieldPlan.value) return false;
+      return true;
+    }
+
+    // Stap 1: type-keuze
+    form.querySelectorAll('.intake-choice').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        form.querySelectorAll('.intake-choice').forEach(function (b) { b.classList.remove('selected'); });
+        btn.classList.add('selected');
+        fieldType.value = btn.getAttribute('data-value');
+      });
+    });
+
+    // Stap 2: plan-keuze
+    form.querySelectorAll('.intake-plan').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        form.querySelectorAll('.intake-plan').forEach(function (b) { b.classList.remove('selected'); });
+        btn.classList.add('selected');
+        fieldPlan.value = btn.getAttribute('data-value');
+      });
+    });
+
+    // Next
+    nextBtn.addEventListener('click', function () {
+      if (!validateStep()) return;
+      if (currentStep === 2) {
+        summary.innerHTML =
+          '<span class="intake-summary-tag">' + fieldType.value + '</span>' +
+          '<span class="intake-summary-tag">' + fieldPlan.value + '</span>';
+      }
+      currentStep++;
+      updateUI();
+    });
+
+    // Back
+    backBtn.addEventListener('click', function () {
+      currentStep--;
+      updateUI();
+    });
+
+    // Submit via fetch (Formspree AJAX)
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var naam = document.getElementById('intake-naam');
+      var email = document.getElementById('intake-email');
+      if (!naam.value || !email.value) return;
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Even geduld...';
+      var data = new FormData(form);
+      data.append('_subject', 'Nieuwe aanvraag: ' + fieldType.value + ' — ' + fieldPlan.value);
+      fetch(form.action, {
+        method: 'POST',
+        body: data,
+        headers: { Accept: 'application/json' }
+      }).then(function () {
+        form.hidden = true;
+        document.querySelector('.intake-progress').hidden = true;
+        thanks.hidden = false;
+      }).catch(function () {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Vraag gratis uw 3 concepten aan';
+      });
+    });
+
+    updateUI();
+  })();
+
   // Scroll reveal
   var reveals = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window) {
