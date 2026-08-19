@@ -142,6 +142,7 @@
       backBtn.hidden = currentStep === 1;
       nextBtn.hidden = currentStep === totalSteps;
       submitBtn.hidden = currentStep !== totalSteps;
+      if (currentStep === totalSteps) validateGegevens();
     }
 
     function showDetailPanels() {
@@ -199,6 +200,17 @@
         btn.classList.add('selected');
         fieldColor.value = btn.getAttribute('data-value');
       });
+    });
+
+    function validateGegevens() {
+      var naam = document.getElementById('intake-naam').value.trim();
+      var email = document.getElementById('intake-email').value.trim();
+      submitBtn.disabled = !(naam && email);
+    }
+
+    // Stap 5:实时验证 naam + e-mail
+    ['intake-naam', 'intake-email'].forEach(function (id) {
+      document.getElementById(id).addEventListener('input', validateGegevens);
     });
 
     // Next
