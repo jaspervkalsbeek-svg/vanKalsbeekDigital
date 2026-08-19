@@ -119,10 +119,14 @@
     var submitBtn = document.getElementById('intake-submit');
     var fieldType = document.getElementById('field-type');
     var fieldPlan = document.getElementById('field-plan');
+    var fieldStyle = document.getElementById('field-style');
+    var fieldColor = document.getElementById('field-color');
     var summary = document.getElementById('intake-summary');
     var thanks = document.getElementById('intake-thanks');
+    var detailNieuw = document.getElementById('detail-nieuw');
+    var detailRedesign = document.getElementById('detail-redesign');
     var currentStep = 1;
-    var totalSteps = 3;
+    var totalSteps = 5;
 
     function updateUI() {
       steps.forEach(function (s) {
@@ -140,10 +144,25 @@
       submitBtn.hidden = currentStep !== totalSteps;
     }
 
+    function showDetailPanels() {
+      var isNieuw = fieldType.value === 'Nieuwe website';
+      detailNieuw.hidden = !isNieuw;
+      detailRedesign.hidden = isNieuw;
+    }
+
     function validateStep() {
       if (currentStep === 1 && !fieldType.value) return false;
       if (currentStep === 2 && !fieldPlan.value) return false;
       return true;
+    }
+
+    function buildSummary() {
+      var tags = '';
+      tags += '<span class="intake-summary-tag">' + fieldType.value + '</span>';
+      tags += '<span class="intake-summary-tag">' + fieldPlan.value + '</span>';
+      if (fieldStyle.value) tags += '<span class="intake-summary-tag">' + fieldStyle.value + '</span>';
+      if (fieldColor.value) tags += '<span class="intake-summary-tag">' + fieldColor.value + '</span>';
+      summary.innerHTML = tags;
     }
 
     // Stap 1: type-keuze
@@ -164,14 +183,29 @@
       });
     });
 
+    // Stap 4: stijl-keuze
+    form.querySelectorAll('.intake-style').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        form.querySelectorAll('.intake-style').forEach(function (b) { b.classList.remove('selected'); });
+        btn.classList.add('selected');
+        fieldStyle.value = btn.getAttribute('data-value');
+      });
+    });
+
+    // Stap 4: kleur-keuze
+    form.querySelectorAll('.intake-color').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        form.querySelectorAll('.intake-color').forEach(function (b) { b.classList.remove('selected'); });
+        btn.classList.add('selected');
+        fieldColor.value = btn.getAttribute('data-value');
+      });
+    });
+
     // Next
     nextBtn.addEventListener('click', function () {
       if (!validateStep()) return;
-      if (currentStep === 2) {
-        summary.innerHTML =
-          '<span class="intake-summary-tag">' + fieldType.value + '</span>' +
-          '<span class="intake-summary-tag">' + fieldPlan.value + '</span>';
-      }
+      if (currentStep === 2) showDetailPanels();
+      if (currentStep === 4) buildSummary();
       currentStep++;
       updateUI();
     });

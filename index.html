@@ -374,21 +374,25 @@
         <div class="intake-head reveal">
           <p class="eyebrow">Aanvraag</p>
           <h2>Gratis uw 3 concepten aanvragen</h2>
-          <p>Kies uw type website en plan — binnen 2 dagen liggen uw concepten klaar. U betaalt pas als u kiest.</p>
+          <p>2 concepten op basis van uw voorkeuren, 1 door mij ontworpen — binnen 2 dagen klaar. U betaalt pas als u kiest.</p>
         </div>
 
-        <div class="intake-progress reveal" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="3" aria-label="Voortgang aanvraag">
+        <div class="intake-progress reveal" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="5" aria-label="Voortgang aanvraag">
           <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
           <div class="progress-steps">
-            <span class="progress-step active" data-step="1"><span class="progress-step-nr">1</span> Type website</span>
-            <span class="progress-step" data-step="2"><span class="progress-step-nr">2</span> Kies uw plan</span>
-            <span class="progress-step" data-step="3"><span class="progress-step-nr">3</span> Uw gegevens</span>
+            <span class="progress-step active" data-step="1"><span class="progress-step-nr">1</span> Type</span>
+            <span class="progress-step" data-step="2"><span class="progress-step-nr">2</span> Plan</span>
+            <span class="progress-step" data-step="3"><span class="progress-step-nr">3</span> Details</span>
+            <span class="progress-step" data-step="4"><span class="progress-step-nr">4</span> Voorkeuren</span>
+            <span class="progress-step" data-step="5"><span class="progress-step-nr">5</span> Gegevens</span>
           </div>
         </div>
 
         <form class="intake-form" id="intake-form" action="https://formspree.io/f/xyegnaaq" method="POST">
           <input type="hidden" name="type_website" id="field-type" />
           <input type="hidden" name="gekozen_plan" id="field-plan" />
+          <input type="hidden" name="stijl" id="field-style" />
+          <input type="hidden" name="kleur" id="field-color" />
 
           <!-- Stap 1: Type website -->
           <div class="intake-step active" data-step="1">
@@ -400,9 +404,7 @@
                 </span>
                 <span class="intake-choice-label">Nieuwe website</span>
                 <span class="intake-choice-desc">Van nul gebouwd</span>
-                <span class="intake-choice-check" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-                </span>
+                <span class="intake-choice-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
               </button>
               <button type="button" class="intake-choice" data-value="Redesign">
                 <span class="intake-choice-icon" aria-hidden="true">
@@ -410,9 +412,7 @@
                 </span>
                 <span class="intake-choice-label">Redesign</span>
                 <span class="intake-choice-desc">Huidige site opfrissen</span>
-                <span class="intake-choice-check" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-                </span>
+                <span class="intake-choice-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
               </button>
             </div>
           </div>
@@ -431,9 +431,7 @@
                   <li>Contactformulier</li>
                   <li>Basis SEO</li>
                 </ul>
-                <span class="intake-plan-check" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-                </span>
+                <span class="intake-plan-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
               </button>
               <button type="button" class="intake-plan intake-plan-popular" data-value="Pro">
                 <span class="intake-plan-badge">Populair</span>
@@ -447,9 +445,7 @@
                   <li>CMS + blog</li>
                   <li>SEO-pakket</li>
                 </ul>
-                <span class="intake-plan-check" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-                </span>
+                <span class="intake-plan-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
               </button>
               <button type="button" class="intake-plan" data-value="Ultimate">
                 <span class="intake-plan-name">Ultimate</span>
@@ -462,15 +458,109 @@
                   <li>Data-integraties</li>
                   <li>Onderhoudsabonnement</li>
                 </ul>
-                <span class="intake-plan-check" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
-                </span>
+                <span class="intake-plan-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
               </button>
             </div>
           </div>
 
-          <!-- Stap 3: Gegevens -->
+          <!-- Stap 3: Details — dynamisch op basis van type -->
           <div class="intake-step" data-step="3">
+            <!-- Nieuwe website -->
+            <div class="intake-detail-panel" id="detail-nieuw" hidden>
+              <h3 class="intake-step-title">Vertel over uw bedrijf</h3>
+              <div class="intake-fields">
+                <div class="form-field">
+                  <label for="intake-bedrijf">Bedrijfsnaam of projectnaam</label>
+                  <input id="intake-bedrijf" type="text" name="bedrijfsnaam" placeholder="Bv. Timmerman de Boer" />
+                </div>
+                <div class="form-field">
+                  <label for="intake-branche">Branche of sector</label>
+                  <input id="intake-branche" type="text" name="branche" placeholder="Bv. bouw, zorg, horeca, retail" />
+                </div>
+                <div class="form-field">
+                  <label for="intake-doel">Wat moet de website uitstralen of bereiken?</label>
+                  <textarea id="intake-doel" name="doel" rows="3" placeholder="Bv. professioneel vertrouwen wekken, meer klanten aantrekken, diensten uitleggen..."></textarea>
+                </div>
+              </div>
+            </div>
+            <!-- Redesign -->
+            <div class="intake-detail-panel" id="detail-redesign" hidden>
+              <h3 class="intake-step-title">Uw huidige website</h3>
+              <div class="intake-fields">
+                <div class="form-field">
+                  <label for="intake-url">Huidige website-URL</label>
+                  <input id="intake-url" type="url" name="huidige_url" placeholder="https://uwsite.nl" />
+                </div>
+                <div class="form-field">
+                  <label for="intake-goed">Wat is er goed aan de huidige site?</label>
+                  <textarea id="intake-goed" name="wat_goed" rows="2" placeholder="Bv. de inhoud is nog prima, de structuur klopt..."></textarea>
+                </div>
+                <div class="form-field">
+                  <label for="intake-slecht">Wat moet er anders?</label>
+                  <textarea id="intake-slecht" name="wat_anders" rows="2" placeholder="Bv. ziet er ouderwets uit, niet mobiel-vriendelijk, trage laadtijd..."></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stap 4: Voorkeuren -->
+          <div class="intake-step" data-step="4">
+            <h3 class="intake-step-title">Wat vindt u mooi?</h3>
+
+            <p class="intake-pref-label">Stijl</p>
+            <div class="intake-style-grid">
+              <button type="button" class="intake-style" data-value="Modern">
+                <span class="intake-style-swatch" style="background:linear-gradient(135deg,#07234B 0%,#0E4C92 100%)"></span>
+                <span class="intake-style-name">Modern</span>
+                <span class="intake-style-desc">Clean, professioneel, veel witruimte</span>
+              </button>
+              <button type="button" class="intake-style" data-value="Strak">
+                <span class="intake-style-swatch" style="background:linear-gradient(135deg,#1a1a2e 0%,#16213e 100%)"></span>
+                <span class="intake-style-name">Strak</span>
+                <span class="intake-style-desc">Donker, industrieel, krachtig</span>
+              </button>
+              <button type="button" class="intake-style" data-value="Warm">
+                <span class="intake-style-swatch" style="background:linear-gradient(135deg,#D4A574 0%,#C48B5C 100%)"></span>
+                <span class="intake-style-name">Warm</span>
+                <span class="intake-style-desc">Aards, toegankelijk, uitnodigend</span>
+              </button>
+              <button type="button" class="intake-style" data-value="Speels">
+                <span class="intake-style-swatch" style="background:linear-gradient(135deg,#6C63FF 0%,#FF6584 100%)"></span>
+                <span class="intake-style-name">Speels</span>
+                <span class="intake-style-desc">Kleurrijk, levendig, creatief</span>
+              </button>
+            </div>
+
+            <p class="intake-pref-label">Kleur</p>
+            <div class="intake-color-grid">
+              <button type="button" class="intake-color" data-value="Eigen huisstijl">
+                <span class="intake-color-swatch intake-color-palette" aria-hidden="true">
+                  <span style="background:#07234B"></span><span style="background:#FFFFFF;border:1px solid rgba(255,255,255,.3)"></span><span style="background:#0E4C92"></span>
+                </span>
+                <span class="intake-color-name">Eigen huisstijl</span>
+              </button>
+              <button type="button" class="intake-color" data-value="Bepaal kleur">
+                <span class="intake-color-swatch intake-color-picker" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M12 2a10 10 0 0 0-2 19.7V22h4v-.3A10 10 0 0 0 12 2Z"/><circle cx="12" cy="12" r="3"/></svg>
+                </span>
+                <span class="intake-color-name">Bepaal kleur zelf</span>
+              </button>
+              <button type="button" class="intake-color" data-value="Verras mij">
+                <span class="intake-color-swatch intake-color-dice" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><rect x="2" y="2" width="20" height="20" rx="4"/><circle cx="8" cy="8" r="1.2" fill="currentColor"/><circle cx="16" cy="8" r="1.2" fill="currentColor"/><circle cx="8" cy="16" r="1.2" fill="currentColor"/><circle cx="16" cy="16" r="1.2" fill="currentColor"/><circle cx="12" cy="12" r="1.2" fill="currentColor"/></svg>
+                </span>
+                <span class="intake-color-name">Verras mij</span>
+              </button>
+            </div>
+
+            <div class="form-field" style="margin-top:1.5rem">
+              <label for="intake-referenties">Referentie-sites <span class="form-optional">(optioneel)</span></label>
+              <textarea id="intake-referenties" name="referenties" rows="2" placeholder="Noem 1–2 websites die u mooi vindt, en waarom..."></textarea>
+            </div>
+          </div>
+
+          <!-- Stap 5: Gegevens -->
+          <div class="intake-step" data-step="5">
             <h3 class="intake-step-title">Uw gegevens</h3>
             <div class="intake-summary" id="intake-summary"></div>
             <div class="intake-fields">
@@ -489,7 +579,7 @@
             </div>
           </div>
 
-          <!-- Stap-annotaties -->
+          <!-- Navigatie -->
           <div class="intake-nav">
             <button type="button" class="btn intake-btn-back" id="intake-back" hidden>Terug</button>
             <button type="button" class="btn btn-primary intake-btn-next" id="intake-next">Volgende</button>
