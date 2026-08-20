@@ -602,6 +602,7 @@ a { color: inherit; }
   cursor: pointer;
   transition: border-color .2s, background .2s;
 }
+.form-field select option { color: #1a1a2e; background: #fff; }
 .form-field select:focus { outline: none; border-color: var(--em-light); background: rgba(255,255,255,.09); }
 .form-separator {
   height: 1px; background: rgba(255,255,255,.1);
