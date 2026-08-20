@@ -417,10 +417,11 @@
             </div>
           </div>
 
-          <!-- Stap 2: Plan kiezen -->
+           <!-- Stap 2: Plan kiezen -->
           <div class="intake-step" data-step="2">
             <h3 class="intake-step-title">Welk plan past bij u?</h3>
-            <div class="intake-plan-grid">
+            <!-- Nieuwe website plans -->
+            <div class="intake-plan-grid" id="plans-nieuw">
               <button type="button" class="intake-plan" data-value="Minimum">
                 <span class="intake-plan-name">Minimum</span>
                 <span class="intake-plan-price">vanaf €595</span>
@@ -456,6 +457,48 @@
                   <li>Onbeperkt pagina's</li>
                   <li>Volledig maatwerk</li>
                   <li>Data-integraties</li>
+                  <li>Onderhoudsabonnement</li>
+                </ul>
+                <span class="intake-plan-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+              </button>
+            </div>
+            <!-- Redesign plans -->
+            <div class="intake-plan-grid" id="plans-redesign" hidden>
+              <button type="button" class="intake-plan" data-value="Basis">
+                <span class="intake-plan-name">Basis</span>
+                <span class="intake-plan-price">vanaf €395</span>
+                <span class="intake-plan-duration">3–5 dagen</span>
+                <ul class="intake-plan-features">
+                  <li>Visuele restyle</li>
+                  <li>Responsive</li>
+                  <li>Snellere laadtijd</li>
+                  <li>Basis SEO-update</li>
+                </ul>
+                <span class="intake-plan-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+              </button>
+              <button type="button" class="intake-plan intake-plan-popular" data-value="Pro">
+                <span class="intake-plan-badge">Populair</span>
+                <span class="intake-plan-name">Pro</span>
+                <span class="intake-plan-price">vanaf €895</span>
+                <span class="intake-plan-duration">1–2 weken</span>
+                <ul class="intake-plan-features">
+                  <li>Alles uit Basis</li>
+                  <li>Tot 7 pagina's</li>
+                  <li>CMS toevoegen</li>
+                  <li>Animaties</li>
+                  <li>SEO-pakket</li>
+                </ul>
+                <span class="intake-plan-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>
+              </button>
+              <button type="button" class="intake-plan" data-value="Ultimate">
+                <span class="intake-plan-name">Ultimate</span>
+                <span class="intake-plan-price">vanaf €1.695</span>
+                <span class="intake-plan-duration">2–3 weken</span>
+                <ul class="intake-plan-features">
+                  <li>Alles uit Pro</li>
+                  <li>Onbeperkt pagina's</li>
+                  <li>Volledig maatwerk design</li>
+                  <li>Nieuwe functionaliteit</li>
                   <li>Onderhoudsabonnement</li>
                 </ul>
                 <span class="intake-plan-check" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>

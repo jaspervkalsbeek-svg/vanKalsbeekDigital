@@ -167,15 +167,22 @@
     }
 
     // Stap 1: type-keuze
+    var plansNieuw = document.getElementById('plans-nieuw');
+    var plansRedesign = document.getElementById('plans-redesign');
     form.querySelectorAll('.intake-choice').forEach(function (btn) {
       btn.addEventListener('click', function () {
         form.querySelectorAll('.intake-choice').forEach(function (b) { b.classList.remove('selected'); });
         btn.classList.add('selected');
         fieldType.value = btn.getAttribute('data-value');
+        var isNieuw = fieldType.value === 'Nieuwe website';
+        plansNieuw.hidden = !isNieuw;
+        plansRedesign.hidden = isNieuw;
+        fieldPlan.value = '';
+        form.querySelectorAll('.intake-plan').forEach(function (b) { b.classList.remove('selected'); });
       });
     });
 
-    // Stap 2: plan-keuze
+    // Stap 2: plan-keuze (beide grids)
     form.querySelectorAll('.intake-plan').forEach(function (btn) {
       btn.addEventListener('click', function () {
         form.querySelectorAll('.intake-plan').forEach(function (b) { b.classList.remove('selected'); });
