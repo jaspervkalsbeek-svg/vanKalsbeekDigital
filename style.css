@@ -619,6 +619,27 @@ a { color: inherit; }
   font-size: .82rem; color: rgba(255,255,255,.55); line-height: 1.5;
   margin-top: -.25rem;
 }
+.intake-privacy-check {
+  display: flex; align-items: flex-start; gap: .65rem;
+  cursor: pointer; margin-top: .25rem;
+}
+.intake-privacy-check input { position: absolute; opacity: 0; width: 0; height: 0; }
+.intake-privacy-box {
+  flex-shrink: 0;
+  width: 22px; height: 22px; border-radius: 6px;
+  border: 2px solid rgba(255,255,255,.25);
+  display: flex; align-items: center; justify-content: center;
+  transition: background .2s, border-color .2s;
+}
+.intake-privacy-box svg { width: 13px; height: 13px; color: var(--navy); opacity: 0; transition: opacity .2s; }
+.intake-privacy-check input:checked + .intake-privacy-box {
+  background: var(--em-light); border-color: var(--em-light);
+}
+.intake-privacy-check input:checked + .intake-privacy-box svg { opacity: 1; }
+.intake-privacy-check input:focus-visible + .intake-privacy-box { outline: 2px solid var(--em-light); outline-offset: 2px; }
+.intake-privacy-text { font-size: .82rem; color: rgba(255,255,255,.6); line-height: 1.5; padding-top: .15rem; }
+.intake-privacy-text a { color: var(--em-light); text-decoration: underline; text-underline-offset: 2px; }
+.intake-privacy-text a:hover { color: #fff; }
 
 /* Navigatie-knoppen */
 .intake-nav {

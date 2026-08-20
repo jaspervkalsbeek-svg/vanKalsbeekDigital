@@ -224,13 +224,15 @@
     function validateGegevens() {
       var naam = document.getElementById('intake-naam').value.trim();
       var email = document.getElementById('intake-email').value.trim();
-      submitBtn.disabled = !(naam && email);
+      var privacy = document.getElementById('intake-privacy').checked;
+      submitBtn.disabled = !(naam && email && privacy);
     }
 
-    // Stap 5: live validatie naam + e-mail
+    // Stap 5: live validatie naam + e-mail + privacy
     ['intake-naam', 'intake-email'].forEach(function (id) {
       document.getElementById(id).addEventListener('input', validateGegevens);
     });
+    document.getElementById('intake-privacy').addEventListener('change', validateGegevens);
 
     // Next
     nextBtn.addEventListener('click', function () {
