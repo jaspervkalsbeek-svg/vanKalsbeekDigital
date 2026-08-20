@@ -591,6 +591,26 @@ a { color: inherit; }
 }
 .form-field textarea::placeholder { color: rgba(255,255,255,.4); }
 .form-field textarea:focus { outline: none; border-color: var(--em-light); background: rgba(255,255,255,.09); }
+.form-field select {
+  font-family: var(--sans); font-size: .95rem; color: #fff;
+  background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.15);
+  border-radius: 8px; padding: .75rem 1rem;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23ffffff80' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  cursor: pointer;
+  transition: border-color .2s, background .2s;
+}
+.form-field select:focus { outline: none; border-color: var(--em-light); background: rgba(255,255,255,.09); }
+.form-separator {
+  height: 1px; background: rgba(255,255,255,.1);
+  margin: .5rem 0;
+}
+.form-hint {
+  font-size: .82rem; color: rgba(255,255,255,.55); line-height: 1.5;
+  margin-top: -.25rem;
+}
 
 /* Navigatie-knoppen */
 .intake-nav {

@@ -202,6 +202,18 @@
       });
     });
 
+    // Stap 5: hosting-keuze
+    var hostingSelect = document.getElementById('intake-hosting');
+    var hostingNaamWrap = document.getElementById('intake-hosting-naam-wrap');
+    var hostingHint = document.getElementById('intake-hosting-hint');
+    if (hostingSelect) {
+      hostingSelect.addEventListener('change', function () {
+        var val = hostingSelect.value;
+        hostingNaamWrap.hidden = val !== 'Ja';
+        hostingHint.hidden = val !== 'Nee';
+      });
+    }
+
     function validateGegevens() {
       var naam = document.getElementById('intake-naam').value.trim();
       var email = document.getElementById('intake-email').value.trim();

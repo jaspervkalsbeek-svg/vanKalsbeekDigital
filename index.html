@@ -579,6 +579,26 @@
                 <label for="intake-telefoon">Telefoon <span class="form-optional">(optioneel)</span></label>
                 <input id="intake-telefoon" type="tel" name="telefoon" placeholder="06-12345678" />
               </div>
+
+              <div class="form-separator"></div>
+
+              <div class="form-field">
+                <label for="intake-hosting">Heeft u al een hostingpartij?</label>
+                <select id="intake-hosting" name="hosting_status">
+                  <option value="">Kies een optie...</option>
+                  <option value="Ja">Ja, ik heb al hosting</option>
+                  <option value="Nee">Nee, nog niet geregeld</option>
+                  <option value="Weet niet">Weet ik niet</option>
+                </select>
+              </div>
+              <div class="form-field" id="intake-hosting-naam-wrap" hidden>
+                <label for="intake-hosting-naam">Wat is de naam van uw hostingpartij?</label>
+                <input id="intake-hosting-naam" type="text" name="hosting_naam" placeholder="Bv. Transip, Cloudflare, SiteGround" />
+              </div>
+              <p class="form-hint" id="intake-hosting-hint" hidden>
+                Geen zorgen — u heeft hosting nodig om uw website online te zetten.
+                Ik help u hier graag bij.
+              </p>
             </div>
           </div>
 
