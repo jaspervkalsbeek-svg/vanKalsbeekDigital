@@ -324,12 +324,14 @@ a { color: inherit; }
 .concept-note::before { content: '\2713 '; color: var(--link); }
 
 .tier-example-link {
-  display: inline-flex; align-items: center; gap: .3rem;
-  font-size: .85rem; font-weight: 600; color: var(--link);
-  text-decoration: none; margin-top: .5rem;
-  transition: color .18s;
+  display: inline-flex; align-items: center; gap: .35rem;
+  font-size: .88rem; font-weight: 600; color: var(--link);
+  text-decoration: none; margin-top: .75rem;
+  padding: .55rem 1rem; border-radius: 8px;
+  background: var(--surface-2); border: 1px solid var(--line);
+  transition: color .18s, background .18s, border-color .18s, transform .15s;
 }
-.tier-example-link:hover { color: var(--heading); text-decoration: underline; text-underline-offset: 3px; }
+.tier-example-link:hover { color: var(--heading); background: var(--bg-soft); border-color: var(--primary); transform: translateY(-1px); }
 .tier-example-link:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; border-radius: 2px; }
 
 /* ── PROCESS ── */
@@ -568,6 +570,10 @@ a { color: inherit; }
 .intake-summary-tag {
   font-size: .82rem; font-weight: 600; color: var(--navy); background: var(--em-light);
   padding: .35rem .9rem; border-radius: 100px;
+}
+.intake-final-hint {
+  text-align: center; font-size: .92rem; color: rgba(255,255,255,.65);
+  margin-bottom: 1.25rem;
 }
 .intake-fields { display: flex; flex-direction: column; gap: 1rem; max-width: 420px; margin: 0 auto; }
 .form-field { display: flex; flex-direction: column; gap: .35rem; }
