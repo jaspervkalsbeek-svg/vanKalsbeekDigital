@@ -1,10 +1,4 @@
-/* ═══════════════════════════════════════════════════════
-   Van Kalsbeek Digital — colour system (light + dark)
-   Light = brand navy #07234B from the logo
-   Dark  = derived palette for dark backgrounds
-   Theme is set via data-theme on <html> by script.js
-   (localStorage, fallback: system preference).
-   ═══════════════════════════════════════════════════════ */
+/* Colour system — light + dark theme via data-theme on <html> */
 :root {
   color-scheme: light;
   --navy:          #07234B;  /* brand — hero, contact, footer */
@@ -54,7 +48,7 @@
   --shadow:        0 14px 40px rgba(0,0,0,.45);
 }
 
-/* ── RESET ── */
+/* Reset */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; scroll-padding-top: 96px; }
 
@@ -79,7 +73,7 @@ a { color: inherit; }
 }
 .skip-link:focus { top: 1rem; }
 
-/* ── HEADER ── */
+/* Header */
 .header {
   position: sticky; top: 0; z-index: 100;
   background: var(--header-bg);
@@ -145,7 +139,7 @@ a { color: inherit; }
 .nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 .nav-toggle:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
 
-/* ── HERO ── */
+/* Hero */
 .hero {
   background: var(--navy);
   color: #fff;
@@ -226,7 +220,7 @@ a { color: inherit; }
 }
 .btn-white:hover { background: var(--bg-soft); }
 
-/* ── CONCEPT / SERVICE CARDS ── */
+/* Concept / service cards */
 .tier-toggle {
   display: flex; justify-content: center; gap: .5rem;
   margin-bottom: 2rem;
@@ -258,7 +252,7 @@ a { color: inherit; }
 .tier-price-note { font-size: .78rem; font-weight: 400; color: var(--muted); }
 .tier-duration { font-size: .82rem; color: var(--accent); font-weight: 600; margin-bottom: .5rem; }
 
-/* ── SECTIONS ── */
+/* Sections */
 .section { max-width: 1100px; margin: 0 auto; padding: clamp(6rem, 8vw, 7.5rem) 1.5rem; }
 .section-soft { background: var(--bg-soft); max-width: none; }
 
@@ -271,7 +265,7 @@ a { color: inherit; }
 }
 .section-intro { color: var(--muted); font-size: 1.02rem; line-height: 1.75; }
 
-/* ── SERVICES ── */
+/* Services */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -334,7 +328,7 @@ a { color: inherit; }
 .tier-example-link:hover { color: var(--heading); background: var(--bg-soft); border-color: var(--primary); transform: translateY(-1px); }
 .tier-example-link:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; border-radius: 2px; }
 
-/* ── PROCESS ── */
+/* Process */
 .steps {
   list-style: none;
   display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -353,7 +347,7 @@ a { color: inherit; }
 .step h3 { font-size: 1.08rem; color: var(--heading); margin-bottom: .5rem; }
 .step p { font-size: .9rem; color: var(--muted); line-height: 1.7; }
 
-/* ── WHY / UP-TO-DATE ── */
+/* Why / up-to-date */
 .why-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -366,7 +360,7 @@ a { color: inherit; }
 }
 .why-item p { font-size: .92rem; color: var(--muted); line-height: 1.75; }
 
-/* ── PORTFOLIO ── */
+/* Portfolio */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -406,7 +400,7 @@ a { color: inherit; }
 .project-links a:hover::after { width: 100%; }
 .project-links a:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; border-radius: 2px; }
 
-/* ── ABOUT ── */
+/* About */
 .about-grid {
   max-width: 1100px; margin: 0 auto;
   padding: clamp(4rem, 8vw, 6.5rem) 1.5rem;
@@ -427,7 +421,7 @@ a { color: inherit; }
 }
 .about-text p { color: var(--muted); line-height: 1.8; font-size: .98rem; margin-bottom: 1.1rem; }
 
-/* ── INTAKE ── */
+/* Intake */
 .intake-section {
   background: var(--navy); color: #fff;
   padding: clamp(4rem, 8vw, 6.5rem) 1.5rem;
@@ -842,7 +836,7 @@ a.contact-item:focus-visible { outline: 2px solid var(--em-light); outline-offse
 .contact-alt a { color: rgba(255,255,255,.85); text-decoration: underline; text-underline-offset: 3px; }
 .contact-alt a:hover { color: #fff; }
 
-/* ── TESTIMONIAL ── */
+/* Testimonial */
 .testimonial {
   max-width: 720px; margin: 0 auto;
   text-align: center; border: none; padding: 0;
@@ -856,7 +850,7 @@ a.contact-item:focus-visible { outline: 2px solid var(--em-light); outline-offse
   font-size: .88rem; color: var(--muted); font-style: normal;
 }
 
-/* ── FAQ ── */
+/* FAQ */
 .faq-list { max-width: 700px; margin: 0 auto; }
 .faq-item { padding: 1.5rem 0; border-bottom: 1px solid var(--line); }
 .faq-item:first-child { border-top: 1px solid var(--line); }
@@ -866,7 +860,7 @@ a.contact-item:focus-visible { outline: 2px solid var(--em-light); outline-offse
 }
 .faq-item dd { font-size: .92rem; color: var(--muted); line-height: 1.7; margin: 0; }
 
-/* ── FOOTER ── */
+/* Footer */
 .footer {
   background: var(--navy-deep); color: rgba(255,255,255,.45);
   text-align: center; padding: 2.5rem 1.5rem;
@@ -911,7 +905,7 @@ a.contact-item:focus-visible { outline: 2px solid var(--em-light); outline-offse
 .btn-cookie-secondary { background: transparent; color: var(--text); border: 1px solid var(--line); }
 .btn-cookie-secondary:hover { border-color: var(--primary); color: var(--primary); }
 
-/* ── LEGAL (privacy & voorwaarden) ── */
+/* Legal */
 .legal { max-width: 760px; margin: 0 auto; padding: clamp(3rem, 6vw, 5rem) 1.5rem; }
 .legal h1 {
   font-family: var(--serif); font-weight: 400;
@@ -936,8 +930,7 @@ a.contact-item:focus-visible { outline: 2px solid var(--em-light); outline-offse
 .legal ul, .legal ol { margin: 0 0 1rem 1.25rem; }
 .legal a { color: var(--link); }
 
-/* ── REVEAL ──
-   Only hidden when JS is active; without JS the content stays visible. */
+/* Reveal — only hidden when JS is active */
 html.js .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease-out, transform .6s ease-out; }
 html.js .reveal.visible { opacity: 1; transform: translateY(0); }
 @media (prefers-reduced-motion: reduce) {
@@ -946,7 +939,7 @@ html.js .reveal.visible { opacity: 1; transform: translateY(0); }
   .btn, .service-card, .project-card, .step { transition: none; }
 }
 
-/* ── RESPONSIVE ── */
+/* Responsive */
 @media (min-width: 1024px) {
   .contact-inner { grid-template-columns: 1fr 1fr; }
   .about-grid { grid-template-columns: minmax(280px, 380px) 1fr; }

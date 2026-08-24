@@ -18,7 +18,7 @@
 
     setPosition(el.getBoundingClientRect().left + el.getBoundingClientRect().width / 2);
 
-    // -- Pointer events (desktop + mobile fallback) --
+    // Pointer events
     function onPointerDown(e) {
       var rect = el.getBoundingClientRect();
       var pct = parseFloat(handle.style.left) || 50;
@@ -50,7 +50,7 @@
 
     el.addEventListener('pointerdown', onPointerDown, { passive: false });
 
-    // -- Touch events (primary on mobile) --
+    // Touch events
     var touchId = null;
 
     function onTouchStart(e) {
@@ -91,7 +91,7 @@
     el.addEventListener('touchend', onTouchEnd);
     el.addEventListener('touchcancel', onTouchEnd);
 
-    // -- Keyboard --
+    // Keyboard
     el.addEventListener('keydown', function (e) {
       var dir = e.key === 'ArrowLeft' ? -1 : e.key === 'ArrowRight' ? 1 : 0;
       if (!dir) return;
