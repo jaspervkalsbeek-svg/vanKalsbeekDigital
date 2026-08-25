@@ -43,7 +43,6 @@
   --header-bg: rgba(10,15,12,.9);
 }
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; scroll-padding-top: 80px; }
 body {
   font-family: var(--sans);
@@ -53,8 +52,6 @@ body {
   -webkit-font-smoothing: antialiased;
   transition: background .25s, color .25s;
 }
-img { max-width: 100%; display: block; }
-a { color: inherit; }
 
 .example-banner {
   background: var(--primary);
@@ -135,8 +132,6 @@ a { color: inherit; }
   transition: background .2s, border-color .2s;
 }
 .theme-toggle:hover { border-color: var(--primary); background: var(--surface-2); }
-.theme-toggle svg { width: 18px; height: 18px; }
-.theme-toggle .icon-sun { display: none; }
 :root[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
 :root[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
 

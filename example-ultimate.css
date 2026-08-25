@@ -43,7 +43,6 @@
   --header-bg: rgba(250,250,250,.92);
 }
 
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; scroll-padding-top: 80px; }
 body {
   font-family: var(--sans);
@@ -54,8 +53,6 @@ body {
   transition: background .3s, color .3s;
   overflow-x: hidden;
 }
-img { max-width: 100%; display: block; }
-a { color: inherit; }
 
 .example-banner {
   background: var(--primary);
@@ -149,8 +146,6 @@ a { color: inherit; }
 }
 .header.scrolled .theme-toggle { border-color: var(--line); color: var(--heading); }
 .theme-toggle:hover { border-color: var(--primary); background: rgba(201,169,110,.1); }
-.theme-toggle svg { width: 18px; height: 18px; }
-.theme-toggle .icon-sun { display: none; }
 :root[data-theme="light"] .theme-toggle .icon-sun { display: block; }
 :root[data-theme="light"] .theme-toggle .icon-moon { display: none; }
 
@@ -579,7 +574,7 @@ a { color: inherit; }
   background: transparent;
   border: 1px solid var(--primary);
   border-radius: 0;
-  padding: .85rem 1.3rem;
+  padding: 1rem 1.3rem;
   text-decoration: none;
   transition: background .2s, color .2s;
 }

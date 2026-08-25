@@ -49,7 +49,6 @@
 }
 
 /* Reset */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; scroll-padding-top: 96px; }
 
 body {
@@ -60,9 +59,6 @@ body {
   -webkit-font-smoothing: antialiased;
   transition: background .25s, color .25s;
 }
-
-img { max-width: 100%; display: block; }
-a { color: inherit; }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 
 .skip-link {
@@ -122,8 +118,6 @@ a { color: inherit; }
 .theme-toggle:hover { border-color: var(--primary); color: var(--primary); }
 .theme-toggle:active { transform: scale(.94); }
 .theme-toggle:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
-.theme-toggle svg { width: 18px; height: 18px; }
-.theme-toggle .icon-sun { display: none; }
 :root[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
 :root[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
 
@@ -321,7 +315,7 @@ a { color: inherit; }
   display: inline-flex; align-items: center; gap: .35rem;
   font-size: .88rem; font-weight: 600; color: var(--link);
   text-decoration: none; margin-top: .75rem;
-  padding: .55rem 1rem; border-radius: 8px;
+  padding: .75rem 1rem; border-radius: 8px;
   background: var(--surface-2); border: 1px solid var(--line);
   transition: color .18s, background .18s, border-color .18s, transform .15s;
 }
@@ -390,7 +384,7 @@ a { color: inherit; }
 .project-links a {
   display: inline-flex; align-items: center; gap: .35rem;
   font-weight: 600; font-size: .92rem; color: var(--link);
-  text-decoration: none;
+  text-decoration: none; padding: .3rem 0;
 }
 .project-links a:active { transform: scale(.96); }
 .project-links a::after {
@@ -459,7 +453,7 @@ a { color: inherit; }
 .progress-step-nr {
   width: 24px; height: 24px; border-radius: 50%;
   display: inline-flex; align-items: center; justify-content: center;
-  font-size: .72rem; font-weight: 700;
+  font-size: .75rem; font-weight: 700;
   background: rgba(255,255,255,.1); color: rgba(255,255,255,.4);
   transition: background .3s, color .3s;
 }
@@ -508,7 +502,12 @@ a { color: inherit; }
   background: var(--em-light); color: var(--navy);
   display: none; align-items: center; justify-content: center;
 }
-.intake-choice-check svg { width: 14px; height: 14px; }
+.intake-choice-check::before {
+  content: '';
+  width: 6px; height: 10px;
+  border-bottom: 2px solid currentColor; border-right: 2px solid currentColor;
+  transform: rotate(45deg); margin-top: -2px;
+}
 .intake-choice.selected .intake-choice-check { display: flex; }
 
 /* Stap 2: plan-kaarten */
@@ -530,7 +529,7 @@ a { color: inherit; }
 .intake-plan-popular { border-color: var(--em-light); }
 .intake-plan-badge {
   position: absolute; top: -10px; left: 50%; transform: translateX(-50%);
-  font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+  font-size: .75rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
   color: var(--navy); background: var(--em-light);
   padding: .2rem .65rem; border-radius: 100px;
 }
@@ -553,7 +552,12 @@ a { color: inherit; }
   background: var(--em-light); color: var(--navy);
   display: none; align-items: center; justify-content: center;
 }
-.intake-plan-check svg { width: 13px; height: 13px; }
+.intake-plan-check::before {
+  content: '';
+  width: 6px; height: 10px;
+  border-bottom: 2px solid currentColor; border-right: 2px solid currentColor;
+  transform: rotate(45deg); margin-top: -2px;
+}
 .intake-plan.selected .intake-plan-check { display: flex; }
 
 /* Stap 3: gegevens */
@@ -625,11 +629,17 @@ a { color: inherit; }
   display: flex; align-items: center; justify-content: center;
   transition: background .2s, border-color .2s;
 }
-.intake-privacy-box svg { width: 13px; height: 13px; color: var(--navy); opacity: 0; transition: opacity .2s; }
+.intake-privacy-box::before {
+  content: '';
+  width: 5px; height: 9px;
+  border-bottom: 2px solid var(--navy); border-right: 2px solid var(--navy);
+  transform: rotate(45deg); margin-top: -2px;
+  opacity: 0; transition: opacity .2s;
+}
 .intake-privacy-check input:checked + .intake-privacy-box {
   background: var(--em-light); border-color: var(--em-light);
 }
-.intake-privacy-check input:checked + .intake-privacy-box svg { opacity: 1; }
+.intake-privacy-check input:checked + .intake-privacy-box::before { opacity: 1; }
 .intake-privacy-check input:focus-visible + .intake-privacy-box { outline: 2px solid var(--em-light); outline-offset: 2px; }
 .intake-privacy-text { font-size: .82rem; color: rgba(255,255,255,.6); line-height: 1.5; padding-top: .15rem; }
 .intake-privacy-text a { color: var(--em-light); text-decoration: underline; text-underline-offset: 2px; }
@@ -721,7 +731,7 @@ a { color: inherit; }
   width: 40px; height: 40px; border-radius: 10px;
 }
 .intake-style-name { font-size: .88rem; font-weight: 600; }
-.intake-style-desc { font-size: .72rem; color: rgba(255,255,255,.5); line-height: 1.4; }
+.intake-style-desc { font-size: .75rem; color: rgba(255,255,255,.5); line-height: 1.4; }
 
 .intake-color-grid {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: .75rem;
@@ -753,7 +763,7 @@ a { color: inherit; }
 .intake-color-picker svg,
 .intake-color-dice svg { width: 22px; height: 22px; color: var(--em-light); }
 .intake-color-name { font-size: .82rem; font-weight: 600; }
-.intake-color-desc { font-size: .7rem; color: rgba(255,255,255,.45); line-height: 1.35; margin-top: .15rem; }
+.intake-color-desc { font-size: .75rem; color: rgba(255,255,255,.45); line-height: 1.35; margin-top: .15rem; }
 
 /* Stap 3: dynamische details */
 .intake-detail-panel { animation: intakeFadeIn .35s ease; }
@@ -785,7 +795,7 @@ a { color: inherit; }
   width: 100%; aspect-ratio: 2 / 1; border-radius: 8px;
 }
 .intake-style-name { font-size: .88rem; font-weight: 600; }
-.intake-style-desc { font-size: .72rem; color: rgba(255,255,255,.5); line-height: 1.4; }
+.intake-style-desc { font-size: .75rem; color: rgba(255,255,255,.5); line-height: 1.4; }
 
 /* Kleur-kaarten */
 .contact-section {
@@ -880,7 +890,7 @@ a.contact-item:focus-visible { outline: 2px solid var(--em-light); outline-offse
 .footer-link-btn {
   background: none; border: none; color: rgba(255,255,255,.6);
   font: inherit; font-size: .82rem; cursor: pointer;
-  padding: .4rem 0; transition: color .15s;
+  padding: .65rem 0; transition: color .15s;
 }
 .footer-link-btn:hover { color: #fff; text-decoration: underline; }
 
@@ -895,7 +905,7 @@ a.contact-item:focus-visible { outline: 2px solid var(--em-light); outline-offse
 .cookie-banner p { font-size: .88rem; color: var(--muted); flex: 1 1 400px; margin: 0; line-height: 1.6; }
 .cookie-actions { display: flex; gap: .5rem; flex-shrink: 0; }
 .btn-cookie {
-  font-size: .85rem; padding: .85rem 1.4rem; font-weight: 600;
+  font-size: .85rem; padding: 1rem 1.4rem; font-weight: 600;
   border-radius: 8px; cursor: pointer;
   transition: background .18s, border-color .18s, transform .15s;
 }
