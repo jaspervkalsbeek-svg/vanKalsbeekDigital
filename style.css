@@ -1,7 +1,7 @@
-/* Colour system — light + dark theme via data-theme on <html> */
+/* Colour system: light + dark theme via data-theme on <html> */
 :root {
   color-scheme: light;
-  --navy:          #07234B;  /* brand — hero, contact, footer */
+  --navy:          #07234B;  /* brand: hero, contact, footer */
   --navy-deep:     #04142B;  /* footer */
   --primary:       #07234B;  /* solid accents (buttons, steps) */
   --primary-strong: #0B3168;
@@ -930,7 +930,7 @@ a.contact-item:focus-visible { outline: 2px solid var(--em-light); outline-offse
 .legal ul, .legal ol { margin: 0 0 1rem 1.25rem; }
 .legal a { color: var(--link); }
 
-/* Reveal — only hidden when JS is active */
+/* Reveal: only hidden when JS is active */
 html.js .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease-out, transform .6s ease-out; }
 html.js .reveal.visible { opacity: 1; transform: translateY(0); }
 @media (prefers-reduced-motion: reduce) {
@@ -963,7 +963,7 @@ html.js .reveal.visible { opacity: 1; transform: translateY(0); }
   .project-featured { grid-column: span 1; }
 }
 
-/* COMPARE SLIDER — reusable before/after splitter */
+/* COMPARE SLIDER: reusable before/after splitter */
 .compare-slider {
   position: relative;
   width: 100%;

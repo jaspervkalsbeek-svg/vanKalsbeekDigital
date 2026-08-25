@@ -1,4 +1,4 @@
-/* Compare Old — dated 2016-era website styles */
+/* Compare Old: dated 2016-era website styles */
 /* Used in compare sliders to show "before" versions */
 
 .compare-side {
@@ -14,7 +14,7 @@
   line-height: 1.4;
 }
 
-/* OLD MINIMUM —Timmerman de Boer 2016 */
+/* OLD MINIMUM: Timmerman de Boer 2016 */
 .old-minimum {
   background: #E8E8E8;
   color: #333;
@@ -110,7 +110,7 @@
   font-family: Arial, sans-serif;
 }
 
-/* OLD PRO — Fysiotherapie Heuvel 2016 */
+/* OLD PRO: Fysiotherapie Heuvel 2016 */
 .old-pro {
   background: #F5F0E8;
   color: #333;
@@ -232,7 +232,7 @@
   font-family: Arial, sans-serif;
 }
 
-/* OLD ULTIMATE — Architectenbureau Void 2016 */
+/* OLD ULTIMATE: Architectenbureau Void 2016 */
 .old-ultimate {
   background: #E0E0E0;
   color: #333;

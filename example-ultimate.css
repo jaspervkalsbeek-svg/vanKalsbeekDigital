@@ -1,5 +1,5 @@
-/* Example Ultimate — Architectenbureau Void */
-/* Tier: Luxury architecture — bold, dramatic, uncompromising */
+/* Example Ultimate: Architectenbureau Void */
+/* Tier: Luxury architecture, bold, dramatic, uncompromising */
 
 :root {
   color-scheme: dark;
@@ -154,7 +154,7 @@ a { color: inherit; }
 :root[data-theme="light"] .theme-toggle .icon-sun { display: block; }
 :root[data-theme="light"] .theme-toggle .icon-moon { display: none; }
 
-/* HERO — immersive full-viewport */
+/* HERO: immersive full-viewport */
 .hero {
   min-height: 100vh;
   display: flex;
@@ -268,7 +268,7 @@ a { color: inherit; }
   margin-top: .3rem;
 }
 
-/* SECTIONS — dramatic spacing */
+/* SECTIONS: dramatic spacing */
 .section {
   max-width: 1400px;
   margin: 0 auto;
@@ -302,7 +302,7 @@ a { color: inherit; }
 }
 .section-intro { color: var(--muted); font-size: 1.05rem; line-height: 1.8; max-width: 520px; margin-top: 1.5rem; }
 
-/* PROJECTS — dramatic masonry */
+/* PROJECTS: dramatic masonry */
 .projects-masonry {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
@@ -368,7 +368,7 @@ a { color: inherit; }
 }
 .project-card p { font-size: .88rem; color: var(--muted); line-height: 1.7; }
 
-/* SERVICES — minimal, numbered */
+/* SERVICES: minimal, numbered */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -399,7 +399,7 @@ a { color: inherit; }
 }
 .service-card p { font-size: .88rem; color: var(--muted); line-height: 1.75; }
 
-/* TESTIMONIAL — full-width statement */
+/* TESTIMONIAL: full-width statement */
 .testimonial-section {
   background: var(--surface);
   border-top: 1px solid var(--line);
@@ -430,7 +430,7 @@ a { color: inherit; }
 .testimonial-attr { font-size: .85rem; color: var(--muted); }
 .testimonial-attr strong { color: var(--text); }
 
-/* DASHBOARD — sleek preview */
+/* DASHBOARD: sleek preview */
 .dashboard-preview {
   background: var(--surface);
   border: 1px solid var(--line);
@@ -485,7 +485,7 @@ a { color: inherit; }
   transition: width 1.2s cubic-bezier(.16,1,.3,1);
 }
 
-/* CONTACT — editorial split */
+/* CONTACT: editorial split */
 .contact-section {
   background: var(--bg);
   padding: clamp(6rem, 12vw, 10rem) clamp(2rem, 5vw, 5rem);
@@ -596,7 +596,7 @@ a { color: inherit; }
 .footer a { color: var(--primary); text-decoration: none; }
 .footer a:hover { text-decoration: underline; }
 
-/* REVEAL — cinematic entrance */
+/* REVEAL: cinematic entrance */
 .reveal {
   opacity: 0;
   transform: translateY(40px);
