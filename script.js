@@ -3,31 +3,18 @@
 (function () {
   'use strict';
 
-  // Cookie consent & analytics. GA_ID is empty until a Google Analytics
-  // measurement ID is provided per project; no tracking runs without consent.
+  // Cookie consent & analytics. GA loads in <head>; we only run gtag('config')
+  // after the user accepts cookies — no tracking without consent.
   var COOKIE_KEY = 'vkd-cookie-consent';
   var GA_ID = 'G-TGF3SZDD35';
-
-  function loadGA() {
-    if (!GA_ID || document.getElementById('ga-script')) return;
-    var s = document.createElement('script');
-    s.async = true;
-    s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
-    s.id = 'ga-script';
-    document.head.appendChild(s);
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { window.dataLayer.push(arguments); }
-    window.gtag = gtag;
-    gtag('js', new Date());
-    gtag('config', GA_ID, { anonymize_ip: true });
-  }
 
   var cookieBanner = document.getElementById('cookie-banner');
   var cookieConsent = null;
   try { cookieConsent = localStorage.getItem(COOKIE_KEY); } catch (e) {}
 
   if (cookieConsent === 'accepted') {
-    loadGA();
+    gtag('js', new Date());
+    gtag('config', GA_ID, { anonymize_ip: true });
   } else if (!cookieConsent && cookieBanner) {
     cookieBanner.style.display = 'flex';
   }
