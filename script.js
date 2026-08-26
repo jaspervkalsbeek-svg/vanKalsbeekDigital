@@ -6,7 +6,7 @@
   // Cookie consent & analytics. GA loads in <head>; we only run gtag('config')
   // after the user accepts cookies — no tracking without consent.
   var COOKIE_KEY = 'vkd-cookie-consent';
-  var GA_ID = 'G-TGF3SZDD35';
+  var GA_ID = window.VKD_CONFIG && window.VKD_CONFIG.gaId || '';
 
   var cookieBanner = document.getElementById('cookie-banner');
   var cookieConsent = null;
