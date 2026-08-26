@@ -354,6 +354,27 @@ body {
 }
 .why-item p { font-size: .92rem; color: var(--muted); line-height: 1.75; }
 
+.why-card { text-align: center; }
+.why-icon {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 48px; height: 48px; border-radius: 12px;
+  background: var(--bg-soft); color: var(--accent); margin-bottom: 1rem;
+}
+.why-icon svg { width: 24px; height: 24px; }
+.why-card h3 { font-size: 1.05rem; color: var(--heading); margin-bottom: .5rem; }
+.why-card p { font-size: .9rem; color: var(--muted); line-height: 1.7; }
+
+.maintenance-cta {
+  text-align: center; margin-top: 2.5rem;
+  padding-top: 2rem; border-top: 1px solid var(--line);
+}
+.maintenance-price {
+  font-family: var(--serif); font-size: 2rem; color: var(--heading); margin-bottom: 1rem;
+}
+.maintenance-price span {
+  font-family: var(--sans); font-size: .9rem; color: var(--muted); font-weight: 400;
+}
+
 /* Portfolio */
 .projects-grid {
   display: grid;
