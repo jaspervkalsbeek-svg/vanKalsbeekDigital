@@ -913,6 +913,9 @@ html.js .reveal.visible { opacity: 1; transform: translateY(0); }
   .nav a.nav-cta { margin-left: 0; margin-top: .5rem; text-align: center; }
   .nav-toggle { display: flex; }
   .project-featured { grid-column: span 1; }
+  .why-grid { gap: 1.5rem; }
+  .maintenance-price { font-size: 1.6rem; }
+  .maintenance-price span { font-size: .85rem; }
 }
 
 /* COMPARE SLIDER: reusable before/after splitter */
@@ -990,4 +993,6 @@ html.js .reveal.visible { opacity: 1; transform: translateY(0); }
   .compare-slider { aspect-ratio: 4 / 3; }
   .compare-label { font-size: .65rem; padding: .35rem .7rem; }
   .compare-handle::after { width: 32px; height: 32px; }
+  .why-card { padding: 0 .25rem; }
+  .maintenance-cta { margin-top: 1.5rem; padding-top: 1.5rem; }
 }
