@@ -108,6 +108,16 @@ body {
 
 .header-actions { display: flex; align-items: center; gap: .5rem; }
 
+.header-phone {
+  display: inline-flex; align-items: center; gap: .4rem;
+  text-decoration: none; color: var(--text);
+  font-size: .85rem; font-weight: 600;
+  padding: .5rem .85rem; border-radius: 6px;
+  transition: background .18s, color .18s;
+}
+.header-phone svg { width: 18px; height: 18px; flex-shrink: 0; }
+.header-phone:hover { background: var(--surface-2); color: var(--heading); }
+
 .theme-toggle {
   width: 44px; height: 44px; flex-shrink: 0;
   display: inline-flex; align-items: center; justify-content: center;
@@ -917,6 +927,7 @@ html.js .reveal.visible { opacity: 1; transform: translateY(0); }
   .why-grid { gap: 1.5rem; }
   .maintenance-price { font-size: 1.6rem; }
   .maintenance-price span { font-size: .85rem; }
+  .header-phone-num { display: none; }
 }
 
 /* COMPARE SLIDER: reusable before/after splitter */
