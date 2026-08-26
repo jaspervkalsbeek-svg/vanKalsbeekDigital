@@ -928,6 +928,7 @@ html.js .reveal.visible { opacity: 1; transform: translateY(0); }
   .maintenance-price { font-size: 1.6rem; }
   .maintenance-price span { font-size: .85rem; }
   .header-phone-num { display: none; }
+  .header-phone:nth-child(2) { display: none; }
 }
 
 /* COMPARE SLIDER: reusable before/after splitter */
