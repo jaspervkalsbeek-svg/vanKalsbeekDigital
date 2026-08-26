@@ -356,6 +356,7 @@ body {
 .why-item p { font-size: .92rem; color: var(--muted); line-height: 1.75; }
 
 .why-card { text-align: center; }
+.why-grid > .why-card:last-child { grid-column: 1 / -1; justify-self: center; max-width: 300px; }
 .why-icon {
   display: inline-flex; align-items: center; justify-content: center;
   width: 48px; height: 48px; border-radius: 12px;
