@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Kies uw concept | Van Kalsbeek Digital</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../../base.css" />
+  <style>
+    :root {
+      --navy: #07234B; --primary: #07234B; --on-primary: #fff;
+      --accent: #0E4C92; --bg: #fff; --bg-soft: #F4F6FA;
+      --surface: #fff; --text: #1B2534; --muted: #5A6678; --line: #E2E7EF;
+      --heading: var(--primary); --serif: 'DM Serif Display', Georgia, serif;
+      --sans: 'DM Sans', system-ui, sans-serif;
+      --shadow: 0 14px 40px rgba(7,35,75,.09);
+    }
+    body { font-family: var(--sans); background: var(--bg-soft); color: var(--text); line-height: 1.6; min-height: 100vh; }
+    .page { max-width: 900px; margin: 0 auto; padding: 3rem 1.5rem; }
+    .page-head { text-align: center; margin-bottom: 3rem; }
+    .page-head h1 { font-family: var(--serif); font-size: clamp(1.6rem, 4vw, 2.4rem); color: var(--heading); margin-bottom: .75rem; }
+    .page-head p { color: var(--muted); max-width: 520px; margin: 0 auto; }
+    .page-price { font-family: var(--serif); font-size: clamp(2rem, 5vw, 3rem); color: var(--heading); margin: .5rem 0 .75rem; }
+    .page-price span { font-family: var(--sans); font-size: .9rem; color: var(--muted); font-weight: 400; }
+
+    .concepts { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; }
+    .concept-card {
+      background: var(--surface); border: 2px solid var(--line); border-radius: 14px;
+      overflow: hidden; transition: border-color .25s, box-shadow .25s, transform .25s;
+      position: relative; display: flex; flex-direction: column;
+    }
+    .concept-card:hover { border-color: var(--primary); box-shadow: var(--shadow); transform: translateY(-4px); }
+    .concept-card.selected { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent), var(--shadow); }
+
+    .concept-preview {
+      aspect-ratio: 16/10; overflow: hidden; border-bottom: 1px solid var(--line);
+      position: relative; background: var(--bg-soft);
+    }
+    .concept-preview iframe { width: 200%; height: 200%; border: none; transform: scale(.5); transform-origin: top left; pointer-events: none; }
+    .preview-overlay {
+      position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+      background: rgba(0,0,0,.3); opacity: 0; transition: opacity .25s;
+    }
+    .concept-card:hover .preview-overlay { opacity: 1; }
+    .preview-btn {
+      background: #fff; color: var(--primary); font-weight: 600; font-size: .88rem;
+      padding: .7rem 1.4rem; border-radius: 8px; border: none; cursor: pointer;
+      box-shadow: 0 4px 16px rgba(0,0,0,.2); transition: transform .15s;
+    }
+    .preview-btn:hover { transform: scale(1.05); }
+
+    .concept-body { padding: 1.25rem 1.5rem; flex: 1; display: flex; flex-direction: column; }
+    .concept-label { font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: var(--accent); margin-bottom: .35rem; }
+    .concept-title { font-size: 1.1rem; font-weight: 600; color: var(--heading); margin-bottom: .35rem; }
+    .concept-desc { font-size: .88rem; color: var(--muted); flex: 1; }
+    .concept-select {
+      margin-top: 1rem; padding: .65rem 1rem; border-radius: 8px; border: 1px solid var(--line);
+      background: var(--surface); color: var(--heading); font-weight: 600; font-size: .88rem;
+      cursor: pointer; transition: background .2s, border-color .2s, color .2s;
+    }
+    .concept-select:hover { border-color: var(--primary); background: var(--bg-soft); }
+    .concept-card.selected .concept-select { background: var(--accent); color: #fff; border-color: var(--accent); }
+    .concept-check {
+      display: none; position: absolute; top: .75rem; right: .75rem;
+      width: 28px; height: 28px; border-radius: 50%; background: var(--accent); color: #fff;
+      align-items: center; justify-content: center; font-size: .85rem; font-weight: 700;
+      z-index: 2;
+    }
+    .concept-card.selected .concept-check { display: flex; }
+
+    .actions { text-align: center; }
+    .btn {
+      display: inline-block; font-weight: 600; font-size: .95rem;
+      padding: .9rem 2rem; border-radius: 8px; text-decoration: none;
+      transition: transform .2s, background .2s, box-shadow .2s;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn:active { transform: scale(.97); }
+    .btn-primary { background: var(--primary); color: #fff; box-shadow: 0 6px 20px rgba(7,35,75,.25); }
+    .btn-primary:hover { background: #0B3168; }
+    .btn-primary:disabled { opacity: .4; cursor: not-allowed; transform: none; box-shadow: none; }
+    .btn-ghost { color: var(--muted); border: 1px solid var(--line); margin-left: .75rem; }
+    .btn-ghost:hover { border-color: var(--primary); color: var(--heading); }
+    .note { text-align: center; margin-top: 1.5rem; font-size: .85rem; color: var(--muted); }
+    .footer-mini { text-align: center; padding: 2rem 1.5rem; font-size: .82rem; color: var(--muted); }
+
+    /* Fullscreen preview modal */
+    .modal {
+      display: none; position: fixed; inset: 0; z-index: 1000;
+      background: #000; flex-direction: column;
+    }
+    .modal.open { display: flex; }
+    .modal-bar {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: .6rem 1rem; background: #111; color: #fff; flex-shrink: 0;
+    }
+    .modal-title { font-size: .88rem; font-weight: 600; }
+    .modal-actions { display: flex; gap: .5rem; }
+    .modal-btn {
+      padding: .5rem 1rem; border-radius: 6px; border: 1px solid rgba(255,255,255,.2);
+      background: rgba(255,255,255,.08); color: #fff; font-size: .82rem; font-weight: 600;
+      cursor: pointer; transition: background .2s;
+    }
+    .modal-btn:hover { background: rgba(255,255,255,.15); }
+    .modal-btn-primary { background: #fff; color: #111; border-color: #fff; }
+    .modal-btn-primary:hover { background: #e0e0e0; }
+    .modal-frame { flex: 1; border: none; background: #fff; }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="page-head">
+      <h1>Uw 3 concepten staan klaar</h1>
+      <p class="page-price">€495 <span>eenmalig, excl. BTW</span></p>
+      <p>Bekijk de concepten door op "Bekijk" te klikken. Klik op "Dit is hem" om uw keuze te maken. Na uw keuze ga ik meteen aan de slag.</p>
+    </div>
+
+    <div class="concepts">
+      <div class="concept-card" data-concept="1">
+        <span class="concept-check" aria-hidden="true">✓</span>
+        <div class="concept-preview">
+          <iframe src="1.html" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+          <div class="preview-overlay">
+            <button type="button" class="preview-btn" onclick="event.stopPropagation(); openPreview(1)">Bekijk</button>
+          </div>
+        </div>
+        <div class="concept-body">
+          <p class="concept-label">Concept 1</p>
+          <p class="concept-title">Modern</p>
+          <p class="concept-desc">Clean, professioneel, veel witruimte. Strakke lijnen en een heldere structuur.</p>
+          <button type="button" class="concept-select" onclick="event.stopPropagation(); selectConcept(this.closest('.concept-card'))">Dit is hem</button>
+        </div>
+      </div>
+
+      <div class="concept-card" data-concept="2">
+        <span class="concept-check" aria-hidden="true">✓</span>
+        <div class="concept-preview">
+          <iframe src="2.html" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+          <div class="preview-overlay">
+            <button type="button" class="preview-btn" onclick="event.stopPropagation(); openPreview(2)">Bekijk</button>
+          </div>
+        </div>
+        <div class="concept-body">
+          <p class="concept-label">Concept 2</p>
+          <p class="concept-title">Strak</p>
+          <p class="concept-desc">Donker, industrieel, krachtig. Een moderne uitstraling met contrast.</p>
+          <button type="button" class="concept-select" onclick="event.stopPropagation(); selectConcept(this.closest('.concept-card'))">Dit is hem</button>
+        </div>
+      </div>
+
+      <div class="concept-card" data-concept="3">
+        <span class="concept-check" aria-hidden="true">✓</span>
+        <div class="concept-preview">
+          <iframe src="3.html" loading="lazy" tabindex="-1" aria-hidden="true"></iframe>
+          <div class="preview-overlay">
+            <button type="button" class="preview-btn" onclick="event.stopPropagation(); openPreview(3)">Bekijk</button>
+          </div>
+        </div>
+        <div class="concept-body">
+          <p class="concept-label">Concept 3</p>
+          <p class="concept-title">Warm</p>
+          <p class="concept-desc">Aards, toegankelijk, uitnodigend. Een huiselijke sfeer.</p>
+          <button type="button" class="concept-select" onclick="event.stopPropagation(); selectConcept(this.closest('.concept-card'))">Dit is hem</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button type="button" class="btn btn-primary" id="choose-btn" disabled onclick="submitChoice()">Verstuur mijn keuze</button>
+      <a href="tel:+31610809971" class="btn btn-ghost">Liever bellen? 06 1080 9971</a>
+    </div>
+    <p class="note">Na uw keuze ga ik meteen aan de slag. U heeft al veel informatie doorgegeven via het formulier. Wilt u nog iets aanpassen? Geef dit dan z.s.m. door via telefoon of mail!</p>
+  </div>
+
+  <div class="footer-mini">Van Kalsbeek Digital · Conceptvoorbeelden</div>
+
+  <!-- Fullscreen preview modal -->
+  <div class="modal" id="modal">
+    <div class="modal-bar">
+      <span class="modal-title" id="modal-title">Concept 1 - Modern</span>
+      <div class="modal-actions">
+        <button type="button" class="modal-btn" onclick="closePreview()">Sluiten</button>
+        <button type="button" class="modal-btn modal-btn-primary" id="modal-choose" onclick="chooseFromModal()">Dit is hem</button>
+      </div>
+    </div>
+    <iframe class="modal-frame" id="modal-frame" src="" tabindex="-1"></iframe>
+  </div>
+
+  <script>
+    var selected = null;
+    var currentPreview = null;
+    var clientName = '';
+    var clientEmail = '';
+
+    (function () {
+      var params = new URLSearchParams(window.location.search);
+      clientName = params.get('naam') || '';
+      clientEmail = params.get('email') || '';
+      if (clientName) {
+        var h1 = document.querySelector('.page-head h1');
+        h1.textContent = h1.textContent.replace('Uw 3 concepten', clientName.split(' ')[0] + ', uw 3 concepten');
+      }
+    })();
+
+    function selectConcept(card) {
+      document.querySelectorAll('.concept-card').forEach(function (c) { c.classList.remove('selected'); });
+      card.classList.add('selected');
+      selected = card.getAttribute('data-concept');
+      document.getElementById('choose-btn').disabled = false;
+    }
+
+    function openPreview(nr) {
+      var titles = { 1: 'Concept 1 - Modern', 2: 'Concept 2 - Strak', 3: 'Concept 3 - Warm' };
+      currentPreview = nr;
+      document.getElementById('modal-title').textContent = titles[nr];
+      document.getElementById('modal-frame').src = nr + '.html';
+      document.getElementById('modal').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closePreview() {
+      document.getElementById('modal').classList.remove('open');
+      document.getElementById('modal-frame').src = '';
+      document.body.style.overflow = '';
+      currentPreview = null;
+    }
+
+    function chooseFromModal() {
+      if (!currentPreview) return;
+      var card = document.querySelector('.concept-card[data-concept="' + currentPreview + '"]');
+      selectConcept(card);
+      closePreview();
+    }
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closePreview();
+    });
+
+    function submitChoice() {
+      if (!selected) return;
+      var btn = document.getElementById('choose-btn');
+      btn.disabled = true;
+      btn.textContent = 'Even geduld...';
+      var conceptNames = { '1': 'Modern', '2': 'Strak', '3': 'Warm' };
+      var subject = 'Conceptkeuze ' + (clientName ? '(' + clientName + ')' : '') + ': Concept ' + selected + ' - ' + conceptNames[selected];
+      var body = 'Ik heb gekozen voor Concept ' + selected + ' (' + conceptNames[selected] + ').\n\n';
+      if (clientName) body += 'Naam: ' + clientName + '\n';
+      if (clientEmail) body += 'Email: ' + clientEmail + '\n';
+      body += '\nEventuele opmerkingen:\n';
+      window.location.href = 'mailto:info@vankalsbeekdigital.com?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+    }
+  </script>
+</body>
+</html>

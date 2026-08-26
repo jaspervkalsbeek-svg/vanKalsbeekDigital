@@ -254,7 +254,7 @@
       submitBtn.disabled = true;
       submitBtn.textContent = 'Even geduld...';
       var data = new FormData(form);
-      data.append('_subject', 'Nieuwe aanvraag: ' + fieldType.value + ' — ' + fieldPlan.value);
+      data.append('_subject', 'Nieuwe aanvraag: ' + fieldType.value + ' - ' + fieldPlan.value);
       fetch(form.action, {
         method: 'POST',
         body: data,
