@@ -55,6 +55,13 @@
         toggle.setAttribute('aria-label', 'Menu openen');
       }
     });
+    document.addEventListener('click', function (event) {
+      if (nav.classList.contains('open') && !nav.contains(event.target) && !toggle.contains(event.target)) {
+        nav.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.setAttribute('aria-label', 'Menu openen');
+      }
+    });
   }
 
   // Theme toggle: manual switch, choice persisted in localStorage.
@@ -126,6 +133,8 @@
         else if (n < currentStep) ps.classList.add('done');
       });
       progressFill.style.width = ((currentStep / totalSteps) * 100) + '%';
+      var progressBar = document.querySelector('.intake-progress');
+      if (progressBar) progressBar.setAttribute('aria-valuenow', currentStep);
       backBtn.hidden = currentStep === 1;
       nextBtn.hidden = currentStep === totalSteps;
       submitBtn.hidden = currentStep !== totalSteps;
