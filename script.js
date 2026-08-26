@@ -6,7 +6,7 @@
   // Cookie consent & analytics. GA_ID is empty until a Google Analytics
   // measurement ID is provided per project; no tracking runs without consent.
   var COOKIE_KEY = 'vkd-cookie-consent';
-  var GA_ID = '';
+  var GA_ID = 'G-TGF3SZDD35';
 
   function loadGA() {
     if (!GA_ID || document.getElementById('ga-script')) return;
