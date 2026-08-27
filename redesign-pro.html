@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="nl" data-theme="light">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -34,7 +34,7 @@
     .compare-slider { position: relative; width: 100vw; height: 100vh; overflow: hidden; cursor: ew-resize; user-select: none; touch-action: pan-y pinch-zoom; }
     .compare-side { position: absolute; inset: 0; overflow-y: auto; overflow-x: hidden; }
     .compare-old { z-index: 2; clip-path: inset(0 50% 0 0); }
-    .compare-new { z-index: 1; background: #fff; }
+    .compare-new { z-index: 1; background: var(--bg); }
     .compare-label { position: fixed; bottom: 24px; z-index: 20; background: rgba(0,0,0,.6); color: #fff; font-size: .75rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; padding: .5rem 1rem; border-radius: 6px; pointer-events: none; font-family: 'DM Sans', sans-serif; }
     .compare-old > .compare-label { left: 24px; }
     .compare-new > .compare-label { right: 24px; }
@@ -114,6 +114,10 @@
             <a href="#nieuws">Nieuws</a>
             <a href="#contact" class="nav-cta">Afspraak maken</a>
           </nav>
+          <button class="theme-toggle" aria-label="Wissel tussen donkere en lichte modus">
+            <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+            <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+          </button>
         </div>
       </header>
       <main>
@@ -303,6 +307,17 @@
   <a href="index.html" style="position:fixed;top:16px;left:16px;z-index:100;background:rgba(0,0,0,.6);color:#fff;font-size:.8rem;font-weight:600;padding:.5rem 1rem;border-radius:6px;text-decoration:none;font-family:'DM Sans',sans-serif;backdrop-filter:blur(6px);">← Terug</a>
   <a href="index.html#contact" style="position:fixed;bottom:16px;left:50%;transform:translateX(-50%);z-index:100;background:#fff;color:#1a1a2e;font-size:.85rem;font-weight:700;padding:.7rem 1.6rem;border-radius:8px;text-decoration:none;font-family:'DM Sans',sans-serif;box-shadow:0 4px 20px rgba(0,0,0,.25);">Dit concept aanvragen →</a>
   <script src="compare-slider.js"></script>
+  <script>
+    const rootTheme = document.documentElement;
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) rootTheme.setAttribute('data-theme', savedTheme);
+    else if (window.matchMedia('(prefers-color-scheme:dark)').matches) rootTheme.setAttribute('data-theme','dark');
+    document.querySelector('.theme-toggle').addEventListener('click', () => {
+      const next = rootTheme.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+      rootTheme.setAttribute('data-theme', next);
+      localStorage.setItem('theme', next);
+    });
+  </script>
   <script>
     (function () {
       var reveals = document.querySelectorAll('.reveal');

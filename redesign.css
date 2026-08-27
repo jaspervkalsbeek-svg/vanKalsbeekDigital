@@ -151,4 +151,9 @@
   .compare-new .blog-grid, .compare-new .features-grid { grid-template-columns: 1fr; }
   .compare-new .dashboard-grid { grid-template-columns: 1fr; }
   .compare-new .project-card.tall .project-visual-inner { min-height: 200px; }
+  /* Keep nav tappable inside the compare pane (no hamburger here) */
+  .compare-new .nav-toggle { display: none; }
+  .compare-new .nav { position: static; flex-direction: row; flex-wrap: wrap; gap: .25rem; opacity: 1; pointer-events: auto; transform: none; padding: 0; background: none; backdrop-filter: none; border: none; }
+  .compare-new .nav a { color: var(--muted) !important; padding: .8rem .75rem; border: none; }
+  .compare-new .header-inner { flex-wrap: wrap; }
 }
