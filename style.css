@@ -118,6 +118,7 @@ body {
 .theme-toggle:hover { border-color: var(--primary); color: var(--primary); }
 .theme-toggle:active { transform: scale(.94); }
 .theme-toggle:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+.theme-toggle .icon-sun { display: none; }
 :root[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
 :root[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
 
@@ -830,6 +831,7 @@ body {
   font-size: .82rem;
 }
 .footer-links a:hover { color: #fff; text-decoration: underline; }
+.footer-social-icon { width: 14px; height: 14px; vertical-align: -2px; margin-right: .35rem; }
 .footer-link-btn {
   background: none; border: none; color: rgba(255,255,255,.6);
   font: inherit; font-size: .82rem; cursor: pointer;
