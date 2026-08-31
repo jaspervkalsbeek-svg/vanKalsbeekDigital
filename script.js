@@ -3,8 +3,9 @@
 (function () {
   'use strict';
 
-  // Cookie consent & analytics. GA loads in <head>; we only run gtag('config')
-  // after the user accepts cookies — no tracking without consent.
+  // Cookie consent & analytics. The GA script tag is NOT loaded in the <head>
+  // anymore (AVG: no network request to Google before consent). Instead we
+  // inject it dynamically only after the user accepts, then fire gtag('config').
   var COOKIE_KEY = 'vkd-cookie-consent';
   var GA_ID = 'G-TGF3SZDD35';
 
@@ -13,8 +14,14 @@
   try { cookieConsent = localStorage.getItem(COOKIE_KEY); } catch (e) {}
 
   if (cookieConsent === 'accepted') {
-    gtag('js', new Date());
-    gtag('config', GA_ID, { anonymize_ip: true });
+    var gaScript = document.createElement('script');
+    gaScript.async = true;
+    gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+    gaScript.onload = function () {
+      gtag('js', new Date());
+      gtag('config', GA_ID, { anonymize_ip: true });
+    };
+    document.head.appendChild(gaScript);
   } else if (!cookieConsent && cookieBanner) {
     cookieBanner.style.display = 'flex';
   }

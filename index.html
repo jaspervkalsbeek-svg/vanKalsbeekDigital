@@ -8,36 +8,22 @@
   <meta name="description" content="Van Kalsbeek Digital ontwikkelt websites, webapplicaties en data-gedreven software van concept tot live. Gebouwd in Landgraaf, Limburg." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://vankalsbeekdigital.com/" />
-  <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Van Kalsbeek Digital" />
-  <meta property="og:url" content="https://vankalsbeekdigital.com/" />
-  <meta property="og:title" content="Van Kalsbeek Digital - Websites, data &amp; software op maat" />
-  <meta property="og:description" content="Websites, webapplicaties en data-gedreven software van concept tot live. Gebouwd in Landgraaf, Limburg." />
-  <meta property="og:image" content="https://vankalsbeekdigital.com/assets/og-image.png" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:locale" content="nl_NL" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Van Kalsbeek Digital - Websites, data &amp; software op maat" />
-  <meta name="twitter:description" content="Websites, webapplicaties en data-gedreven software van concept tot live. Gebouwd in Landgraaf, Limburg." />
-  <meta name="twitter:image" content="https://vankalsbeekdigital.com/assets/og-image.png" />
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="base.css" />
-  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=3" />
+  <link rel="stylesheet" href="redesign-vkd.css?v=36" />
   <script>
-    // Thema vóór eerste weergave zetten: eigen keuze, anders systeeminstelling.
     (function () {
       try {
+        var root = document.documentElement;
         var theme = localStorage.getItem('vkd-theme') ||
           (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-        document.documentElement.setAttribute('data-theme', theme);
-      } catch (e) { /* localStorage niet beschikbaar: systeeminstelling geldt */ }
+        root.setAttribute('data-theme', theme);
+      } catch (e) {}
     })();
   </script>
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TGF3SZDD35"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
@@ -60,89 +46,70 @@
     },
     "telephone": "+31610809971",
     "email": "info@vankalsbeekdigital.com",
-    "areaServed": {
-      "@type": "State",
-      "name": "Limburg"
-    },
+    "areaServed": { "@type": "State", "name": "Limburg" },
     "priceRange": "€595-€2495",
-    "identifier": {
-      "@type": "PropertyValue",
-      "propertyID": "KVK",
-      "value": "42140552"
-    }
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Wat kost een website?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "De prijzen op de site zijn vanaf-prijzen. De exacte kosten hangen af van uw wensen: als u iets specifieks nodig heeft dat niet bij een tier staat, of slechts één onderdeel uit een andere tier wilt, dan spreken we samen af wat dat kost."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Hoe lang duurt het?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Binnen twee dagen liggen uw drie concepten klaar. Na uw keuze is de oplevering snel: ik geef u een concrete datum voordat we beginnen."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Wat als ik niet tevreden ben?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "De concepten zijn gratis en vrijblijvend: u zit nergens aan vast. Na uw keuze zijn revisierondes inbegrepen (aantal hangt af van het plan). Pas als het echt goed is, gaat het live."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Heb ik hosting nodig?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Ja, om een website online te zetten hebt u hosting nodig. Als u dat nog niet geregeld hebt, leg ik uit wat u nodig heeft en help ik u bij de keuze. De meeste klanten kiezen voor een partij als TransIP of Cloudflare: dat regelt u eenvoudig zelf."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Kan ik mijn website later uitbreiden?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Ja, elke website is uitbreidbaar. Begint u met Essential en wilt u later animaties, meer pagina's of een CMS? Dan bouwen we daar op voort: u begint niet opnieuw."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Gebruikt u templates of maatwerk?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Alles wordt op maat gebouwd, geen kant-en-klare templates. Uw website wordt specifiek voor uw bedrijf ontworpen en ontwikkeld."
-        }
-      }
-    ]
+    "identifier": { "@type": "PropertyValue", "propertyID": "KVK", "value": "42140552" }
   }
   </script>
 </head>
 <body>
+  <div class="vkd-ambient" aria-hidden="true"></div>
+  <div class="vkd-grid-bg" aria-hidden="true"></div>
+  <div class="vkd-scroll-progress" id="vkd-scroll-progress" aria-hidden="true"></div>
+
   <a class="skip-link" href="#hoofd">Ga naar inhoud</a>
 
-  <header class="header" id="header">
+  <header class="vkd-header" id="header">
     <div class="header-inner">
       <a href="#hoofd" class="brand" aria-label="Van Kalsbeek Digital, naar boven">
         <img src="assets/logo.png" alt="Van Kalsbeek Digital logo" class="brand-logo brand-logo-light" />
         <img src="assets/logo-dark.png" alt="Van Kalsbeek Digital logo" class="brand-logo brand-logo-dark" />
+        <svg class="brand-logo-svg vkd-logo" viewBox="0 0 469 496" role="img" aria-label="Van Kalsbeek Digital logo">
+          <g fill="currentColor" transform="translate(0 496) scale(0.1 -0.1)">
+            <path d="M1477 4545 l-299 -294 2 -358 c1 -197 2 -362 1 -368 -1 -6 -105 -11
+-284 -13 l-282 -3 -1 -127 -1 -127 -108 -5 -107 -5 -2 -175 -1 -175 -123 -5
+-122 -5 -3 -1373 c-1 -754 1 -1373 5 -1375 5 -1 537 -1 1183 1 l1176 2 -2 148
+-1 147 138 5 139 5 0 195 c0 194 0 195 -22 198 -22 3 -23 3 -25 -170 l-3 -173
+-112 -3 c-111 -3 -113 -2 -118 21 -4 14 -6 31 -5 38 5 35 -1 50 -17 47 -14 -2
+-19 -16 -23 -58 l-5 -55 -1010 0 -1010 0 0 1175 0 1175 341 3 c273 2 343 5
+347 16 13 34 -5 36 -349 38 l-339 3 0 159 0 158 369 -1 c202 -1 372 -4 377 -6
+4 -3 6 -535 4 -1183 -3 -647 -2 -1244 2 -1327 l6 -149 298 304 298 305 1 464
+0 463 363 372 c1025 1052 1592 1637 1595 1644 1 4 -181 6 -405 4 l-408 -2
+-160 -163 c-286 -291 -978 -987 -982 -987 -1 0 -3 425 -3 945 0 520 -3 945 -7
+945 -5 -1 -142 -133 -306 -295z m-1085 -2900 l3 -1195 1030 -4 c567 -2 1031
+-5 1033 -5 1 -1 1 -58 0 -128 l-3 -128 -1130 0 -1130 0 -3 1328 -2 1327 100 0
+100 0 2 -1195z"/>
+            <path d="M4235 3313 c-37 -10 -73 -43 -85 -78 l-12 -35 -211 0 -212 0 -200
+-206 -200 -207 -301 2 c-271 2 -302 1 -308 -14 -3 -9 -6 -21 -6 -26 0 -5 127
+-9 308 -9 l307 0 210 210 210 210 202 0 202 0 17 -36 c38 -80 153 -84 213 -8
+24 30 28 95 8 133 -23 46 -91 77 -142 64z m95 -71 c58 -73 -17 -170 -105 -136
+-26 10 -48 62 -41 99 14 72 101 95 146 37z"/>
+            <path d="M4280 2510 c-21 -10 -43 -33 -53 -54 l-17 -36 -796 0 -795 0 3 -22 3
+-23 798 -3 c680 -2 797 -4 797 -16 0 -27 51 -76 91 -86 152 -41 237 176 96
+243 -45 22 -83 21 -127 -3z m123 -57 c10 -10 17 -31 17 -55 0 -49 -28 -78 -75
+-78 -47 0 -75 29 -75 78 0 72 78 104 133 55z"/>
+            <path d="M2203 2241 c-83 -86 -172 -180 -198 -208 l-46 -53 268 -296 c269
+-298 492 -547 808 -902 l170 -191 393 -2 c215 -1 400 -3 410 -3 41 -2 43 -4
+-422 508 -389 431 -579 636 -956 1036 -80 85 -170 181 -199 213 -30 31 -59 56
+-65 56 -6 -1 -79 -72 -163 -158z"/>
+            <path d="M3861 2127 c-20 -6 -44 -26 -60 -48 l-26 -38 -220 -2 c-667 -7 -600
+-4 -603 -27 -3 -21 0 -22 85 -23 48 0 234 -3 413 -5 l325 -3 13 -25 c7 -13 26
+-36 43 -50 74 -62 199 -2 199 96 0 94 -80 154 -169 125z m101 -70 c39 -50 6
+-121 -56 -121 -63 0 -96 58 -65 115 23 43 89 46 121 6z"/>
+            <path d="M3262 1683 c3 -16 22 -18 198 -20 190 -2 196 -3 213 -25 11 -13 50
+-56 89 -95 l70 -73 229 0 c196 0 229 -2 229 -15 0 -8 13 -29 28 -46 21 -23 39
+-32 73 -36 106 -12 171 83 124 182 -20 40 -56 60 -109 60 -52 0 -93 -26 -112
+-71 l-14 -34 -218 0 -218 0 -88 95 -87 95 -205 0 c-190 0 -205 -1 -202 -17z
+m1197 -129 c31 -26 39 -60 25 -99 -8 -19 -55 -45 -84 -45 -31 0 -80 53 -80 85
+0 34 50 85 83 85 14 0 39 -12 56 -26z"/>
+          </g>
+        </svg>
       </a>
       <nav class="nav" id="nav" aria-label="Hoofdnavigatie">
         <a href="#diensten">Concepten</a>
         <a href="#werkwijze">Werkwijze</a>
         <a href="#portfolio">Portfolio</a>
-        <a href="#over">Over mij</a>
+        <button type="button" class="nav-link-btn" id="nav-over" data-open-modal>Over mij</button>
         <a href="#contact" class="nav-cta">Contact</a>
       </nav>
       <div class="header-actions">
@@ -161,18 +128,110 @@
   <main id="hoofd">
 
     <!-- HERO -->
-    <section class="hero">
-      <div class="hero-inner">
-        <p class="eyebrow">Landgraaf · Limburg</p>
-        <h1 class="hero-title" id="hero-title">Uw website werkt <em>voor u</em>, terwijl u onderneemt</h1>
-        <p class="hero-text">Professionele websites en webapplicaties voor kleine tot middelgrote bedrijven in Limburg. Van eerste idee tot live: strak, snel en gemaakt om dagelijks te gebruiken.</p>
-        <div class="hero-proof">3 gratis concepten, binnen 2 dagen klaar. U betaalt pas als u kiest.</div>
-        <div class="hero-actions">
-          <a href="#contact" class="btn btn-primary">Vraag gratis uw concepten aan</a>
-          <a href="#portfolio" class="btn btn-ghost">Bekijk mijn werk</a>
+    <section class="vkd-hero">
+      <div class="vkd-hero-inner">
+        <div class="vkd-hero-copy">
+          <div class="vkd-hero-logo">
+            <svg class="vkd-logo" viewBox="0 0 469 496" role="img" aria-label="Van Kalsbeek Digital logo">
+              <g fill="currentColor" transform="translate(0 496) scale(0.1 -0.1)">
+                <path d="M1477 4545 l-299 -294 2 -358 c1 -197 2 -362 1 -368 -1 -6 -105 -11
+-284 -13 l-282 -3 -1 -127 -1 -127 -108 -5 -107 -5 -2 -175 -1 -175 -123 -5
+-122 -5 -3 -1373 c-1 -754 1 -1373 5 -1375 5 -1 537 -1 1183 1 l1176 2 -2 148
+-1 147 138 5 139 5 0 195 c0 194 0 195 -22 198 -22 3 -23 3 -25 -170 l-3 -173
+-112 -3 c-111 -3 -113 -2 -118 21 -4 14 -6 31 -5 38 5 35 -1 50 -17 47 -14 -2
+-19 -16 -23 -58 l-5 -55 -1010 0 -1010 0 0 1175 0 1175 341 3 c273 2 343 5
+347 16 13 34 -5 36 -349 38 l-339 3 0 159 0 158 369 -1 c202 -1 372 -4 377 -6
+4 -3 6 -535 4 -1183 -3 -647 -2 -1244 2 -1327 l6 -149 298 304 298 305 1 464
+0 463 363 372 c1025 1052 1592 1637 1595 1644 1 4 -181 6 -405 4 l-408 -2
+-160 -163 c-286 -291 -978 -987 -982 -987 -1 0 -3 425 -3 945 0 520 -3 945 -7
+945 -5 -1 -142 -133 -306 -295z m-1085 -2900 l3 -1195 1030 -4 c567 -2 1031
+-5 1033 -5 1 -1 1 -58 0 -128 l-3 -128 -1130 0 -1130 0 -3 1328 -2 1327 100 0
+100 0 2 -1195z"/>
+                <path d="M4235 3313 c-37 -10 -73 -43 -85 -78 l-12 -35 -211 0 -212 0 -200
+-206 -200 -207 -301 2 c-271 2 -302 1 -308 -14 -3 -9 -6 -21 -6 -26 0 -5 127
+-9 308 -9 l307 0 210 210 210 210 202 0 202 0 17 -36 c38 -80 153 -84 213 -8
+24 30 28 95 8 133 -23 46 -91 77 -142 64z m95 -71 c58 -73 -17 -170 -105 -136
+-26 10 -48 62 -41 99 14 72 101 95 146 37z"/>
+                <path d="M4280 2510 c-21 -10 -43 -33 -53 -54 l-17 -36 -796 0 -795 0 3 -22 3
+-23 798 -3 c680 -2 797 -4 797 -16 0 -27 51 -76 91 -86 152 -41 237 176 96
+243 -45 22 -83 21 -127 -3z m123 -57 c10 -10 17 -31 17 -55 0 -49 -28 -78 -75
+-78 -47 0 -75 29 -75 78 0 72 78 104 133 55z"/>
+                <path d="M2203 2241 c-83 -86 -172 -180 -198 -208 l-46 -53 268 -296 c269
+-298 492 -547 808 -902 l170 -191 393 -2 c215 -1 400 -3 410 -3 41 -2 43 -4
+-422 508 -389 431 -579 636 -956 1036 -80 85 -170 181 -199 213 -30 31 -59 56
+-65 56 -6 -1 -79 -72 -163 -158z"/>
+                <path d="M3861 2127 c-20 -6 -44 -26 -60 -48 l-26 -38 -220 -2 c-667 -7 -600
+-4 -603 -27 -3 -21 0 -22 85 -23 48 0 234 -3 413 -5 l325 -3 13 -25 c7 -13 26
+-36 43 -50 74 -62 199 -2 199 96 0 94 -80 154 -169 125z m101 -70 c39 -50 6
+-121 -56 -121 -63 0 -96 58 -65 115 23 43 89 46 121 6z"/>
+                <path d="M3262 1683 c3 -16 22 -18 198 -20 190 -2 196 -3 213 -25 11 -13 50
+-56 89 -95 l70 -73 229 0 c196 0 229 -2 229 -15 0 -8 13 -29 28 -46 21 -23 39
+-32 73 -36 106 -12 171 83 124 182 -20 40 -56 60 -109 60 -52 0 -93 -26 -112
+-71 l-14 -34 -218 0 -218 0 -88 95 -87 95 -205 0 c-190 0 -205 -1 -202 -17z
+m1197 -129 c31 -26 39 -60 25 -99 -8 -19 -55 -45 -84 -45 -31 0 -80 53 -80 85
+0 34 50 85 83 85 14 0 39 -12 56 -26z"/>
+              </g>
+            </svg>
+          </div>
+          <p class="vkd-eyebrow"><span class="vkd-dot" aria-hidden="true"></span>Beschikbaar voor nieuwe projecten</p>
+          <h1 class="vkd-title">Ik bouw websites die uw bedrijf laten <span class="vkd-rotator" aria-hidden="true"><svg class="vkd-rot-svg" viewBox="0 0 0 41" height="41"><defs><linearGradient id="vkd-grad-0" x1="0" y1="0" x2="1" y2="0"><stop offset="0" class="vkd-grad-0"/><stop offset="1" class="vkd-grad-1"/></linearGradient></defs><text class="vkd-rot-svg-text" x="0" y="41" fill="url(#vkd-grad-0)"></text></svg><span class="vkd-rot-cursor"></span></span><span class="sr-only">groeien.</span></h1>
+          <p class="vkd-sub">Websites, webapplicaties en data-tools, van concept tot live.</p>
+          <div class="vkd-proof">
+            <span class="vkd-badge">3 gratis concepten</span>
+            <span class="vkd-proof-text">Binnen 2 dagen klaar, vrijblijvend.</span>
+          </div>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">Vraag gratis uw concepten aan</a>
+          </div>
         </div>
+        <button type="button" class="vkd-trust" id="vkdTrustBtn" aria-label="Open meer over mij">
+          <div class="vkd-profile">
+            <img src="assets/profile.jpg" alt="Jasper van Kalsbeek" width="96" height="128" loading="lazy" />
+            <div class="vkd-profile-meta">
+              <p class="vkd-profile-name">Jasper van Kalsbeek</p>
+              <p class="vkd-profile-role">MBO-4 softwareontwikkelaar</p>
+            </div>
+          </div>
+          <ul class="vkd-trust-list">
+            <li class="vkd-trust-item">
+              <svg class="vkd-trust-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg>
+              <span>Klant live: arbo-advies.info</span>
+            </li>
+            <li class="vkd-trust-item">
+              <svg class="vkd-trust-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+              <span>"Denkt goed mee, levert precies wat je nodig hebt."</span>
+            </li>
+            <li class="vkd-trust-item">
+              <svg class="vkd-trust-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6"/><path d="M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+              <span>Eigen bedrijf sinds 2024</span>
+            </li>
+          </ul>
+          <span class="vkd-trust-open">Meer over mij <span aria-hidden="true">→</span></span>
+        </button>
       </div>
     </section>
+
+    <!-- OVER MIJ MODAL -->
+
+    <!-- BEWIJSCIJFERS -->
+    <div class="vkd-stats">
+      <div class="vkd-stat reveal">
+        <span class="vkd-stat-num" data-target="2" data-prefix="Binnen " data-suffix=" dagen">Binnen 2 dagen</span>
+        <span class="vkd-stat-label">tot uw 3 gratis concepten klaar liggen</span>
+      </div>
+      <div class="vkd-stat reveal">
+        <span class="vkd-stat-num" data-target="3">3</span>
+        <span class="vkd-stat-label">gratis concepten, geheel vrijblijvend</span>
+      </div>
+      <div class="vkd-stat reveal">
+        <span class="vkd-stat-num" data-target="595" data-prefix="€">€595</span>
+        <span class="vkd-stat-label">vanaf-prijs voor een complete website</span>
+      </div>
+      <div class="vkd-stat reveal">
+        <span class="vkd-stat-num">1</span>
+        <span class="vkd-stat-label">opgeleverde website, live online</span>
+      </div>
+    </div>
 
     <!-- CONCEPTEN -->
     <section class="section" id="diensten">
@@ -189,135 +248,178 @@
       <div class="tier-panels">
         <div class="tier-panel active" id="tier-nieuw" role="tabpanel">
           <div class="services-grid">
-        <article class="service-card reveal">
-          <span class="service-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 20h16M7 20v-6"/></svg>
-          </span>
-          <h3>Essential</h3>
-          <p class="tier-price">vanaf €595 <span class="tier-price-note">excl. BTW</span></p>
-          <p class="tier-duration">Binnen 1 week opgeleverd</p>
-          <p>Een strakke, overzichtelijke basis die precies doet wat u nodig hebt.</p>
-          <ul class="tier-features">
-            <li>1–3 pagina's</li>
-            <li>Responsive (mobiel, tablet, desktop)</li>
-            <li>Licht én donker thema</li>
-            <li>Contactformulier</li>
-            <li>Snel ladende pagina</li>
-            <li>Basis SEO (vindbaar in Google)</li>
-            <li>1e maand onderhoud gratis, daarna €15/maand</li>
-          </ul>
-          <a href="example-essential.html" class="tier-example-link">Bekijk voorbeeld <span aria-hidden="true">→</span></a>
-        </article>
-        <article class="service-card tier-popular reveal">
-          <span class="tier-badge">Populair</span>
-          <span class="service-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 20h16M7 20v-6M12 20v-9"/></svg>
-          </span>
-          <h3>Pro</h3>
-          <p class="tier-price">vanaf €1.295 <span class="tier-price-note">excl. BTW</span></p>
-          <p class="tier-duration">Binnen 2–3 weken opgeleverd</p>
-          <p>De slimme keuze: alles uit Essential, aangevuld met wat uw zaak écht laat opvallen.</p>
-          <ul class="tier-features">
-            <li>Alles uit Essential</li>
-            <li>Tot 7 pagina's</li>
-            <li>Animaties &amp; micro-interacties</li>
-            <li>Eigen huisstijl (kleuren, lettertype, logo)</li>
-            <li>Zelf content beheren (CMS)</li>
-            <li>Blog / nieuws-sectie</li>
-            <li>Bezoekersinzicht (statistieken)</li>
-            <li>SEO-pakket (titels, Google-indexering)</li>
-            <li>2 revisierondes</li>
-            <li>Prioriteit bij vragen</li>
-            <li>1e maand onderhoud gratis, daarna €15/maand</li>
-          </ul>
-          <a href="example-pro.html" class="tier-example-link">Bekijk voorbeeld <span aria-hidden="true">→</span></a>
-        </article>
-        <article class="service-card reveal">
-          <span class="service-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 20h16M7 20v-6M12 20v-9M17 20V4"/></svg>
-          </span>
-          <h3>Ultimate</h3>
-          <p class="tier-price">vanaf €2.495 <span class="tier-price-note">excl. BTW</span></p>
-          <p class="tier-duration">Binnen 4–6 weken opgeleverd</p>
-          <p>Het complete pakket: maatwerk, data-integraties en doorlopende ondersteuning.</p>
-          <ul class="tier-features">
-            <li>Alles uit Pro</li>
-            <li>Onbeperkt pagina's, uitbreidbaar</li>
-            <li>Volledig maatwerk design</li>
-            <li>Data-gedreven functies (automatische overzichten, koppelingen)</li>
-            <li>Webapplicatie / dashboard op maat</li>
-            <li>Korte beheersessie na oplevering</li>
-            <li>3 maanden onderhoud gratis, daarna €15/maand</li>
-          </ul>
-          <a href="example-ultimate.html" class="tier-example-link">Bekijk voorbeeld <span aria-hidden="true">→</span></a>
-        </article>
-        </div>
-        <p class="concept-note">Gratis en vrijblijvend: binnen 2 dagen liggen uw drie concepten klaar. U betaalt pas wanneer u kiest welk concept u wilt.</p>
+            <details class="service-card vkd-spot reveal">
+              <span class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 20h16M7 20v-6"/></svg>
+              </span>
+              <summary>
+              <h3>Essential</h3>
+              <span class="tier-price">vanaf €595 <span class="tier-price-note">excl. BTW</span></span>
+              <span class="tier-duration">Binnen 1 week opgeleverd</span>
+              <span class="vkd-tier-desc">Een strakke, overzichtelijke basis die precies doet wat u nodig hebt.</span>
+              <span class="vkd-tier-hint"><span class="vkd-tier-more">Wat zit erin?</span><span class="vkd-tier-less">Sluit</span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span>
+              </summary>
+              <ul class="tier-features">
+                <li>1–3 pagina's</li>
+                <li>Responsive (mobiel, tablet, desktop)</li>
+                <li>Licht én donker thema</li>
+                <li>Contactformulier</li>
+                <li>Snel ladende pagina</li>
+                <li>Basis SEO (vindbaar in Google)</li>
+                <li>1e maand onderhoud gratis, daarna €15/maand</li>
+              </ul>
+              <a href="example-essential.html" class="tier-example-link">Bekijk voorbeeld <span aria-hidden="true">→</span></a>
+            </details>
+            <details class="service-card tier-popular vkd-spot reveal">
+              <span class="tier-badge">Populair</span>
+              <span class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 20h16M7 20v-6M12 20v-9"/></svg>
+              </span>
+              <summary>
+              <h3>Pro</h3>
+              <span class="tier-price">vanaf €1.295 <span class="tier-price-note">excl. BTW</span></span>
+              <span class="tier-duration">Binnen 2–3 weken opgeleverd</span>
+              <span class="vkd-tier-desc">De slimme keuze: alles uit Essential, aangevuld met wat uw zaak écht laat opvallen.</span>
+              <span class="vkd-tier-hint"><span class="vkd-tier-more">Wat zit erin?</span><span class="vkd-tier-less">Sluit</span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span>
+              </summary>
+              <ul class="tier-features">
+                <li>Alles uit Essential</li>
+                <li>Tot 7 pagina's</li>
+                <li>Animaties &amp; micro-interacties</li>
+                <li>Eigen huisstijl (kleuren, lettertype, logo)</li>
+                <li>Zelf content beheren (CMS)</li>
+                <li>Blog / nieuws-sectie</li>
+                <li>Bezoekersinzicht (statistieken)</li>
+                <li>SEO-pakket (titels, Google-indexering)</li>
+                <li>2 revisierondes</li>
+                <li>Prioriteit bij vragen</li>
+                <li>1e maand onderhoud gratis, daarna €15/maand</li>
+              </ul>
+              <a href="example-pro.html" class="tier-example-link">Bekijk voorbeeld <span aria-hidden="true">→</span></a>
+            </details>
+            <details class="service-card vkd-spot reveal">
+              <span class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 20h16M7 20v-6M12 20v-9M17 20V4"/></svg>
+              </span>
+              <summary>
+              <h3>Ultimate</h3>
+              <span class="tier-price">vanaf €2.495 <span class="tier-price-note">excl. BTW</span></span>
+              <span class="tier-duration">Binnen 4–6 weken opgeleverd</span>
+              <span class="vkd-tier-desc">Het complete pakket: maatwerk, data-integraties en doorlopende ondersteuning.</span>
+              <span class="vkd-tier-hint"><span class="vkd-tier-more">Wat zit erin?</span><span class="vkd-tier-less">Sluit</span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span>
+              </summary>
+              <ul class="tier-features">
+                <li>Alles uit Pro</li>
+                <li>Onbeperkt pagina's, uitbreidbaar</li>
+                <li>Volledig maatwerk design</li>
+                <li>Data-gedreven functies (automatische overzichten, koppelingen)</li>
+                <li>Webapplicatie / dashboard op maat</li>
+                <li>Korte beheersessie na oplevering</li>
+                <li>3 maanden onderhoud gratis, daarna €15/maand</li>
+              </ul>
+              <a href="example-ultimate.html" class="tier-example-link">Bekijk voorbeeld <span aria-hidden="true">→</span></a>
+            </details>
+          </div>
+          <p class="concept-note">Gratis en vrijblijvend: binnen 2 dagen liggen uw drie concepten klaar. U betaalt pas wanneer u kiest welk concept u wilt.</p>
         </div>
 
         <div class="tier-panel" id="tier-redesign" role="tabpanel">
           <div class="services-grid">
-        <article class="service-card reveal">
-          <span class="service-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 20h16M7 20v-6"/></svg>
-          </span>
-          <h3>Essential</h3>
-          <p class="tier-price">vanaf €395 <span class="tier-price-note">excl. BTW</span></p>
-          <p class="tier-duration">Binnen 3–5 dagen opgeleverd</p>
-          <p>Visuele restyle van uw huidige site: strakker, sneller, mobiel-vriendelijk.</p>
-          <ul class="tier-features">
-            <li>Visuele restyle van bestaande pagina's</li>
-            <li>Responsive (mobiel, tablet, desktop)</li>
-            <li>Snellere laadtijd</li>
-            <li>Basis SEO-update</li>
-            <li>1 revisieronde</li>
-            <li>1e maand onderhoud gratis, daarna €15/maand</li>
-          </ul>
-          <a href="redesign-essential.html" class="tier-example-link">Bekijk voorbeeld <span aria-hidden="true">→</span></a>
-        </article>
-        <article class="service-card tier-popular reveal">
-          <span class="tier-badge">Populair</span>
-          <span class="service-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 20h16M7 20v-6M12 20v-9"/></svg>
-          </span>
-          <h3>Pro</h3>
-          <p class="tier-price">vanaf €895 <span class="tier-price-note">excl. BTW</span></p>
-          <p class="tier-duration">Binnen 1–2 weken opgeleverd</p>
-          <p>Alles uit Essential, aangevuld met CMS en professionele afwerking.</p>
-          <ul class="tier-features">
-            <li>Alles uit Essential</li>
-            <li>Tot 7 pagina's opnieuw ingericht</li>
-            <li>CMS toevoegen (zelf content beheren)</li>
-            <li>Animaties &amp; micro-interacties</li>
-            <li>SEO-pakket (titels, Google-indexering)</li>
-            <li>2 revisierondes</li>
-            <li>1e maand onderhoud gratis, daarna €15/maand</li>
-          </ul>
-          <a href="redesign-pro.html" class="tier-example-link">Bekijk voorbeeld <span aria-hidden="true">→</span></a>
-        </article>
-        <article class="service-card reveal">
-          <span class="service-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 20h16M7 20v-6M12 20v-9M17 20V4"/></svg>
-          </span>
-          <h3>Ultimate</h3>
-          <p class="tier-price">vanaf €1.695 <span class="tier-price-note">excl. BTW</span></p>
-          <p class="tier-duration">Binnen 2–3 weken opgeleverd</p>
-          <p>Volledige herschrijving: nieuw design, nieuwe technologie, nieuwe mogelijkheden.</p>
-          <ul class="tier-features">
-            <li>Alles uit Pro</li>
-            <li>Onbeperkt pagina's</li>
-            <li>Nieuwe functionaliteit (formulieren, integraties)</li>
-            <li>Volledig maatwerk design</li>
-            <li>Korte beheersessie na oplevering</li>
-            <li>3 maanden onderhoud gratis, daarna €15/maand</li>
-          </ul>
-          <a href="redesign-ultimate.html" class="tier-example-link">Bekijk voorbeeld <span aria-hidden="true">→</span></a>
-        </article>
-        </div>
-        <p class="concept-note">Ook bij een redesign: drie gratis concepten, vrijblijvend. Meestal sneller klaar dan een volledig nieuwe site.</p>
+            <details class="service-card vkd-spot reveal">
+              <span class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 20h16M7 20v-6"/></svg>
+              </span>
+              <summary>
+              <h3>Essential</h3>
+              <span class="tier-price">vanaf €395 <span class="tier-price-note">excl. BTW</span></span>
+              <span class="tier-duration">Binnen 3–5 dagen opgeleverd</span>
+              <span class="vkd-tier-desc">Visuele restyle van uw huidige site: strakker, sneller, mobiel-vriendelijk.</span>
+              <span class="vkd-tier-hint"><span class="vkd-tier-more">Wat zit erin?</span><span class="vkd-tier-less">Sluit</span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span>
+              </summary>
+              <ul class="tier-features">
+                <li>Visuele restyle van bestaande pagina's</li>
+                <li>Responsive (mobiel, tablet, desktop)</li>
+                <li>Snellere laadtijd</li>
+                <li>Basis SEO-update</li>
+                <li>1 revisieronde</li>
+                <li>1e maand onderhoud gratis, daarna €15/maand</li>
+              </ul>
+              <a href="redesign-essential.html" class="tier-example-link">Bekijk voorbeeld <span aria-hidden="true">→</span></a>
+            </details>
+            <details class="service-card tier-popular vkd-spot reveal">
+              <span class="tier-badge">Populair</span>
+              <span class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 20h16M7 20v-6M12 20v-9"/></svg>
+              </span>
+              <summary>
+              <h3>Pro</h3>
+              <span class="tier-price">vanaf €895 <span class="tier-price-note">excl. BTW</span></span>
+              <span class="tier-duration">Binnen 1–2 weken opgeleverd</span>
+              <span class="vkd-tier-desc">Alles uit Essential, aangevuld met CMS en professionele afwerking.</span>
+              <span class="vkd-tier-hint"><span class="vkd-tier-more">Wat zit erin?</span><span class="vkd-tier-less">Sluit</span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span>
+              </summary>
+              <ul class="tier-features">
+                <li>Alles uit Essential</li>
+                <li>Tot 7 pagina's opnieuw ingericht</li>
+                <li>CMS toevoegen (zelf content beheren)</li>
+                <li>Animaties &amp; micro-interacties</li>
+                <li>SEO-pakket (titels, Google-indexering)</li>
+                <li>2 revisierondes</li>
+                <li>1e maand onderhoud gratis, daarna €15/maand</li>
+              </ul>
+              <a href="redesign-pro.html" class="tier-example-link">Bekijk voorbeeld <span aria-hidden="true">→</span></a>
+            </details>
+            <details class="service-card vkd-spot reveal">
+              <span class="service-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M4 20h16M7 20v-6M12 20v-9M17 20V4"/></svg>
+              </span>
+              <summary>
+              <h3>Ultimate</h3>
+              <span class="tier-price">vanaf €1.695 <span class="tier-price-note">excl. BTW</span></span>
+              <span class="tier-duration">Binnen 2–3 weken opgeleverd</span>
+              <span class="vkd-tier-desc">Volledige herschrijving: nieuw design, nieuwe technologie, nieuwe mogelijkheden.</span>
+              <span class="vkd-tier-hint"><span class="vkd-tier-more">Wat zit erin?</span><span class="vkd-tier-less">Sluit</span><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg></span>
+              </summary>
+              <ul class="tier-features">
+                <li>Alles uit Pro</li>
+                <li>Onbeperkt pagina's</li>
+                <li>Nieuwe functionaliteit (formulieren, integraties)</li>
+                <li>Volledig maatwerk design</li>
+                <li>Korte beheersessie na oplevering</li>
+                <li>3 maanden onderhoud gratis, daarna €15/maand</li>
+              </ul>
+              <a href="redesign-ultimate.html" class="tier-example-link">Bekijk voorbeeld <span aria-hidden="true">→</span></a>
+            </details>
+          </div>
+          <p class="concept-note">Ook bij een redesign: drie gratis concepten, vrijblijvend. Meestal sneller klaar dan een volledig nieuwe site.</p>
         </div>
       </div>
+    </section>
 
+    <!-- STACKSHOW -->
+    <section class="vkd-stack" id="stack">
+      <div class="section-head">
+        <p class="eyebrow">Techniek</p>
+        <h2>Wat ik gebruik</h2>
+        <p class="section-intro">Elke site bouw ik op maat. Dit is de kern van mijn gereedschapskist, en daar vertel ik u graag alles over.</p>
+      </div>
+      <div class="vkd-stack-grid">
+        <div class="vkd-stack-card vkd-spot reveal">
+          <span class="vkd-stack-icon" aria-hidden="true">&lt;/&gt;</span>
+          <h3>HTML5</h3>
+          <p>Semantische, toegankelijke markup. Elke pagina begint met een heldere, logische structuur.</p>
+        </div>
+        <div class="vkd-stack-card vkd-spot reveal">
+          <span class="vkd-stack-icon" aria-hidden="true">{ }</span>
+          <h3>CSS3</h3>
+          <p>Responsive layouts, animaties en micro-interacties. Geen bibliotheek die er niet hoeft te zijn.</p>
+        </div>
+        <div class="vkd-stack-card vkd-spot reveal">
+          <span class="vkd-stack-icon" aria-hidden="true">JS</span>
+          <h3>JavaScript</h3>
+          <p>Interactie en data: van formulieren tot dashboards. Modern en zonder ballast.</p>
+        </div>
+      </div>
     </section>
 
     <!-- HOE IK WERK -->
@@ -353,19 +455,19 @@
         <p class="section-intro">Uw website is het eerste wat potentiële klanten zien. Een trage, verouderde of onveilige site jaagt ze weg voordat ze ooit contact opnemen.</p>
       </div>
       <div class="why-grid">
-        <article class="why-item reveal">
+        <article class="why-item vkd-spot reveal">
           <h3>U wordt gevonden</h3>
           <p>Google beloont actuele, snelle sites met een hogere ranking. Verouderde sites zakken weg in de resultaten.</p>
         </article>
-        <article class="why-item reveal">
+        <article class="why-item vkd-spot reveal">
           <h3>Bezoekers blijven</h3>
           <p>Elke seconde vertraging kost 7% conversie. Moderne technologie houdt uw bezoekers op de pagina.</p>
         </article>
-        <article class="why-item reveal">
+        <article class="why-item vkd-spot reveal">
           <h3>Professionele indruk</h3>
           <p>75% van de bezoekers beoordeelt uw professionaliteit op uw website. Een moderne site bouwt vertrouwen op.</p>
         </article>
-        <article class="why-item reveal">
+        <article class="why-item vkd-spot reveal">
           <h3>Beschermd tegen aanvallen</h3>
           <p>Verouderde software is het mikpunt van hackers. Up-to-date software minimaliseert de kans op lekken.</p>
         </article>
@@ -379,9 +481,8 @@
         <h2>Werk waar ik trots op ben</h2>
         <p class="section-intro">De eerste van meer: een complete bedrijfswebsite voor een echte opdrachtgever.</p>
       </div>
-
       <div class="projects-grid">
-        <article class="project-card project-featured reveal">
+        <article class="project-card project-featured vkd-spot reveal">
           <div class="project-body">
             <span class="project-flag">Familiebedrijf</span>
             <h3>Arbo Adviesburo Van Kalsbeek</h3>
@@ -403,52 +504,38 @@
     </section>
 
     <!-- OVER MIJ -->
-    <section class="section section-soft" id="over">
-      <div class="about-grid">
-        <div class="about-photo reveal">
-          <img src="assets/profile.jpg" alt="Jasper van Kalsbeek" loading="lazy" width="380" height="507" />
-        </div>
-        <div class="about-text reveal">
-          <p class="eyebrow">Over mij</p>
-          <h2>Jasper van Kalsbeek</h2>
-          <p>Wat ik maak moet werken én gebruikt worden: duidelijk, overzichtelijk en zonder functies die niemand vraagt. Precies zoals de complete bedrijfswebsite die ik voor het familiebedrijf bouwde.</p>
-          <p>MBO-4 softwareontwikkelaar bij VISTA College Heerlen, met een neus voor data en een achtergrond in klantgerichte rollen.</p>
-        </div>
-      </div>
-    </section>
-
     <!-- FAQ -->
     <section class="section" id="faq">
       <div class="section-head">
         <p class="eyebrow">Veelgestelde vragen</p>
         <h2>Korte antwoorden</h2>
       </div>
-      <dl class="faq-list">
-        <div class="faq-item reveal">
-          <dt>Wat kost een website?</dt>
+      <div class="faq-list">
+        <details class="faq-item reveal" name="faq">
+          <summary>Wat kost een website?</summary>
           <dd>De prijzen op de site zijn vanaf-prijzen. De exacte kosten hangen af van uw wensen: als u iets specifieks nodig heeft dat niet bij een tier staat, of slechts één onderdeel uit een andere tier wilt, dan spreken we samen af wat dat kost.</dd>
-        </div>
-        <div class="faq-item reveal">
-          <dt>Hoe lang duurt het?</dt>
+        </details>
+        <details class="faq-item reveal" name="faq">
+          <summary>Hoe lang duurt het?</summary>
           <dd>Binnen twee dagen liggen uw drie concepten klaar. Na uw keuze is de oplevering snel: ik geef u een concrete datum voordat we beginnen.</dd>
-        </div>
-        <div class="faq-item reveal">
-          <dt>Wat als ik niet tevreden ben?</dt>
+        </details>
+        <details class="faq-item reveal" name="faq">
+          <summary>Wat als ik niet tevreden ben?</summary>
           <dd>De concepten zijn gratis en vrijblijvend: u zit nergens aan vast. Na uw keuze zijn revisierondes inbegrepen (aantal hangt af van het plan). Pas als het echt goed is, gaat het live.</dd>
-        </div>
-        <div class="faq-item reveal">
-          <dt>Heb ik hosting nodig?</dt>
+        </details>
+        <details class="faq-item reveal" name="faq">
+          <summary>Heb ik hosting nodig?</summary>
           <dd>Ja, om een website online te zetten hebt u hosting nodig. Als u dat nog niet geregeld hebt, leg ik uit wat u nodig heeft en help ik u bij de keuze. De meeste klanten kiezen voor een partij als TransIP of Cloudflare: dat regelt u eenvoudig zelf.</dd>
-        </div>
-        <div class="faq-item reveal">
-          <dt>Kan ik mijn website later uitbreiden?</dt>
+        </details>
+        <details class="faq-item reveal" name="faq">
+          <summary>Kan ik mijn website later uitbreiden?</summary>
           <dd>Ja, elke website is uitbreidbaar. Begint u met Essential en wilt u later animaties, meer pagina's of een CMS? Dan bouwen we daar op voort: u begint niet opnieuw.</dd>
-        </div>
-        <div class="faq-item reveal">
-          <dt>Gebruikt u templates of maatwerk?</dt>
+        </details>
+        <details class="faq-item reveal" name="faq">
+          <summary>Gebruikt u templates of maatwerk?</summary>
           <dd>Alles wordt op maat gebouwd, geen kant-en-klare templates. Uw website wordt specifiek voor uw bedrijf ontworpen en ontwikkeld.</dd>
-        </div>
-      </dl>
+        </details>
+      </div>
     </section>
 
     <!-- ONDERHOUD -->
@@ -459,21 +546,21 @@
         <p class="section-intro">Na oplevering is de eerste maand ondersteuning gratis. Daarna kunt u doorgaan met het onderhoudsabonnement: kleine aanpassingen, updates en vragen, onbeperkt.</p>
       </div>
       <div class="why-grid">
-        <div class="why-card reveal">
+        <div class="why-card vkd-spot reveal">
           <span class="why-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M12 2v4m0 12v4M4.9 4.9l2.8 2.8m8.6 8.6 2.8 2.8M2 12h4m12 0h4M4.9 19.1l2.8-2.8m8.6-8.6 2.8-2.8"/></svg>
           </span>
           <h3>Wat zit erin?</h3>
           <p>Tekstwijzigingen, foto's updaten, kleine bugs fixen, SSL-verlenging checken. Geen grote verbouwingen, maar alles wat uw site actueel houdt.</p>
         </div>
-        <div class="why-card reveal">
+        <div class="why-card vkd-spot reveal">
           <span class="why-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
           </span>
           <h3>Flexibel</h3>
           <p>Maandelijks opzegbaar, geen contract. Stopt u? Uw website blijft gewoon online. Later weer starten? Geen heractivatiekosten.</p>
         </div>
-        <div class="why-card reveal">
+        <div class="why-card vkd-spot reveal">
           <span class="why-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
           </span>
@@ -483,7 +570,7 @@
       </div>
       <div class="maintenance-cta reveal">
         <p class="maintenance-price">€15 <span>per maand, eerste maand gratis</span></p>
-        <a href="mailto:info@vankalsbeekdigital.com?subject=Onderhoudsabonnement" class="btn btn-primary">Meld u aan</a>
+        <a href="#contact" class="btn btn-primary">Plan uw onderhoud nu in</a>
       </div>
     </section>
 
@@ -536,10 +623,9 @@
             </div>
           </div>
 
-           <!-- Stap 2: Plan kiezen -->
+          <!-- Stap 2: Plan kiezen -->
           <div class="intake-step" data-step="2">
             <h3 class="intake-step-title">Welk plan past bij u?</h3>
-            <!-- Nieuwe website plans -->
             <div class="intake-plan-grid" id="plans-nieuw">
               <button type="button" class="intake-plan" data-value="Essential">
                 <span class="intake-plan-name">Essential</span>
@@ -581,7 +667,6 @@
                 <span class="intake-plan-check" aria-hidden="true"></span>
               </button>
             </div>
-            <!-- Redesign plans -->
             <div class="intake-plan-grid" id="plans-redesign" hidden>
               <button type="button" class="intake-plan" data-value="Essential">
                 <span class="intake-plan-name">Essential</span>
@@ -625,9 +710,8 @@
             </div>
           </div>
 
-          <!-- Stap 3: Details, dynamisch op basis van type -->
+          <!-- Stap 3: Details -->
           <div class="intake-step" data-step="3">
-            <!-- Nieuwe website -->
             <div class="intake-detail-panel" id="detail-nieuw" hidden>
               <h3 class="intake-step-title">Vertel over uw bedrijf</h3>
               <div class="intake-fields">
@@ -649,7 +733,6 @@
                 </div>
               </div>
             </div>
-            <!-- Redesign -->
             <div class="intake-detail-panel" id="detail-redesign" hidden>
               <h3 class="intake-step-title">Uw huidige website</h3>
               <div class="intake-fields">
@@ -676,7 +759,6 @@
           <!-- Stap 4: Voorkeuren -->
           <div class="intake-step" data-step="4">
             <h3 class="intake-step-title">Wat vindt u mooi?</h3>
-
             <p class="intake-pref-label">Stijl</p>
             <div class="intake-style-grid">
               <button type="button" class="intake-style" data-value="Modern">
@@ -700,7 +782,6 @@
                 <span class="intake-style-desc">Kleurrijk, levendig, creatief</span>
               </button>
             </div>
-
             <p class="intake-pref-label">Kleur</p>
             <div class="intake-color-grid">
               <button type="button" class="intake-color" data-value="Eigen huisstijl">
@@ -725,7 +806,6 @@
                 <span class="intake-color-desc">Ik vertrouw op uw smaak</span>
               </button>
             </div>
-
             <div class="form-field" style="margin-top:1.5rem">
               <label for="intake-referenties">Referentie-sites <span class="form-optional">(optioneel)</span></label>
               <textarea id="intake-referenties" name="referenties" rows="2" placeholder="Noem 1–2 websites die u mooi vindt, en waarom..."></textarea>
@@ -750,9 +830,7 @@
                 <label for="intake-telefoon">Telefoon <span class="form-optional">(optioneel)</span></label>
                 <input id="intake-telefoon" type="tel" name="telefoon" placeholder="06-12345678" />
               </div>
-
               <div class="form-separator"></div>
-
               <div class="form-field">
                 <label for="intake-hosting">Heeft u al een hostingpartij?</label>
                 <select id="intake-hosting" name="hosting_status">
@@ -770,9 +848,7 @@
                 Geen zorgen, u heeft hosting nodig om uw website online te zetten.
                 Ik help u hier graag bij.
               </p>
-
               <div class="form-separator"></div>
-
               <label class="intake-privacy-check">
                 <input type="checkbox" id="intake-privacy" name="privacy_akkoord" value="akkoord" required />
                 <span class="intake-privacy-box" aria-hidden="true"></span>
@@ -789,7 +865,6 @@
           </div>
         </form>
 
-        <!-- Bedank-state na verzending -->
         <div class="intake-thanks" id="intake-thanks" hidden>
           <div class="intake-thanks-icon" aria-hidden="true">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg>
@@ -799,7 +874,6 @@
           <a href="#hoofd" class="btn btn-ghost intake-thanks-btn">Terug naar boven</a>
         </div>
 
-        <!-- Alternatief: direct contact -->
         <div class="intake-alt reveal">
           <p>Liever direct bellen of mailen?</p>
           <div class="intake-alt-links">
@@ -817,8 +891,12 @@
     </section>
   </main>
 
+  <button type="button" class="vkd-back" id="vkd-back" hidden aria-label="Terug naar boven">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+
   <div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie-instellingen">
-    <p>Deze website gebruikt cookies om te meten hoe de site wordt gebruikt (Google Analytics). Kies hieronder of u hiermee akkoord gaat.</p>
+    <p>Deze site meet bezoek via cookies. Gaat u akkoord?</p>
     <div class="cookie-actions">
       <button type="button" class="btn-cookie btn-cookie-primary" id="cookie-accept">Akkoord</button>
       <button type="button" class="btn-cookie btn-cookie-secondary" id="cookie-reject">Weigeren</button>
@@ -842,5 +920,41 @@
   </footer>
 
   <script src="script.js"></script>
+  <script src="https://unpkg.com/animejs@4.0.0/lib/anime.umd.min.js"></script>
+
+  <!-- OVER MIJ MODAL -->
+  <div class="vkd-modal" id="vkdModal" hidden role="dialog" aria-modal="true" aria-labelledby="vkdModalTitle">
+    <div class="vkd-modal-backdrop" data-close></div>
+    <div class="vkd-modal-card">
+      <button type="button" class="vkd-modal-close" data-close aria-label="Sluiten">×</button>
+      <div class="about-grid vkd-modal-about">
+        <div class="about-photo">
+          <img src="assets/profile.jpg" alt="Jasper van Kalsbeek" width="380" height="507" />
+        </div>
+        <div class="about-text">
+          <p class="eyebrow">Over mij</p>
+          <h2 id="vkdModalTitle">Jasper van Kalsbeek</h2>
+          <p>Wat ik maak moet werken én gebruikt worden: duidelijk, overzichtelijk en zonder functies die niemand vraagt. Precies zoals de complete bedrijfswebsite die ik voor het familiebedrijf bouwde.</p>
+          <p>MBO-4 softwareontwikkelaar bij VISTA College Heerlen, met een neus voor data en een achtergrond in klantgerichte rollen.</p>
+          <ul class="vkd-trust-list">
+            <li class="vkd-trust-item">
+              <svg class="vkd-trust-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4 12 14.01l-3-3"/></svg>
+              <span>Klant live: arbo-advies.info</span>
+            </li>
+            <li class="vkd-trust-item">
+              <svg class="vkd-trust-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+              <span>"Denkt goed mee, levert precies wat je nodig hebt."</span>
+            </li>
+            <li class="vkd-trust-item">
+              <svg class="vkd-trust-icon" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6"/><path d="M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+              <span>MBO-4 softwareontwikkelaar bij VISTA College Heerlen</span>
+            </li>
+          </ul>
+          <a href="#ervaringen" class="btn btn-primary vkd-modal-cta" data-close>Bekijk ervaringen</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="redesign-vkd.js"></script>
 </body>
 </html>

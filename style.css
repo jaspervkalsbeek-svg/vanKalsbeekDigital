@@ -105,6 +105,15 @@ body {
 .nav a.nav-cta:hover { background: var(--primary-strong); color: var(--on-primary); }
 .nav a.active { color: var(--heading); font-weight: 600; }
 .nav a.nav-cta.active { color: var(--on-primary); background: var(--primary-strong); }
+.nav button.nav-link-btn {
+  font: inherit; color: var(--text); cursor: pointer; background: none; border: 0;
+  font-size: .9rem; font-weight: 500; line-height: 1;
+  padding: 1rem .85rem; border-radius: 6px;
+  transition: color .18s, background .18s, transform .15s;
+}
+.nav button.nav-link-btn:hover { color: var(--heading); background: var(--surface-2); }
+.nav button.nav-link-btn:active { transform: scale(.96); }
+.nav button.nav-link-btn:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
 
 .header-actions { display: flex; align-items: center; gap: .5rem; }
 
@@ -461,7 +470,7 @@ body {
   margin-bottom: 1rem; overflow: hidden;
 }
 .progress-fill {
-  height: 100%; width: 33.33%; background: var(--em-light); border-radius: 100px;
+  height: 100%; width: 20%; background: var(--em-light); border-radius: 100px;
   transition: width .4s ease;
 }
 .progress-steps {
@@ -728,8 +737,7 @@ body {
 .intake-alt-link svg { width: 18px; height: 18px; }
 
 /* Stap 3: dynamische details */
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: .75rem;
-}
+.intake-color-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: .75rem; }
 .intake-color {
   position: relative;
   display: flex; flex-direction: column; align-items: center; gap: .5rem;
@@ -913,6 +921,7 @@ html.js .reveal.visible { opacity: 1; transform: translateY(0); }
   }
   .nav.open { display: flex; }
   .nav a { padding: .9rem 1rem; border-radius: 8px; }
+  .nav button.nav-link-btn { padding: .9rem 1rem; border-radius: 8px; }
   .nav a.nav-cta { margin-left: 0; margin-top: .5rem; text-align: center; }
   .nav-toggle { display: flex; }
   .project-featured { grid-column: span 1; }
