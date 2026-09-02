@@ -2,7 +2,7 @@
    Loads after style.css, only overrides what needs to differ. */
 
 :root {
-  --mono: 'JetBrains Mono', ui-monospace, monospace;
+  --mono: ui-monospace, 'Cascadia Code', 'Consolas', monospace;
   --serif: 'Fraunces', Georgia, serif;
 }
 
