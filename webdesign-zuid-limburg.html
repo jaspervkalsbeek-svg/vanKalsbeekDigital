@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="color-scheme" content="light dark" />
+  <title>Webdesign Zuid-Limburg | Website laten maken (Landgraaf, Heerlen, Sittard)</title>
+  <meta name="description" content="Maatwerk websites voor bedrijven in Landgraaf, Heerlen, Sittard en omstreken. 3 gratis concepten in 2 dagen, u betaalt pas als u kiest." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://vankalsbeekdigital.com/webdesign-zuid-limburg" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css?v=3" />
+  <link rel="stylesheet" href="redesign-vkd.css?v=36" />
+  <style>
+    .vkd-landing .vkd-eyebrow { animation-delay: .05s; }
+    .vkd-landing .vkd-title { animation-delay: .18s; }
+    .vkd-landing .vkd-sub { animation-delay: .34s; }
+    .vkd-landing .vkd-proof { animation-delay: .46s; }
+    .vkd-landing .hero-actions { animation-delay: .56s; }
+    .vkd-landing .steps .step { transition: transform .25s ease, background .25s ease, border-color .25s ease, box-shadow .25s ease; }
+    .vkd-landing .steps .step:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: var(--accent); }
+    .vkd-landing .btn-ghost { color: var(--heading); border-color: var(--line); background: transparent; }
+    .vkd-landing .btn-ghost:hover { border-color: var(--accent); color: var(--accent); background: var(--surface-2); }
+    .vkd-landing .vkd-slot { text-align: center; }
+    .vkd-landing .vkd-slot .vkd-slot-title { margin-top: .5rem; }
+    @media (prefers-reduced-motion: reduce) {
+      .vkd-landing .vkd-eyebrow, .vkd-landing .vkd-title, .vkd-landing .vkd-sub,
+      .vkd-landing .vkd-proof, .vkd-landing .hero-actions { animation: none; }
+    }
+  </style>
+  <script>
+    (function () {
+      try {
+        var root = document.documentElement;
+        var theme = localStorage.getItem('vkd-theme') ||
+          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        root.setAttribute('data-theme', theme);
+      } catch (e) {}
+    })();
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Webdesign Zuid-Limburg",
+    "serviceType": "Webdesign",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Van Kalsbeek Digital",
+      "url": "https://vankalsbeekdigital.com",
+      "telephone": "+31610809971",
+      "email": "info@vankalsbeekdigital.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Palenbergerweg 1",
+        "postalCode": "6374 LS",
+        "addressLocality": "Landgraaf",
+        "addressRegion": "Limburg",
+        "addressCountry": "NL"
+      },
+      "priceRange": "€595-€2495"
+    },
+    "areaServed": [
+      { "@type": "City", "name": "Landgraaf" },
+      { "@type": "City", "name": "Heerlen" },
+      { "@type": "City", "name": "Kerkrade" },
+      { "@type": "City", "name": "Brunssum" },
+      { "@type": "City", "name": "Sittard" },
+      { "@type": "City", "name": "Parkstad Limburg" }
+    ],
+    "offers": {
+      "@type": "Offer",
+      "description": "3 gratis concepten binnen 2 dagen, vrijblijvend. U betaalt pas als u kiest."
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Werkt u ook met bedrijven in Heerlen of Sittard?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Ja. Vanuit Landgraaf werk ik met bedrijven in heel Zuid-Limburg: Heerlen, Sittard, Brunssum, Kerkrade, Geleen en Parkstad. Voor een intake kom ik gewoon langs, online of aan tafel." }
+      },
+      {
+        "@type": "Question",
+        "name": "Hoe snel staat mijn website live?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Binnen twee dagen liggen uw drie concepten klaar. Na uw keuze krijgt u een concrete opleverdatum voordat we beginnen." }
+      },
+      {
+        "@type": "Question",
+        "name": "Wat kost een website in Zuid-Limburg?",
+        "acceptedAnswer": { "@type": "Answer", "text": "De vanaf-prijzen staan op de hoofdpagina. De exacte kosten hangen af van uw wensen; wij spreken samen af wat uw website kost." }
+      },
+      {
+        "@type": "Question",
+        "name": "Gebruikt u templates of maatwerk?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Alles wordt op maat gebouwd voor uw bedrijf. Geen kant-en-klare templates, maar een website die specifiek voor ú ontworpen en ontwikkeld is." }
+      },
+      {
+        "@type": "Question",
+        "name": "Kan ik mijn website later uitbreiden?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Ja. Elke website is uitbreidbaar met extra pagina's, animaties of een CMS, zonder dat u opnieuw begint." }
+      }
+    ]
+  }
+  </script>
+</head>
+<body class="vkd-landing">
+  <div class="vkd-ambient" aria-hidden="true"></div>
+  <div class="vkd-grid-bg" aria-hidden="true"></div>
+  <div class="vkd-scroll-progress" id="vkd-scroll-progress" aria-hidden="true"></div>
+
+  <a class="skip-link" href="#hoofd">Ga naar inhoud</a>
+
+  <header class="vkd-header" id="header">
+    <div class="header-inner">
+      <a href="/" class="brand" aria-label="Van Kalsbeek Digital, naar de hoofdpagina">
+        <img src="assets/logo.png" alt="Van Kalsbeek Digital logo" class="brand-logo brand-logo-light" />
+        <img src="assets/logo-dark.png" alt="Van Kalsbeek Digital logo" class="brand-logo brand-logo-dark" />
+      </a>
+      <nav class="nav" id="nav" aria-label="Hoofdnavigatie">
+        <a href="/#diensten">Concepten</a>
+        <a href="/#werkwijze">Werkwijze</a>
+        <a href="/#portfolio">Portfolio</a>
+        <a href="/#contact" class="nav-cta">Vraag gratis 3 concepten aan</a>
+      </nav>
+      <div class="header-actions">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Wissel tussen donkere en lichte modus">
+          <svg class="icon-moon" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          <svg class="icon-sun" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+        </button>
+        <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Menu openen">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="hoofd">
+
+    <!-- HERO -->
+    <section class="vkd-hero">
+      <div class="vkd-hero-inner">
+        <div class="vkd-hero-copy">
+          <p class="vkd-eyebrow"><span class="vkd-dot" aria-hidden="true"></span>Webdesign in Zuid-Limburg</p>
+          <h1 class="vkd-title">Website laten maken in Zuid-Limburg, op maat en zonder verrassingen</h1>
+          <p class="vkd-sub">Ik bouw websites voor bedrijven in Landgraaf, Heerlen, Sittard, Brunssum en Kerkrade. Van concept tot live, in een heldere structuur die uw klanten vindt én overtuigt.</p>
+          <div class="vkd-proof">
+            <span class="vkd-badge">3 gratis concepten</span>
+            <span class="vkd-proof-text">Binnen 2 dagen klaar, vrijblijvend.</span>
+          </div>
+          <div class="hero-actions">
+            <a href="/#contact" class="btn btn-primary">Vraag gratis uw 3 concepten aan</a>
+            <a href="#werkwijze" class="btn btn-ghost">Bekijk de werkwijze</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WAAROM LOKAAL -->
+    <section class="section">
+      <div class="section-head">
+        <p class="eyebrow">Waarom een lokale webdesigner?</p>
+        <h2>Zuid-Limburgs ondernemersverdriet, een voor een aangepakt</h2>
+        <p class="section-intro">Een website is het eerste wat potentiële klanten van uw bedrijf zien. Een trage, verouderde of onvindbare site kost u klanten, ook als uw werk uitstekend is. Een moderne, snelle website levert u juist méér afspraken en offerteaanvragen op.</p>
+      </div>
+      <div class="steps">
+        <div class="step reveal">
+          <h3>U wordt gevonden in de regio</h3>
+          <p>Een website die goed in elkaar zit, wordt beter gevonden op zoektermen als "website laten maken" in uw omgeving. Dát is waar uw klanten beginnen.</p>
+        </div>
+        <div class="step reveal">
+          <h3>Bezoekers worden klanten</h3>
+          <p>Duidelijke structuur en een heldere boodschap zorgen ervoor dat bezoekers niet afhaken, maar contact opnemen.</p>
+        </div>
+        <div class="step reveal">
+          <h3>Snel, veilig en actueel</h3>
+          <p>Snelle laadtijden, beveiliging en onderhoud zitten in de basis. Uw website blijft werken ook als de technologie verandert.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- WERKWIJZE -->
+    <section class="section section-soft" id="werkwijze">
+      <div class="section-head">
+        <p class="eyebrow">Werkwijze</p>
+        <h2>Van bespreken naar live, zonder omwegen</h2>
+      </div>
+      <ol class="steps">
+        <li class="step reveal">
+          <h3>1. Bespreken</h3>
+          <p>We nemen uw website door en bespreken wat uw bedrijf wil uitstralen en bereiken.</p>
+        </li>
+        <li class="step reveal">
+          <h3>2. Bouwen</h3>
+          <p>Binnen 2 dagen liggen uw 3 gratis concepten klaar. U kiest, en we bouwen het verder uit.</p>
+        </li>
+        <li class="step reveal">
+          <h3>3. Live zetten</h3>
+          <p>We zetten uw website live en houden hem daarna actueel met het onderhoudsabonnement.</p>
+        </li>
+      </ol>
+      <div class="section-head" style="margin-top: 4rem;">
+        <a href="/#contact" class="btn btn-primary">Vraag uw 3 gratis concepten aan</a>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq">
+      <div class="section-head">
+        <p class="eyebrow">Veelgestelde vragen</p>
+        <h2>Korte antwoorden over webdesign in Zuid-Limburg</h2>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item reveal" name="faq">
+          <summary>Werkt u ook met bedrijven in Heerlen of Sittard?</summary>
+          <dd>Ja. Vanuit Landgraaf werk ik met bedrijven in heel Zuid-Limburg: Heerlen, Sittard, Brunssum, Kerkrade, Geleen en Parkstad. Voor een intake kom ik gewoon langs, online of aan tafel.</dd>
+        </details>
+        <details class="faq-item reveal" name="faq">
+          <summary>Hoe snel staat mijn website live?</summary>
+          <dd>Binnen twee dagen liggen uw drie concepten klaar. Na uw keuze krijgt u een concrete opleverdatum voordat we beginnen.</dd>
+        </details>
+        <details class="faq-item reveal" name="faq">
+          <summary>Wat kost een website in Zuid-Limburg?</summary>
+          <dd>De vanaf-prijzen staan op de hoofdpagina. De exacte kosten hangen af van uw wensen; wij spreken samen af wat uw website kost.</dd>
+        </details>
+        <details class="faq-item reveal" name="faq">
+          <summary>Gebruikt u templates of maatwerk?</summary>
+          <dd>Alles wordt op maat gebouwd voor uw bedrijf. Geen kant-en-klare templates, maar een website die specifiek voor ú ontworpen en ontwikkeld is.</dd>
+        </details>
+        <details class="faq-item reveal" name="faq">
+          <summary>Kan ik mijn website later uitbreiden?</summary>
+          <dd>Ja. Elke website is uitbreidbaar met extra pagina's, animaties of een CMS, zonder dat u opnieuw begint.</dd>
+        </details>
+      </div>
+    </section>
+
+    <!-- SLOT CTA -->
+    <section class="section section-soft vkd-slot">
+      <div class="section-head">
+        <p class="eyebrow">Aan de slag</p>
+        <h2 class="vkd-slot-title">Klaar om uw website te laten maken in Zuid-Limburg?</h2>
+        <p class="section-intro">Vanaf 3 gratis concepten binnen 2 dagen, vrijblijvend. U kiest, wij bouwen, en uw website staat live. Geen enkele verplichting, de keuze is helemaal aan u.</p>
+      </div>
+      <div class="hero-actions" style="justify-content: center;">
+        <a href="/#contact" class="btn btn-primary">Vraag nu uw 3 gratis concepten aan</a>
+        <a href="/" class="btn btn-ghost">Bekijk de hoofdpagina</a>
+      </div>
+    </section>
+
+  </main>
+
+  <button type="button" class="vkd-back" id="vkd-back" hidden aria-label="Terug naar boven">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+  </button>
+
+  <div class="cookie-banner" id="cookie-banner" role="dialog" aria-label="Cookie-instellingen">
+    <p>Deze site meet bezoek via cookies. Gaat u akkoord?</p>
+    <div class="cookie-actions">
+      <button type="button" class="btn-cookie btn-cookie-primary" id="cookie-accept">Akkoord</button>
+      <button type="button" class="btn-cookie btn-cookie-secondary" id="cookie-reject">Weigeren</button>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p class="footer-brand">Van Kalsbeek Digital</p>
+    <p>© <span id="year">2026</span> vankalsbeekdigital.com</p>
+    <p>KVK 42140552 · BTW NL005528908B28</p>
+    <p class="footer-links">
+      <a href="privacy.html">Privacy &amp; voorwaarden</a>
+      <span aria-hidden="true">·</span>
+      <a href="/">Naar de hoofdpagina</a>
+      <span aria-hidden="true">·</span>
+      <button type="button" class="footer-link-btn" id="cookie-settings">Cookie-instellingen</button>
+    </p>
+  </footer>
+
+  <script>
+    (function () {
+      'use strict';
+      var COOKIE_KEY = 'vkd-cookie-consent';
+      var GA_ID = 'G-TGF3SZDD35';
+      var cookieBanner = document.getElementById('cookie-banner');
+      var cookieConsent = null;
+      try { cookieConsent = localStorage.getItem(COOKIE_KEY); } catch (e) {}
+
+      if (cookieConsent === 'accepted') {
+        var gaScript = document.createElement('script');
+        gaScript.async = true;
+        gaScript.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
+        gaScript.onload = function () {
+          gtag('js', new Date());
+          gtag('config', GA_ID, { anonymize_ip: true });
+        };
+        document.head.appendChild(gaScript);
+      } else if (!cookieConsent && cookieBanner) {
+        cookieBanner.style.display = 'flex';
+      }
+
+      if (cookieBanner) {
+        document.getElementById('cookie-accept').addEventListener('click', function () {
+          try { localStorage.setItem(COOKIE_KEY, 'accepted'); } catch (e) {}
+          window.location.reload();
+        });
+        document.getElementById('cookie-reject').addEventListener('click', function () {
+          try { localStorage.setItem(COOKIE_KEY, 'rejected'); } catch (e) {}
+          window.location.reload();
+        });
+      }
+      var cookieSettingsBtn = document.getElementById('cookie-settings');
+      if (cookieSettingsBtn) {
+        cookieSettingsBtn.addEventListener('click', function () {
+          if (cookieBanner) cookieBanner.style.display = 'flex';
+        });
+      }
+
+      document.documentElement.classList.add('js');
+
+      var toggle = document.getElementById('nav-toggle');
+      var nav = document.getElementById('nav');
+      if (toggle && nav) {
+        toggle.addEventListener('click', function () {
+          var open = nav.classList.toggle('open');
+          toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+          toggle.setAttribute('aria-label', open ? 'Menu sluiten' : 'Menu openen');
+        });
+        nav.addEventListener('click', function (event) {
+          if (event.target.tagName === 'A') {
+            nav.classList.remove('open');
+            toggle.setAttribute('aria-expanded', 'false');
+            toggle.setAttribute('aria-label', 'Menu openen');
+          }
+        });
+        document.addEventListener('click', function (event) {
+          if (nav.classList.contains('open') && !nav.contains(event.target) && !toggle.contains(event.target)) {
+            nav.classList.remove('open');
+            toggle.setAttribute('aria-expanded', 'false');
+            toggle.setAttribute('aria-label', 'Menu openen');
+          }
+        });
+      }
+
+      var themeToggle = document.getElementById('theme-toggle');
+      function updateThemeButton() {
+        if (!themeToggle) return;
+        var dark = document.documentElement.getAttribute('data-theme') === 'dark';
+        themeToggle.setAttribute('aria-pressed', dark ? 'true' : 'false');
+        themeToggle.setAttribute('aria-label', dark ? 'Schakel naar lichte modus' : 'Schakel naar donkere modus');
+      }
+      if (themeToggle) {
+        updateThemeButton();
+        themeToggle.addEventListener('click', function () {
+          var next = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+          document.documentElement.setAttribute('data-theme', next);
+          try { localStorage.setItem('vkd-theme', next); } catch (e) {}
+          updateThemeButton();
+        });
+      }
+
+      var yearElement = document.getElementById('year');
+      if (yearElement) yearElement.textContent = new Date().getFullYear();
+
+      var progressBar = document.getElementById('vkd-scroll-progress');
+      var backBtn = document.getElementById('vkd-back');
+      var header = document.getElementById('header');
+      var ticking = false;
+      function onScroll() {
+        var top = window.scrollY || document.documentElement.scrollTop;
+        var max = document.documentElement.scrollHeight - window.innerHeight;
+        if (progressBar) progressBar.style.width = (max > 0 ? (top / max) * 100 : 0) + '%';
+        if (backBtn) backBtn.hidden = top < 600;
+        if (header) header.classList.toggle('is-scrolled', top > 8);
+        ticking = false;
+      }
+      window.addEventListener('scroll', function () {
+        if (!ticking) { ticking = true; requestAnimationFrame(onScroll); }
+      }, { passive: true });
+      onScroll();
+
+      if (backBtn) {
+        backBtn.addEventListener('click', function () {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+
+      var reveals = document.querySelectorAll('.reveal');
+      if (reveals.length && 'IntersectionObserver' in window) {
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          });
+        }, { threshold: 0.15 });
+        reveals.forEach(function (el) { observer.observe(el); });
+      } else {
+        reveals.forEach(function (el) { el.classList.add('visible'); });
+      }
+    })();
+  </script>
+</body>
+</html>
