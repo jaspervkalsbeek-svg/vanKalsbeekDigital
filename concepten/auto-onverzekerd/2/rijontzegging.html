@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Rijontzegging? Direct een offerte aanvragen | Auto Onverzekerd</title>
+  <meta name="description" content="Conceptvoorstel Rijontzegging voor auto-onverzekerd.nl." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#hoofd">Naar hoofdinhoud</a>
+
+  <div class="topbar">
+    Geweigerd bij een andere verzekeraar? <a href="#formulier">Vraag hier direct een offerte aan</a>
+  </div>
+
+  <header class="header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html" aria-label="Auto Onverzekerd">
+        <img src="../assets/logo.png" alt="Auto Onverzekerd" width="220" height="42" />
+      </a>
+      <button class="hamburger" type="button" aria-label="Menu openen" onclick="toggleNav(event)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <input class="nav-toggle" type="checkbox" id="nav-toggle" autocomplete="off" />
+      <nav class="nav" aria-label="Hoofdnavigatie">
+        <a href="index.html">Home</a>
+        <a href="index.html#situaties">Uw situatie</a>
+        <a href="index.html#zo-werkt">Zo werkt het</a>
+        <a href="index.html#vertrouwen">Waarom wij</a>
+        <div class="nav-cta-wrap"><a class="btn btn-accent" href="#formulier">Offerte aanvragen</a></div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="hoofd">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Kruimelpad">
+        <a href="index.html">Home</a> / <a href="index.html#situaties">Uw situatie</a> / Rijontzegging
+      </nav>
+
+      <section class="problem-hero">
+        <p class="kicker">Uw situatie: rijontzegging</p>
+        <h1>Rijontzegging? Autoverzekering kan wél.</h1>
+        <p class="page-lead">Heeft u een rijontzegging op zak? Veel verzekeraars weigeren u dan automatisch. Bij ons kunt u wél terecht: wij kennen de regels en regelen een passende oplossing.</p>
+      </section>
+    </div>
+
+    <section class="problem-layout">
+      <div class="container inner">
+        <div>
+          <div class="prose">
+            <h2>Waarom het lastig is</h2>
+            <p>Een rijontzegging is voor veel verzekeraars een automatische weigering. Zij zien alleen de aantekening, niet uw volledige situatie.</p>
+
+            <h2>Wat wij voor u doen</h2>
+            <ul>
+              <li>We beoordelen uw aanvraag op de volledige situatie</li>
+              <li>We zoeken de verzekeraar die u wél kan accepteren, zoals De Vereende</li>
+              <li>We regelen aanvraag en administratie volledig voor u</li>
+              <li>U krijgt duidelijkheid, zonder gezeur of gepreek</li>
+            </ul>
+            <p>Liever eerst lezen? Bekijk <a href="index.html#zo-werkt">hoe het werkt in 5 stappen</a> of lees over <a href="index.html#vertrouwen">waarom wij</a>.</p>
+          </div>
+
+          <div class="related">
+            <h2>Vergelijkbare situaties</h2>
+            <div class="related-chips">
+              <a class="chip" href="rijontzegging.html">Fraude of verzwijging</a>
+              <a class="chip" href="rijontzegging.html">Veroordeling strafbaar feit</a>
+              <a class="chip" href="rijontzegging.html">Schadeverleden</a>
+              <a class="chip" href="rijontzegging.html">Snel, duur of apart voertuig</a>
+              <a class="chip" href="rijontzegging.html">Wanbetaling</a>
+            </div>
+          </div>
+
+          <p class="concept-note">Conceptpagina: in het definitieve ontwerp krijgt elke situatie een eigen pagina met dit format. Voor dit concept is Rijontzegging als voorbeeld uitgewerkt.</p>
+        </div>
+
+        <div class="form-card sticky-form" id="formulier">
+          <h2>Vraag direct een offerte aan</h2>
+          <p>Binnen 1 werkdag reactie. Zelfs bij een rijontzegging.</p>
+          <form id="offerte-form" novalidate>
+            <div class="form-grid">
+              <div class="field">
+                <label for="voornamen">Voorletters <span class="req">*</span></label>
+                <input id="voornamen" name="voornamen" type="text" autocomplete="off" required />
+              </div>
+              <div class="field">
+                <label for="achternaam">Achternaam <span class="req">*</span></label>
+                <input id="achternaam" name="achternaam" type="text" autocomplete="family-name" required />
+              </div>
+              <div class="field">
+                <label for="postcode">Postcode <span class="req">*</span></label>
+                <input id="postcode" name="postcode" type="text" autocomplete="postal-code" required />
+              </div>
+              <div class="field">
+                <label for="huisnummer">Huisnummer <span class="req">*</span></label>
+                <input id="huisnummer" name="huisnummer" type="text" autocomplete="street-address" required />
+              </div>
+              <div class="field">
+                <label for="email">E-mailadres <span class="req">*</span></label>
+                <input id="email" name="email" type="email" autocomplete="email" required />
+              </div>
+              <div class="field">
+                <label for="telefoon">Telefoonnummer <span class="req">*</span></label>
+                <input id="telefoon" name="telefoon" type="tel" autocomplete="tel" required />
+              </div>
+              <div class="field full">
+                <label class="checkbox">
+                  <input type="checkbox" name="privacy" required />
+                  <span>Ik ga akkoord met de <a href="#">privacyverklaring</a> en het gebruik van mijn gegevens voor de offerteaanvraag. <span class="req">*</span></span>
+                </label>
+              </div>
+            </div>
+            <div class="form-submit">
+              <button class="btn btn-accent" type="submit">Verstuur offerteaanvraag</button>
+            </div>
+            <p class="privacy-note">Vrijblijvend en zonder verplichtingen.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>Over Auto-onverzekerd.nl</h3>
+        <p style="color: rgba(255,255,255,.75); margin-bottom: .8rem;">
+          Auto-onverzekerd.nl is een initiatief van Van Rems &amp; Portier Assurantiën.
+          Wij zijn gespecialiseerd in verzekeringen voor mensen die elders geweigerd worden.
+        </p>
+        <a href="index.html#formulier" class="btn btn-white">Offerte aanvragen</a>
+      </div>
+      <div>
+        <h3>Waarom wij</h3>
+        <ul>
+          <li>Ook verzekerd wanneer anderen weigeren</li>
+          <li>Beste mogelijkheden voor uw situatie</li>
+          <li>Professioneel advies op maat</li>
+          <li>Administratieve afhandeling geregeld</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <ul>
+          <li>Auto-onverzekerd.nl</li>
+          <li>Mozartlaan 25 AA</li>
+          <li>1217 CM Hilversum</li>
+          <li>T: <a href="tel:+31356562260">035-6562260</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <span>© Auto Onverzekerd</span>
+        <span>Concept 2 - Conversiegedreven (Van Kalsbeek Digital)</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleNav(event) {
+      var input = document.getElementById('nav-toggle');
+      input.checked = !input.checked;
+      event.currentTarget.setAttribute('aria-expanded', String(input.checked));
+    }
+    document.addEventListener('DOMContentLoaded', function () {
+      var toggle = document.querySelector('.hamburger');
+      var nav = document.querySelector('.nav');
+      if (toggle && nav) {
+        toggle.setAttribute('aria-controls', 'nav-toggle');
+        toggle.setAttribute('aria-expanded', 'false');
+        nav.addEventListener('click', function (e) {
+          if (e.target.closest('a')) {
+            document.getElementById('nav-toggle').checked = false;
+            toggle.setAttribute('aria-expanded', 'false');
+          }
+        });
+      }
+
+      var form = document.getElementById('offerte-form');
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var note = document.createElement('p');
+        note.textContent = 'Dit is een conceptformulier. In de definitieve site verstuurt dit formulier uw aanvraag automatisch naar Auto Onverzekerd.';
+        note.style.cssText = 'margin-top:.8rem; font-size:.85rem; color:#e25843; text-align:center; font-weight:600;';
+        form.appendChild(note);
+      });
+    });
+  </script>
+</body>
+</html>

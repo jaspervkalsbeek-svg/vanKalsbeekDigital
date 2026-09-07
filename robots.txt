@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /concepten/
 
 Sitemap: https://vankalsbeekdigital.com/sitemap.xml

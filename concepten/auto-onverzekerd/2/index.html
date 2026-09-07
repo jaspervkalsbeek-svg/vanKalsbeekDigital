@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Concept 2 - Conversiegedreven | Auto Onverzekerd</title>
+  <meta name="description" content="Conceptvoorstel Conversiegedreven voor auto-onverzekerd.nl: formulier direct voorop." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Source+Sans+Pro:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#hoofd">Naar hoofdinhoud</a>
+
+  <div class="topbar">
+    Geweigerd bij een andere verzekeraar? <a href="#formulier">Vraag hier direct een offerte aan</a>
+  </div>
+
+  <header class="header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html" aria-label="Auto Onverzekerd">
+        <img src="../assets/logo.png" alt="Auto Onverzekerd" width="220" height="42" />
+      </a>
+      <button class="hamburger" type="button" aria-label="Menu openen" onclick="toggleNav(event)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <input class="nav-toggle" type="checkbox" id="nav-toggle" autocomplete="off" />
+      <nav class="nav" aria-label="Hoofdnavigatie">
+        <a href="index.html" aria-current="page">Home</a>
+        <a href="#situaties">Uw situatie</a>
+        <a href="#zo-werkt">Zo werkt het</a>
+        <a href="#vertrouwen">Waarom wij</a>
+        <div class="nav-cta-wrap"><a class="btn btn-accent" href="#formulier">Offerte aanvragen</a></div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="hoofd">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <p class="kicker">Autoverzekering bij weigering</p>
+          <h1>Geweigerd voor uw autoverzekering?<br /><em>Vraag hier direct een offerte aan.</em></h1>
+          <p class="lead">Geen lange procedures, geen oordeel. U vult uw gegevens in, wij zoeken de verzekeraar die u wél accepteert.</p>
+          <ul class="hero-checks">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m8 12 2.5 2.5L16 9"/></svg>
+              Werkelijk altijd verzekerd
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m8 12 2.5 2.5L16 9"/></svg>
+              Professioneel advies op maat
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m8 12 2.5 2.5L16 9"/></svg>
+              Administratieve afhandeling geregeld
+            </li>
+          </ul>
+          <div class="phone-cta">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.5c.9.3 1.9.6 2.9.7a2 2 0 0 1 1.7 2Z"/></svg>
+            <div>
+              <span class="plabel">Liever bellen?</span><br />
+              <a href="tel:+31356562260">035-6562260</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-card" id="formulier">
+          <h2>Vraag vrijblijvend een offerte aan</h2>
+          <p>Binnen 1 werkdag reactie. Uw gegevens blijven bij ons.</p>
+          <form id="offerte-form" novalidate>
+            <div class="form-grid">
+              <div class="field">
+                <label for="voornamen">Voorletters <span class="req">*</span></label>
+                <input id="voornamen" name="voornamen" type="text" autocomplete="off" required />
+              </div>
+              <div class="field">
+                <label for="achternaam">Achternaam <span class="req">*</span></label>
+                <input id="achternaam" name="achternaam" type="text" autocomplete="family-name" required />
+              </div>
+              <div class="field">
+                <label for="postcode">Postcode <span class="req">*</span></label>
+                <input id="postcode" name="postcode" type="text" autocomplete="postal-code" required />
+              </div>
+              <div class="field">
+                <label for="huisnummer">Huisnummer <span class="req">*</span></label>
+                <input id="huisnummer" name="huisnummer" type="text" autocomplete="street-address" required />
+              </div>
+              <div class="field full">
+                <label for="kenteken">Kenteken</label>
+                <input id="kenteken" name="kenteken" type="text" autocomplete="off" />
+              </div>
+              <div class="field">
+                <label for="email">E-mailadres <span class="req">*</span></label>
+                <input id="email" name="email" type="email" autocomplete="email" required />
+              </div>
+              <div class="field">
+                <label for="telefoon">Telefoonnummer <span class="req">*</span></label>
+                <input id="telefoon" name="telefoon" type="tel" autocomplete="tel" required />
+              </div>
+              <div class="field full">
+                <label for="reden">Reden van aanvraag</label>
+                <select id="reden" name="reden">
+                  <option value="">Kies uw situatie (optioneel)</option>
+                  <option>Rijontzegging</option>
+                  <option>Fraude of verzwijging</option>
+                  <option>Veroordeling strafbaar feit</option>
+                  <option>Veel schadeverleden</option>
+                  <option>Snel, duur of apart voertuig</option>
+                  <option>Wanbetaling of premieachterstand</option>
+                  <option>Anders / wil ik bespreken</option>
+                </select>
+              </div>
+              <div class="field full">
+                <label class="checkbox">
+                  <input type="checkbox" name="privacy" required />
+                  <span>Ik ga akkoord met de <a href="#">privacyverklaring</a> en het gebruik van mijn gegevens voor de offerteaanvraag. <span class="req">*</span></span>
+                </label>
+              </div>
+            </div>
+            <div class="form-submit">
+              <button class="btn btn-accent" type="submit">Verstuur offerteaanvraag</button>
+            </div>
+            <p class="privacy-note">Vrijblijvend en zonder verplichtingen.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="situaties">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">Uw situatie</p>
+          <h2>Overzicht van veelvoorkomende redenen</h2>
+          <p>Elke situatie heeft een eigen aanpak. Kies uw situatie en wij vertellen u wat er mogelijk is.</p>
+        </div>
+        <div class="reason-grid">
+          <a class="reason-card" href="rijontzegging.html">
+            <span class="n-tag">1</span>
+            <h3>Rijontzegging</h3>
+          </a>
+          <div class="reason-card">
+            <span class="n-tag">2</span>
+            <h3>Fraude of verzwijging</h3>
+          </div>
+          <div class="reason-card">
+            <span class="n-tag">3</span>
+            <h3>Veroordeling strafbaar feit</h3>
+          </div>
+          <div class="reason-card">
+            <span class="n-tag">4</span>
+            <h3>Veel schadeverleden</h3>
+          </div>
+          <div class="reason-card">
+            <span class="n-tag">5</span>
+            <h3>Snel, duur of apart voertuig</h3>
+          </div>
+          <div class="reason-card">
+            <span class="n-tag">6</span>
+            <h3>Wanbetaling of premieachterstand</h3>
+          </div>
+        </div>
+        <p class="concept-note" style="margin-top:1.5rem; max-width:none;">Concepttoelichting: in de uiteindelijke site krijgt elke reden een eigen landingspagina met hetzelfde mobiele en desktop-format. Rijontzegging is hier als voorbeeld uitgewerkt.</p>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="zo-werkt">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">Zo werkt het</p>
+          <h2>In 5 stappen verzekerd</h2>
+          <p>Geen onnodig getouwtrek. Wij regelen het traject van aanvraag tot polis.</p>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <h3>Offerte aanvragen</h3>
+            <p>Vul het formulier in of bel ons.</p>
+          </div>
+          <div class="step">
+            <h3>Wij beoordelen</h3>
+            <p>We kijken naar uw volledige situatie.</p>
+          </div>
+          <div class="step">
+            <h3>Best passende dekking</h3>
+            <p>We zoeken de verzekeraar die u wilt.</p>
+          </div>
+          <div class="step">
+            <h3>Offerte ontvangen</h3>
+            <p>U krijgt een heldere offerte op maat.</p>
+          </div>
+          <div class="step">
+            <h3>Verzekerd</h3>
+            <p>Wij regelen de administratieve afhandeling.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="vertrouwen">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">Waarom wij</p>
+          <h2>Een eerlijke kans, ook voor u</h2>
+        </div>
+        <div class="trust-grid">
+          <div class="trust-card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#21698a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5.2 3.4 9.2 8 10 4.6-.8 8-4.8 8-10V5l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg>
+            <h3>Ook verzekerd bij weigering elders</h3>
+            <p>Wij hebben toegang tot maatschappijen die vrijwel iedereen accepteren.</p>
+          </div>
+          <div class="trust-card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#21698a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+            <h3>Professioneel advies op maat</h3>
+            <p>Geen standaard verhaal, maar een advies dat past bij uw situatie.</p>
+          </div>
+          <div class="trust-card">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#21698a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 7 6v5l5 9 5-9V6l-5-4Z"/><path d="M9 9h2l1-2 2 3 1-1h1"/></svg>
+            <h3>Administratie voor u geregeld</h3>
+            <p>Van aanvraag tot polis. U hoeft niets zelf te regelen.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="container">
+        <h2>Wij kunnen u in alle gevallen verzekeren.</h2>
+        <p>Vraag direct een offerte aan, of bel ons voor persoonlijk advies.</p>
+        <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
+          <a class="btn btn-white btn-lg" href="#formulier">Offerte aanvragen</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <h3>Over Auto-onverzekerd.nl</h3>
+        <p style="color: rgba(255,255,255,.75); margin-bottom: .8rem;">
+          Auto-onverzekerd.nl is een initiatief van Van Rems &amp; Portier Assurantiën.
+          Wij zijn gespecialiseerd in verzekeringen voor mensen die elders geweigerd worden.
+        </p>
+        <a href="#formulier" class="btn btn-white">Offerte aanvragen</a>
+      </div>
+      <div>
+        <h3>Waarom wij</h3>
+        <ul>
+          <li>Ook verzekerd wanneer anderen weigeren</li>
+          <li>Beste mogelijkheden voor uw situatie</li>
+          <li>Professioneel advies op maat</li>
+          <li>Administratieve afhandeling geregeld</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <ul>
+          <li>Auto-onverzekerd.nl</li>
+          <li>Mozartlaan 25 AA</li>
+          <li>1217 CM Hilversum</li>
+          <li>T: <a href="tel:+31356562260">035-6562260</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <span>© Auto Onverzekerd</span>
+        <span>Concept 2 - Conversiegedreven (Van Kalsbeek Digital)</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function toggleNav(event) {
+      var input = document.getElementById('nav-toggle');
+      input.checked = !input.checked;
+      event.currentTarget.setAttribute('aria-expanded', String(input.checked));
+    }
+    document.addEventListener('DOMContentLoaded', function () {
+      var toggle = document.querySelector('.hamburger');
+      var nav = document.querySelector('.nav');
+      if (toggle && nav) {
+        toggle.setAttribute('aria-controls', 'nav-toggle');
+        toggle.setAttribute('aria-expanded', 'false');
+        nav.addEventListener('click', function (e) {
+          if (e.target.closest('a')) {
+            document.getElementById('nav-toggle').checked = false;
+            toggle.setAttribute('aria-expanded', 'false');
+          }
+        });
+      }
+
+      var form = document.getElementById('offerte-form');
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var note = document.createElement('p');
+        note.textContent = 'Dit is een conceptformulier. In de definitieve site verstuurt dit formulier uw aanvraag automatisch naar Auto Onverzekerd.';
+        note.style.cssText = 'margin-top:.8rem; font-size:.85rem; color:#e25843; text-align:center; font-weight:600;';
+        form.appendChild(note);
+      });
+    });
+  </script>
+</body>
+</html>
