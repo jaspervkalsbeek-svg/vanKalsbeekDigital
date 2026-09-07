@@ -201,7 +201,8 @@
       clientEmail = params.get('email') || '';
       if (clientName) {
         var h1 = document.querySelector('.page-head h1');
-        h1.textContent = h1.textContent.replace('Uw 3 concepten', clientName.split(' ')[0] + ', uw 3 concepten');
+        var displayName = clientName.replace(/-/g, ' ').split(' ').map(function (w) { return w.charAt(0).toUpperCase() + w.slice(1); }).join(' ');
+        h1.textContent = h1.textContent.replace('Uw 3 concepten', displayName + ', uw 3 concepten');
       }
     })();
 

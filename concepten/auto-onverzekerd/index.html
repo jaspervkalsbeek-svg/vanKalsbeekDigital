@@ -584,7 +584,8 @@ m1197 -129 c31 -26 39 -60 25 -99 -8 -19 -55 -45 -84 -45 -31 0 -80 53 -80 85
       clientEmail = params.get('email') || '';
       if (clientName) {
         var h1 = document.querySelector('.page-head h1');
-        h1.textContent = h1.textContent.replace('Uw 3 persoonlijke concepten', clientName.split(' ')[0] + ', uw 3 persoonlijke concepten');
+        var displayName = clientName.replace(/-/g, ' ').split(' ').map(function (w) { return w.charAt(0).toUpperCase() + w.slice(1); }).join(' ');
+        h1.textContent = h1.textContent.replace('Uw 3 persoonlijke concepten', displayName + ', uw 3 persoonlijke concepten');
       }
       if (clientName) document.getElementById('klant-naam').value = clientName;
       if (clientEmail) document.getElementById('klant-email').value = clientEmail;
