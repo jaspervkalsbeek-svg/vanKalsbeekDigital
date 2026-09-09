@@ -277,7 +277,8 @@
         method: 'POST',
         body: data,
         headers: { Accept: 'application/json' }
-      }).then(function () {
+      }).then(function (res) {
+        if (!res.ok) throw new Error('Formspree weigerde de aanvraag (status ' + res.status + ')');
         track('form_submit', {
           type_website: fieldType.value,
           gekozen_plan: fieldPlan.value
