@@ -9,6 +9,12 @@
   var COOKIE_KEY = 'vkd-cookie-consent';
   var GA_ID = 'G-TGF3SZDD35';
 
+  // Fire a GA4 custom event, but only if gtag exists. gtag is injected after
+  // consent, so events silently no-op for rejectors (and the AVG stays intact).
+  function track(name, params) {
+    if (typeof gtag === 'function') gtag('event', name, params || {});
+  }
+
   var cookieBanner = document.getElementById('cookie-banner');
   var cookieConsent = null;
   try { cookieConsent = localStorage.getItem(COOKIE_KEY); } catch (e) {}
@@ -29,10 +35,12 @@
   if (cookieBanner) {
     document.getElementById('cookie-accept').addEventListener('click', function () {
       try { localStorage.setItem(COOKIE_KEY, 'accepted'); } catch (e) {}
+      track('cookie_consent', { status: 'accepted' });
       window.location.reload();
     });
     document.getElementById('cookie-reject').addEventListener('click', function () {
       try { localStorage.setItem(COOKIE_KEY, 'rejected'); } catch (e) {}
+      track('cookie_consent', { status: 'rejected' });
       window.location.reload();
     });
   }
@@ -105,6 +113,7 @@
       tierPanels.forEach(function (panel) {
         panel.classList.toggle('active', panel.id === 'tier-' + target);
       });
+      track('tier_toggle', { selected: target });
     });
   });
 
@@ -191,6 +200,7 @@
         form.querySelectorAll('.intake-plan').forEach(function (b) { b.classList.remove('selected'); });
         btn.classList.add('selected');
         fieldPlan.value = btn.getAttribute('data-value');
+        track('tier_click', { tier_name: fieldPlan.value, tier_type: fieldType.value });
       });
     });
 
@@ -243,6 +253,7 @@
       if (currentStep === 2) showDetailPanels();
       if (currentStep === 4) buildSummary();
       currentStep++;
+      track('form_step', { step_number: currentStep });
       updateUI();
     });
 
@@ -267,6 +278,15 @@
         body: data,
         headers: { Accept: 'application/json' }
       }).then(function () {
+        track('form_submit', {
+          type_website: fieldType.value,
+          gekozen_plan: fieldPlan.value
+        });
+        track('generate_lead', {
+          value: 1,
+          type_website: fieldType.value,
+          gekozen_plan: fieldPlan.value
+        });
         window.location.href = 'bedankt.html';
       }).catch(function () {
         submitBtn.disabled = false;
@@ -275,7 +295,53 @@
     });
 
     updateUI();
+    track('form_start');
   })();
+
+  // Marketing events: clicks on example links, primary CTAs, FAQ items,
+  // contact links and the tier details cards.
+  document.querySelectorAll('.tier-example-link').forEach(function (link) {
+    link.addEventListener('click', function () {
+      var card = link.closest('.service-card');
+      track('example_view', { tier_name: card ? card.querySelector('h3').textContent : '' });
+    });
+  });
+  document.querySelectorAll('a[href="#contact"]').forEach(function (link) {
+    link.addEventListener('click', function () {
+      var card = link.closest('.maintenance-cta');
+      track('cta_click', { cta_location: card ? 'onderhoud' : 'hero' });
+    });
+  });
+  document.querySelectorAll('details.faq-item').forEach(function (item) {
+    item.addEventListener('toggle', function () {
+      if (item.open) {
+        var summary = item.querySelector('summary');
+        track('faq_toggle', { question_text: summary ? summary.textContent.trim() : '' });
+      }
+    });
+  });
+  document.querySelectorAll('a[href^="tel:"], a[href^="mailto:"]').forEach(function (link) {
+    link.addEventListener('click', function () {
+      track('contact_click', { contact_type: link.getAttribute('href').indexOf('tel:') === 0 ? 'phone' : 'email' });
+    });
+  });
+
+  // Scroll depth: fire once per 25/50/75/100% of page height scrolled.
+  var depthTracked = {};
+  function reportDepth() {
+    var doc = document.documentElement;
+    var scrollable = doc.scrollHeight - window.innerHeight;
+    if (scrollable <= 0) return;
+    var pct = Math.round((window.pageYOffset || doc.scrollTop) / scrollable * 100);
+    [25, 50, 75, 100].forEach(function (threshold) {
+      if (pct >= threshold && !depthTracked[threshold]) {
+        depthTracked[threshold] = true;
+        track('scroll_depth', { percent: threshold });
+      }
+    });
+  }
+  window.addEventListener('scroll', reportDepth, { passive: true });
+  reportDepth();
 
   // Scroll reveal
   var reveals = document.querySelectorAll('.reveal');

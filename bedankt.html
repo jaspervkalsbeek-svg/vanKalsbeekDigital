@@ -129,5 +129,20 @@
     </div>
   </main>
   <script src="script.js"></script>
+  <script>
+    // Conversion events fire once GA is available (after consent). The actual
+    // form_submit/generate_lead already fired client-side on index.html; these
+    // guard against the redirect racing past the network request.
+    (function () {
+      function fire() {
+        if (typeof gtag !== 'function') return;
+        gtag('event', 'form_submit', { event_category: 'conversion' });
+        gtag('event', 'generate_lead', { value: 1, event_category: 'conversion' });
+        window.clearInterval(interval);
+      }
+      var interval = window.setInterval(fire, 500);
+      window.setTimeout(function () { window.clearInterval(interval); }, 5000);
+    })();
+  </script>
 </body>
 </html>
